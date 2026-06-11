@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { navigationItems } from "@/data/siteContent";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 
 const socialLinks = ["Fb", "In", "Li", "Yt", "Wa"];
 
@@ -12,8 +13,8 @@ export default async function Footer({ content }) {
     <footer className="gridContainer bg-white px-5 py-10 md:px-9 md:py-12">
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.15fr]">
         <div>
-          <Link className="text-lg font-800 tracking-tight" href="/">
-            GK InterCare.
+          <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
+            <Image src="/images/logo/black-logo.png" alt="GK InterCare Logo" width={200} height={200} className="h-10 w-fit object-center object-contain" />
           </Link>
 
           <div className="mt-9">

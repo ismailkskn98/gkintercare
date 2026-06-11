@@ -44,22 +44,31 @@ export default function Header({ locale }) {
       <nav className="gridContainer">
         <div className="flex min-h-[5.5rem] items-center justify-between gap-5">
           <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
-            <Image
-              src={isScrolled ? "/images/logo/black-logo.png" : "/images/logo/white-logo.png"}
-              alt="GK InterCare Logo"
-              width={200}
-              height={200}
-              className="h-10 w-fit object-center object-contain"
-            />
+            <Image src={isScrolled ? "/images/logo/logo.png" : "/images/logo/white-logo.png"} alt="GK InterCare Logo" width={200} height={200} className="h-10 w-fit object-center object-contain" />
           </Link>
 
           <div className="hidden items-center gap-7 xl:flex">
-            {navLinks.map((item) => (
-              <Link className={`relative text-sm font-700 transition hover:text-accent ${pathname === item.href ? "text-accent" : inactiveLinkColor}`} href={item.href} key={item.href}>
-                {item.label}
-                {pathname === item.href ? <span className="absolute -bottom-3 left-1/2 h-0.5 w-6 -translate-x-1/2 bg-accent" /> : null}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  aria-current={isActive ? "page" : undefined}
+                  className={`relative text-sm font-700 transition hover:text-accent ${isActive ? "text-accent" : inactiveLinkColor}`}
+                  href={item.href}
+                  key={item.href}
+                >
+                  {item.label}
+                  {isActive ? (
+                    <motion.span
+                      className="absolute -bottom-3 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-accent"
+                      layoutId="header-active-nav-underline"
+                      transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                    />
+                  ) : null}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="hidden items-center gap-3 xl:flex">

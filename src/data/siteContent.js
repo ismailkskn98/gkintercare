@@ -64,90 +64,39 @@ const coreStats = [
 const treatmentAreas = [
   {
     title: "Plastic Surgery",
-    description:
-      "Enhance your natural beauty and confidence with advanced surgical and aesthetic procedures.",
-    image: "/images/gk-intercare-plastic-surgery.avif",
-    tags: [
-      "Rhinoplasty",
-      "Liposuction",
-      "Facelift",
-      "Tummy Tuck",
-      "Breast Surgery",
-      "Brazilian Butt Lift",
-      "Eyelid Surgery",
-      "Hair Transplantation",
-    ],
+    description: "Enhance your natural beauty and confidence with advanced surgical and aesthetic procedures.",
+    image: "/images/treatments/plastic.webp",
+    tags: ["Rhinoplasty", "Liposuction", "Facelift", "Tummy Tuck", "Breast Surgery", "Brazilian Butt Lift", "Eyelid Surgery", "Hair Transplantation"],
   },
   {
     title: "Dental",
-    description:
-      "Achieve a healthy, beautiful smile with our comprehensive dental care solutions.",
-    image: "/images/gk-intercare-dental-treatments.avif",
-    tags: [
-      "Dental Implants",
-      "Crowns & Bridges",
-      "Veneers",
-      "Orthodontics",
-      "Hollywood Smile",
-      "Gum Treatments",
-      "Teeth Whitening",
-      "Root Canal Therapy",
-    ],
+    description: "Achieve a healthy, beautiful smile with our comprehensive dental care solutions.",
+    image: "/images/treatments/dental.webp",
+    tags: ["Dental Implants", "Crowns & Bridges", "Veneers", "Orthodontics", "Hollywood Smile", "Gum Treatments", "Teeth Whitening", "Root Canal Therapy"],
   },
   {
     title: "Bariatric Surgery",
-    description:
-      "Safe and effective weight loss procedures for a healthier, longer life.",
-    image: "/images/gk-intercare-bariatric-surgery.avif",
-    tags: [
-      "Bariatric Surgery",
-      "Lifestyle Coaching",
-      "Pre-Surgery Evaluation",
-      "Post-Surgery Follow-Up",
-      "Nutritional Counseling",
-      "Long-Term Support",
-    ],
+    description: "Safe and effective weight loss procedures for a healthier, longer life.",
+    image: "/images/treatments/bariatric.webp",
+    tags: ["Bariatric Surgery", "Lifestyle Coaching", "Pre-Surgery Evaluation", "Post-Surgery Follow-Up", "Nutritional Counseling", "Long-Term Support"],
   },
   {
     title: "Orthopedics",
     description: "Regain mobility and live pain-free with our expert orthopedic care.",
-    image: "/images/gk-intercare-orthopedics.avif",
-    tags: [
-      "Knee Replacement",
-      "Spinal Surgery",
-      "Hip Replacement",
-      "Sports Injuries",
-      "Arthroscopy",
-      "Joint Pain Treatments",
-    ],
+    image: "/images/treatments/orthopedics.webp",
+    tags: ["Knee Replacement", "Spinal Surgery", "Hip Replacement", "Sports Injuries", "Arthroscopy", "Joint Pain Treatments"],
   },
   {
     title: "Neurology",
-    description:
-      "Advanced diagnosis and treatment for a wide range of neurological conditions.",
-    image: "/images/gk-intercare-neurology.avif",
-    tags: [
-      "Brain & Spine Surgery",
-      "Migraine & Headache",
-      "Epilepsy Treatment",
-      "Neuropathy Treatment",
-      "Multiple Sclerosis (MS)",
-      "Stroke Rehabilitation",
-    ],
+    description: "Advanced diagnosis and treatment for a wide range of neurological conditions.",
+    image: "/images/treatments/neurology.webp",
+    tags: ["Brain & Spine Surgery", "Migraine & Headache", "Epilepsy Treatment", "Neuropathy Treatment", "Multiple Sclerosis (MS)", "Stroke Rehabilitation"],
   },
   {
     title: "Oncology",
-    description:
-      "Comprehensive cancer care with compassionate support every step of the way.",
-    image: "/images/gk-intercare-oncology.avif",
-    tags: [
-      "Cancer Diagnosis",
-      "Targeted Therapy",
-      "Chemotherapy",
-      "Radiotherapy",
-      "Immunotherapy",
-      "Follow-Up & Support",
-    ],
+    description: "Comprehensive cancer care with compassionate support every step of the way.",
+    image: "/images/treatments/oncology.webp",
+    tags: ["Cancer Diagnosis", "Targeted Therapy", "Chemotherapy", "Radiotherapy", "Immunotherapy", "Follow-Up & Support"],
   },
 ];
 
@@ -158,14 +107,7 @@ const doctors = [
     image: "/images/prof-dr-gurkan-kayabasoglu.avif",
     description:
       "Gürkan Kayabaşoğlu has concentrated all his education and scientific studies on only one part of the human body, namely the face. He only performs surgeries on the facial area. For this reason, he was given the Oral, Facial and Maxillofacial Surgery Specialization Diploma by the Ministry of Health.",
-    expertise: [
-      "Rhinoplasty",
-      "Facelift & Neck Lift",
-      "Chin Surgery & Implant",
-      "Temporal Lift",
-      "Eyelid Surgery",
-      "Forehead Reduction",
-    ],
+    expertise: ["Rhinoplasty", "Facelift & Neck Lift", "Chin Surgery & Implant", "Temporal Lift", "Eyelid Surgery", "Forehead Reduction"],
   },
   {
     name: "Dr. Mustafa",
@@ -173,14 +115,7 @@ const doctors = [
     image: "/images/dr-mustafa.avif",
     description:
       "Dr. Mustafa specializes in aesthetic and reconstructive procedures with a strong focus on patient safety and satisfaction. He is dedicated to providing personalized care and achieving natural-looking results.",
-    expertise: [
-      "Rhinoplasty",
-      "Facelift & Neck Lift",
-      "Breast Surgery",
-      "Liposuction & Body Contouring",
-      "Hair Transplantation",
-      "Tummy Tuck",
-    ],
+    expertise: ["Rhinoplasty", "Facelift & Neck Lift", "Breast Surgery", "Liposuction & Body Contouring", "Hair Transplantation", "Tummy Tuck"],
   },
   {
     name: "Dr. Bircan",
@@ -188,13 +123,7 @@ const doctors = [
     image: "/images/dr-bircan.avif",
     description:
       "Dr. Bircan is a physician who is a specialist in his field and provides safe services, combining a successful academic education with professional experience. As a result, he became a member of the International Society of Hair Restoration Surgery (ISHRS).",
-    expertise: [
-      "FUE Hair Transplant",
-      "DHI Hair Transplant",
-      "Beard and Moustache Transplant",
-      "Eyebrow Transplant",
-      "Women Hair Transplant",
-    ],
+    expertise: ["FUE Hair Transplant", "DHI Hair Transplant", "Beard and Moustache Transplant", "Eyebrow Transplant", "Women Hair Transplant"],
   },
   {
     name: "Dr. Mehtap",
@@ -218,13 +147,7 @@ const doctors = [
     image: "/images/dr-ali.avif",
     description:
       "He accompanied thousands of cases and gained experience in a wide range of areas, from reconstructive surgery to microsurgery, from burn treatment to aesthetic operations. He completed his training and received the title of Plastic, Reconstructive and Aesthetic Surgery Specialist.",
-    expertise: [
-      "Reconstructive Surgery",
-      "Microsurgery",
-      "Burn Treatment",
-      "Aesthetic Operations",
-      "Body Contouring",
-    ],
+    expertise: ["Reconstructive Surgery", "Microsurgery", "Burn Treatment", "Aesthetic Operations", "Body Contouring"],
   },
 ];
 
@@ -232,36 +155,31 @@ const journeySteps = [
   {
     number: "01",
     title: "Take the First Step",
-    description:
-      "Reach out to us and share your expectations. Our dedicated team is here to listen, understand, and guide you from the very beginning.",
+    description: "Reach out to us and share your expectations. Our dedicated team is here to listen, understand, and guide you from the very beginning.",
     image: "/images/patient-journey1.avif",
   },
   {
     number: "02",
     title: "Personalized Medical Plan",
-    description:
-      "Our specialists carefully evaluate your case and create a fully tailored treatment plan designed specifically for your needs and desired outcome.",
+    description: "Our specialists carefully evaluate your case and create a fully tailored treatment plan designed specifically for your needs and desired outcome.",
     image: "/images/patient-journey2.avif",
   },
   {
     number: "03",
     title: "Smart Planning Together",
-    description:
-      "We schedule your procedure at the most convenient time for you and organize every detail to ensure a smooth and stress-free experience.",
+    description: "We schedule your procedure at the most convenient time for you and organize every detail to ensure a smooth and stress-free experience.",
     image: "/images/patient-journey3.avif",
   },
   {
     number: "04",
     title: "VIP Arrival Experience",
-    description:
-      "From the moment you land, everything is taken care of. Our private transfer team welcomes you in a luxury Vito and accompanies you throughout your journey.",
+    description: "From the moment you land, everything is taken care of. Our private transfer team welcomes you in a luxury Vito and accompanies you throughout your journey.",
     image: "/images/patient-journey4.avif",
   },
   {
     number: "05",
     title: "Experience the Transformation",
-    description:
-      "Relax and focus on yourself while our expert team delivers exceptional, natural results. All you need to do is witness the transformation.",
+    description: "Relax and focus on yourself while our expert team delivers exceptional, natural results. All you need to do is witness the transformation.",
     image: "/images/patient-journey5.avif",
   },
 ];
@@ -273,8 +191,7 @@ const englishContent = {
     treatmentCards: {
       eyebrow: "Treatment Areas",
       title: "Advanced Care for a Healthier Tomorrow",
-      description:
-        "We provide expert medical care with modern technology and a personalized approach to help you feel confident at every stage.",
+      description: "We provide expert medical care with modern technology and a personalized approach to help you feel confident at every stage.",
       badge: "Treatment",
       buttonLabel: "Get Your Personalized Plan",
       previousLabel: "Previous slide",
@@ -314,50 +231,42 @@ const englishContent = {
   metadata: {
     home: {
       title: "GK InterCare | Premium Health Tourism in Istanbul",
-      description:
-        "Personalized medical and aesthetic care in Istanbul with expert doctors, VIP travel support, and international patient coordination.",
+      description: "Personalized medical and aesthetic care in Istanbul with expert doctors, VIP travel support, and international patient coordination.",
       keywords: ["health tourism Istanbul", "medical tourism Turkey", "GK InterCare"],
     },
     about: {
       title: "About GK InterCare | Doctor-Led International Patient Care",
-      description:
-        "Learn how GK InterCare combines medical expertise, premium coordination, and patient-first support for international healthcare journeys.",
+      description: "Learn how GK InterCare combines medical expertise, premium coordination, and patient-first support for international healthcare journeys.",
       keywords: ["about GK InterCare", "doctor led healthcare agency", "international patient care"],
     },
     treatments: {
       title: "Treatments | Plastic Surgery, Dental, Bariatric and More",
-      description:
-        "Explore GK InterCare treatment areas including plastic surgery, dental care, bariatric surgery, orthopedics, neurology, and oncology.",
+      description: "Explore GK InterCare treatment areas including plastic surgery, dental care, bariatric surgery, orthopedics, neurology, and oncology.",
       keywords: ["treatments in Istanbul", "plastic surgery Turkey", "dental treatment Istanbul"],
     },
     doctors: {
       title: "Our Doctors | GK InterCare Medical Experts",
-      description:
-        "Meet the experienced doctors and specialists working with GK InterCare for safe, personalized, and natural-looking results.",
+      description: "Meet the experienced doctors and specialists working with GK InterCare for safe, personalized, and natural-looking results.",
       keywords: ["doctors in Istanbul", "medical experts Turkey", "GK InterCare doctors"],
     },
     patientJourney: {
       title: "Patient Journey | From Consultation to Aftercare",
-      description:
-        "See how GK InterCare supports international patients from first contact and planning to VIP arrival, treatment, recovery, and follow-up.",
+      description: "See how GK InterCare supports international patients from first contact and planning to VIP arrival, treatment, recovery, and follow-up.",
       keywords: ["patient journey medical tourism", "VIP medical travel Istanbul", "aftercare Turkey"],
     },
     beforeAfter: {
       title: "Before & After | Patient Results and Testimonials",
-      description:
-        "Discover GK InterCare transformation stories, patient testimonials, and result categories from personalized aesthetic care.",
+      description: "Discover GK InterCare transformation stories, patient testimonials, and result categories from personalized aesthetic care.",
       keywords: ["before after Turkey", "patient testimonials", "aesthetic results Istanbul"],
     },
     partners: {
       title: "For Partners | Healthcare Partnership in Istanbul",
-      description:
-        "Partner with GK InterCare to offer your patients trusted healthcare services in Istanbul, dedicated coordination, and premium support.",
+      description: "Partner with GK InterCare to offer your patients trusted healthcare services in Istanbul, dedicated coordination, and premium support.",
       keywords: ["healthcare partners Istanbul", "medical tourism agency partner", "GK InterCare partners"],
     },
     contact: {
       title: "Contact GK InterCare | Free Consultation",
-      description:
-        "Contact GK InterCare for a free consultation, WhatsApp support, and personalized treatment planning for your healthcare journey in Istanbul.",
+      description: "Contact GK InterCare for a free consultation, WhatsApp support, and personalized treatment planning for your healthcare journey in Istanbul.",
       keywords: ["contact GK InterCare", "free consultation medical tourism", "WhatsApp health tourism"],
     },
   },
@@ -366,8 +275,7 @@ const englishContent = {
       label: "Your Journey. Our Mission.",
       title: "Explore trusted care.",
       accent: "Create a safer health journey.",
-      description:
-        "A premium health tourism experience in Istanbul, planned around your treatment, travel, comfort, and aftercare needs.",
+      description: "A premium health tourism experience in Istanbul, planned around your treatment, travel, comfort, and aftercare needs.",
       primaryButton: "Start Planning",
       secondaryButton: "View Treatments",
       formLabel: "Free Consultation",
@@ -435,14 +343,8 @@ const englishContent = {
       label: "About Us",
       title: "Experience. Compassion.",
       accent: "Global Care.",
-      description:
-        "GK InterCare is an international healthcare agency dedicated to delivering world-class medical services with a personalized, patient-first approach.",
-      checklist: [
-        "Over 10+ Years of Experience in Healthcare Services",
-        "Thousands of Satisfied International Patients",
-        "Doctor-Led Vision, Patient-Focused Care",
-        "Global Network, Local Expertise",
-      ],
+      description: "GK InterCare is an international healthcare agency dedicated to delivering world-class medical services with a personalized, patient-first approach.",
+      checklist: ["Over 10+ Years of Experience in Healthcare Services", "Thousands of Satisfied International Patients", "Doctor-Led Vision, Patient-Focused Care", "Global Network, Local Expertise"],
       button: "Discover Our Services",
     },
     apart: {
@@ -510,22 +412,14 @@ const englishContent = {
       title: "Healthcare, Experienced Through a Doctor's Perspective",
       text: "We believe the best results come from combining medical excellence with a personalized approach. Our team works with a doctor's perspective at every stage of your journey.",
       center: "We evaluate, plan, coordinate, and care just as we would for our own family.",
-      quote:
-        "Our goal is to make world-class healthcare accessible, without compromising on quality.",
+      quote: "Our goal is to make world-class healthcare accessible, without compromising on quality.",
       highlight: "High-end quality, made accessible.",
     },
     promise: {
       label: "Our Promise to You",
       title: "Premium Quality. Accessible to All.",
-      description:
-        "We make high-end healthcare services more affordable without compromising on safety, quality, or comfort. Because everyone deserves the best care.",
-      steps: [
-        "Consultation & Planning",
-        "Travel & Arrival Management",
-        "Treatment Coordination",
-        "Recovery & Follow-Up",
-        "Aftercare & Long-Term Support",
-      ],
+      description: "We make high-end healthcare services more affordable without compromising on safety, quality, or comfort. Because everyone deserves the best care.",
+      steps: ["Consultation & Planning", "Travel & Arrival Management", "Treatment Coordination", "Recovery & Follow-Up", "Aftercare & Long-Term Support"],
     },
     cta: {
       title: "Your health journey deserves experience you can trust.",
@@ -538,16 +432,10 @@ const englishContent = {
       label: "Our Treatments",
       title: "Comprehensive Care.",
       accent: "Personalized for You.",
-      description:
-        "We partner with leading hospitals and specialists in Istanbul to provide world-class treatments across a wide range of medical disciplines.",
+      description: "We partner with leading hospitals and specialists in Istanbul to provide world-class treatments across a wide range of medical disciplines.",
       image: "/images/gk-intercare-health-solutions1.avif",
       imageAlt: "GK InterCare treatment planning in Istanbul",
-      badges: [
-        "International Accredited Hospitals",
-        "Doctor-Led Treatment Approach",
-        "Personalized Care Plans",
-        "End-to-End Support",
-      ],
+      badges: ["International Accredited Hospitals", "Doctor-Led Treatment Approach", "Personalized Care Plans", "End-to-End Support"],
     },
     header: {
       label: "Our Treatment Areas",
@@ -580,12 +468,7 @@ const englishContent = {
         "Our experienced doctors combine advanced medical expertise with a personalized approach to deliver safe, effective, and natural-looking results that enhance your confidence and well-being.",
       image: "/images/gk-intercare-health-solutions1.avif",
       imageAlt: "GK InterCare medical team and healthcare solutions",
-      badges: [
-        "Experienced Specialists",
-        "International Standards",
-        "Patient-Centered Care",
-        "Proven Results",
-      ],
+      badges: ["Experienced Specialists", "International Standards", "Patient-Centered Care", "Proven Results"],
     },
     header: {
       label: "Meet Our Medical Experts",
@@ -616,8 +499,7 @@ const englishContent = {
       label: "Patient Journey",
       title: "Your Journey,",
       accent: "Our Priority",
-      description:
-        "A seamless experience designed around your comfort, safety and exceptional results.",
+      description: "A seamless experience designed around your comfort, safety and exceptional results.",
       image: "/images/gk-intercare-health-solutions1.avif",
       imageAlt: "GK InterCare patient journey support",
     },
@@ -653,8 +535,7 @@ const englishContent = {
       label: "Real Patients. Real Results.",
       title: "Before & After Photos",
       accent: "and Testimonial Videos",
-      description:
-        "Every transformation tells a story. Discover real results achieved by our patients with advanced techniques and personalized care.",
+      description: "Every transformation tells a story. Discover real results achieved by our patients with advanced techniques and personalized care.",
     },
     filters: ["All", "Face", "Neck", "Nose", "Eyes", "Breast", "Body"],
     labels: {
@@ -703,22 +584,19 @@ const englishContent = {
         author: "Sarah J.",
         country: "United Kingdom",
         duration: "1:24",
-        quote:
-          "I had rhinoplasty with Prof. Dr. Gürkan Kayabaşoğlu and the results exceeded my expectations. My nose looks so natural and my confidence is back!",
+        quote: "I had rhinoplasty with Prof. Dr. Gürkan Kayabaşoğlu and the results exceeded my expectations. My nose looks so natural and my confidence is back!",
       },
       {
         author: "Marc T.",
         country: "Germany",
         duration: "1:37",
-        quote:
-          "From the first consultation to the final result, everything was perfect. The team is very professional and caring. Highly recommended!",
+        quote: "From the first consultation to the final result, everything was perfect. The team is very professional and caring. Highly recommended!",
       },
       {
         author: "Elena P.",
         country: "Italy",
         duration: "1:18",
-        quote:
-          "I had a neck lift and the transformation is incredible. I look younger and refreshed. Thank you for everything!",
+        quote: "I had a neck lift and the transformation is incredible. I look younger and refreshed. Thank you for everything!",
       },
     ],
     cta: {
@@ -726,12 +604,7 @@ const englishContent = {
       title: "Your transformation story could be next.",
       text: "Let's create your best version together.",
       button: "Start Your Transformation Today",
-      features: [
-        "Natural Looking Results",
-        "Advanced Techniques",
-        "Personalized Care",
-        "Expert Team",
-      ],
+      features: ["Natural Looking Results", "Advanced Techniques", "Personalized Care", "Expert Team"],
     },
   },
   partnersPage: {
@@ -739,8 +612,7 @@ const englishContent = {
       label: "For Partners",
       title: "Partner With a Trusted Healthcare Provider",
       accent: "in Istanbul",
-      description:
-        "We collaborate with agencies and facilitators worldwide to deliver exceptional healthcare experiences and outstanding results for your patients.",
+      description: "We collaborate with agencies and facilitators worldwide to deliver exceptional healthcare experiences and outstanding results for your patients.",
       image: "/images/gk-intercare-for-partners.avif",
       imageAlt: "GK InterCare international healthcare partnership",
       badges: ["Trusted Expertise", "Reliable Partnership", "Premium Quality", "Global Collaboration"],
@@ -755,23 +627,13 @@ const englishContent = {
           title: "Send Your Patients to Istanbul",
           text: "We provide complete medical travel services in Istanbul with VIP and Economic options.",
           image: "/images/for-partners1.avif",
-          points: [
-            "Accommodation & VIP transfers",
-            "Priority appointments",
-            "Translation & concierge services",
-            "Post-op care & follow-up",
-          ],
+          points: ["Accommodation & VIP transfers", "Priority appointments", "Translation & concierge services", "Post-op care & follow-up"],
         },
         {
           title: "We Come to You",
           text: "We visit your country for consultations and even surgeries in collaboration with local hospitals.",
           image: "/images/for-partners2.avif",
-          points: [
-            "On-site patient consultations",
-            "Surgeries in partner hospitals",
-            "Training & knowledge sharing",
-            "Long-term collaboration",
-          ],
+          points: ["On-site patient consultations", "Surgeries in partner hospitals", "Training & knowledge sharing", "Long-term collaboration"],
         },
       ],
     },
@@ -792,11 +654,7 @@ const englishContent = {
       label: "Become a Partner",
       title: "Let's Build a Successful Partnership",
       text: "Fill out the form and our partnership team will contact you to discuss how we can work together and grow your business.",
-      points: [
-        "Quick response within 24 hours",
-        "Dedicated partnership manager",
-        "Long-term and mutually beneficial collaboration",
-      ],
+      points: ["Quick response within 24 hours", "Dedicated partnership manager", "Long-term and mutually beneficial collaboration"],
       fields: [
         { label: "Full Name", placeholder: "Your full name" },
         { label: "Company Name", placeholder: "Your company" },
@@ -819,8 +677,7 @@ const englishContent = {
       label: "Contact Us",
       title: "We're Here for You,",
       accent: "Every Step of the Way",
-      description:
-        "Have questions or ready to start your journey? Our team is here to help you anytime. Reach out to us and let's create the best version of you, together.",
+      description: "Have questions or ready to start your journey? Our team is here to help you anytime. Reach out to us and let's create the best version of you, together.",
       image: "/images/gk-intercare-health-solutions1.avif",
       imageAlt: "GK InterCare contact and consultation support",
       badges: [
@@ -844,8 +701,7 @@ const englishContent = {
       subjectPlaceholder: "What would you like to inquire about?",
       messageLabel: "Your Message",
       messagePlaceholder: "Tell us about yourself and what you're looking for...",
-      consentText:
-        "I agree to the processing of my personal data in accordance with the Privacy Policy.",
+      consentText: "I agree to the processing of my personal data in accordance with the Privacy Policy.",
       button: "Send Message",
     },
     contactBox: {
@@ -902,8 +758,7 @@ const spanishOverrides = {
     treatmentCards: {
       eyebrow: "Áreas de tratamiento",
       title: "Atención avanzada para un mañana más saludable",
-      description:
-        "Ofrecemos atención médica experta con tecnología moderna y un enfoque personalizado para que te sientas seguro en cada etapa.",
+      description: "Ofrecemos atención médica experta con tecnología moderna y un enfoque personalizado para que te sientas seguro en cada etapa.",
       badge: "Tratamiento",
       buttonLabel: "Obtén tu plan personalizado",
       previousLabel: "Diapositiva anterior",
@@ -914,21 +769,8 @@ const spanishOverrides = {
     supportTitle: "Soporte",
     headOfficeTitle: "Oficina central",
     socialTitle: "Redes",
-    treatmentLinks: [
-      { label: "Cirugía plástica" },
-      { label: "Odontología" },
-      { label: "Cirugía bariátrica" },
-      { label: "Ortopedia" },
-      { label: "Neurología" },
-      { label: "Oncología" },
-    ],
-    utilityLinks: [
-      { label: "Viaje del paciente" },
-      { label: "Antes y después" },
-      { label: "Para socios" },
-      { label: "Contacto" },
-      { label: "404" },
-    ],
+    treatmentLinks: [{ label: "Cirugía plástica" }, { label: "Odontología" }, { label: "Cirugía bariátrica" }, { label: "Ortopedia" }, { label: "Neurología" }, { label: "Oncología" }],
+    utilityLinks: [{ label: "Viaje del paciente" }, { label: "Antes y después" }, { label: "Para socios" }, { label: "Contacto" }, { label: "404" }],
     newsletter: {
       title: "Mantente al día",
       text: "Suscríbete para recibir novedades sobre viajes de salud.",
@@ -939,107 +781,51 @@ const spanishOverrides = {
   stats: [
     {
       label: "Años de experiencia",
-      description:
-        "Una década coordinando viajes médicos y ofreciendo apoyo sanitario centrado en el paciente.",
+      description: "Una década coordinando viajes médicos y ofreciendo apoyo sanitario centrado en el paciente.",
     },
     {
       label: "Pacientes internacionales",
-      description:
-        "Pacientes de todo el mundo acompañados con planificación clara y atención personal.",
+      description: "Pacientes de todo el mundo acompañados con planificación clara y atención personal.",
     },
     {
       label: "Hospitales asociados",
-      description:
-        "Una red médica de confianza con hospitales líderes y clínicas especializadas.",
+      description: "Una red médica de confianza con hospitales líderes y clínicas especializadas.",
     },
     {
       label: "Índice de satisfacción del paciente",
-      description:
-        "Trayectos de atención diseñados en torno a la comodidad, la seguridad, la comunicación y los resultados.",
+      description: "Trayectos de atención diseñados en torno a la comodidad, la seguridad, la comunicación y los resultados.",
     },
   ],
   treatments: [
     {
       title: "Cirugía plástica",
-      description:
-        "Realza tu belleza natural y tu confianza con procedimientos quirúrgicos y estéticos avanzados.",
-      tags: [
-        "Rinoplastia",
-        "Liposucción",
-        "Lifting facial",
-        "Abdominoplastia",
-        "Cirugía mamaria",
-        "Aumento de glúteos brasileño",
-        "Cirugía de párpados",
-        "Trasplante capilar",
-      ],
+      description: "Realza tu belleza natural y tu confianza con procedimientos quirúrgicos y estéticos avanzados.",
+      tags: ["Rinoplastia", "Liposucción", "Lifting facial", "Abdominoplastia", "Cirugía mamaria", "Aumento de glúteos brasileño", "Cirugía de párpados", "Trasplante capilar"],
     },
     {
       title: "Odontología",
-      description:
-        "Consigue una sonrisa sana y bonita con nuestras soluciones integrales de cuidado dental.",
-      tags: [
-        "Implantes dentales",
-        "Coronas y puentes",
-        "Carillas",
-        "Ortodoncia",
-        "Sonrisa Hollywood",
-        "Tratamientos de encías",
-        "Blanqueamiento dental",
-        "Endodoncia",
-      ],
+      description: "Consigue una sonrisa sana y bonita con nuestras soluciones integrales de cuidado dental.",
+      tags: ["Implantes dentales", "Coronas y puentes", "Carillas", "Ortodoncia", "Sonrisa Hollywood", "Tratamientos de encías", "Blanqueamiento dental", "Endodoncia"],
     },
     {
       title: "Cirugía bariátrica",
-      description:
-        "Procedimientos de pérdida de peso seguros y eficaces para una vida más saludable y duradera.",
-      tags: [
-        "Cirugía bariátrica",
-        "Coaching de estilo de vida",
-        "Evaluación preoperatoria",
-        "Seguimiento posoperatorio",
-        "Asesoría nutricional",
-        "Apoyo a largo plazo",
-      ],
+      description: "Procedimientos de pérdida de peso seguros y eficaces para una vida más saludable y duradera.",
+      tags: ["Cirugía bariátrica", "Coaching de estilo de vida", "Evaluación preoperatoria", "Seguimiento posoperatorio", "Asesoría nutricional", "Apoyo a largo plazo"],
     },
     {
       title: "Ortopedia",
-      description:
-        "Recupera la movilidad y vive sin dolor con nuestra atención ortopédica experta.",
-      tags: [
-        "Prótesis de rodilla",
-        "Cirugía de columna",
-        "Prótesis de cadera",
-        "Lesiones deportivas",
-        "Artroscopia",
-        "Tratamientos para dolor articular",
-      ],
+      description: "Recupera la movilidad y vive sin dolor con nuestra atención ortopédica experta.",
+      tags: ["Prótesis de rodilla", "Cirugía de columna", "Prótesis de cadera", "Lesiones deportivas", "Artroscopia", "Tratamientos para dolor articular"],
     },
     {
       title: "Neurología",
-      description:
-        "Diagnóstico y tratamiento avanzados para una amplia variedad de enfermedades neurológicas.",
-      tags: [
-        "Cirugía cerebral y de columna",
-        "Migraña y cefalea",
-        "Tratamiento de epilepsia",
-        "Tratamiento de neuropatía",
-        "Esclerosis múltiple (EM)",
-        "Rehabilitación tras ictus",
-      ],
+      description: "Diagnóstico y tratamiento avanzados para una amplia variedad de enfermedades neurológicas.",
+      tags: ["Cirugía cerebral y de columna", "Migraña y cefalea", "Tratamiento de epilepsia", "Tratamiento de neuropatía", "Esclerosis múltiple (EM)", "Rehabilitación tras ictus"],
     },
     {
       title: "Oncología",
-      description:
-        "Atención oncológica integral con apoyo humano en cada etapa del proceso.",
-      tags: [
-        "Diagnóstico de cáncer",
-        "Terapia dirigida",
-        "Quimioterapia",
-        "Radioterapia",
-        "Inmunoterapia",
-        "Seguimiento y apoyo",
-      ],
+      description: "Atención oncológica integral con apoyo humano en cada etapa del proceso.",
+      tags: ["Diagnóstico de cáncer", "Terapia dirigida", "Quimioterapia", "Radioterapia", "Inmunoterapia", "Seguimiento y apoyo"],
     },
   ],
   doctors: [
@@ -1047,39 +833,19 @@ const spanishOverrides = {
       specialty: "Cirujano ORL",
       description:
         "Gürkan Kayabaşoğlu ha concentrado toda su formación y sus estudios científicos en una sola parte del cuerpo humano: el rostro. Realiza cirugías únicamente en el área facial. Por este motivo, el Ministerio de Salud le otorgó el Diploma de Especialización en Cirugía Oral, Facial y Maxilofacial.",
-      expertise: [
-        "Rinoplastia",
-        "Lifting facial y de cuello",
-        "Cirugía e implante de mentón",
-        "Lifting temporal",
-        "Cirugía de párpados",
-        "Reducción de frente",
-      ],
+      expertise: ["Rinoplastia", "Lifting facial y de cuello", "Cirugía e implante de mentón", "Lifting temporal", "Cirugía de párpados", "Reducción de frente"],
     },
     {
       specialty: "Cirugía plástica",
       description:
         "El Dr. Mustafa se especializa en procedimientos estéticos y reconstructivos con un fuerte enfoque en la seguridad y satisfacción del paciente. Se dedica a ofrecer atención personalizada y resultados de aspecto natural.",
-      expertise: [
-        "Rinoplastia",
-        "Lifting facial y de cuello",
-        "Cirugía mamaria",
-        "Liposucción y contorno corporal",
-        "Trasplante capilar",
-        "Abdominoplastia",
-      ],
+      expertise: ["Rinoplastia", "Lifting facial y de cuello", "Cirugía mamaria", "Liposucción y contorno corporal", "Trasplante capilar", "Abdominoplastia"],
     },
     {
       specialty: "Trasplante capilar",
       description:
         "El Dr. Bircan es un médico especialista en su campo que ofrece servicios seguros, combinando una sólida formación académica con experiencia profesional. Como resultado, se convirtió en miembro de la International Society of Hair Restoration Surgery (ISHRS).",
-      expertise: [
-        "Trasplante capilar FUE",
-        "Trasplante capilar DHI",
-        "Trasplante de barba y bigote",
-        "Trasplante de cejas",
-        "Trasplante capilar femenino",
-      ],
+      expertise: ["Trasplante capilar FUE", "Trasplante capilar DHI", "Trasplante de barba y bigote", "Trasplante de cejas", "Trasplante capilar femenino"],
     },
     {
       specialty: "Cirujana ORL",
@@ -1097,65 +863,50 @@ const spanishOverrides = {
       specialty: "Cirugía plástica",
       description:
         "Ha participado en miles de casos y ha adquirido experiencia en una amplia variedad de áreas, desde cirugía reconstructiva hasta microcirugía, desde tratamiento de quemaduras hasta operaciones estéticas. Completó su formación y recibió el título de Especialista en Cirugía Plástica, Reconstructiva y Estética.",
-      expertise: [
-        "Cirugía reconstructiva",
-        "Microcirugía",
-        "Tratamiento de quemaduras",
-        "Operaciones estéticas",
-        "Contorno corporal",
-      ],
+      expertise: ["Cirugía reconstructiva", "Microcirugía", "Tratamiento de quemaduras", "Operaciones estéticas", "Contorno corporal"],
     },
   ],
   journeySteps: [
     {
       title: "Da el primer paso",
-      description:
-        "Contáctanos y comparte tus expectativas. Nuestro equipo dedicado está aquí para escucharte, entenderte y guiarte desde el primer momento.",
+      description: "Contáctanos y comparte tus expectativas. Nuestro equipo dedicado está aquí para escucharte, entenderte y guiarte desde el primer momento.",
     },
     {
       title: "Plan médico personalizado",
-      description:
-        "Nuestros especialistas evalúan cuidadosamente tu caso y crean un plan de tratamiento totalmente adaptado a tus necesidades y al resultado deseado.",
+      description: "Nuestros especialistas evalúan cuidadosamente tu caso y crean un plan de tratamiento totalmente adaptado a tus necesidades y al resultado deseado.",
     },
     {
       title: "Planificación inteligente juntos",
-      description:
-        "Programamos tu procedimiento en el momento más conveniente para ti y organizamos cada detalle para garantizar una experiencia fluida y sin estrés.",
+      description: "Programamos tu procedimiento en el momento más conveniente para ti y organizamos cada detalle para garantizar una experiencia fluida y sin estrés.",
     },
     {
       title: "Experiencia VIP de llegada",
-      description:
-        "Desde el momento en que aterrizas, todo está organizado. Nuestro equipo de traslado privado te recibe en un Vito de lujo y te acompaña durante todo tu viaje.",
+      description: "Desde el momento en que aterrizas, todo está organizado. Nuestro equipo de traslado privado te recibe en un Vito de lujo y te acompaña durante todo tu viaje.",
     },
     {
       title: "Vive la transformación",
-      description:
-        "Relájate y concéntrate en ti mientras nuestro equipo experto consigue resultados excepcionales y naturales. Solo tienes que presenciar la transformación.",
+      description: "Relájate y concéntrate en ti mientras nuestro equipo experto consigue resultados excepcionales y naturales. Solo tienes que presenciar la transformación.",
     },
   ],
   metadata: {
     home: {
       title: "GK InterCare | Turismo de salud premium en Estambul",
-      description:
-        "Atención médica y estética personalizada en Estambul con médicos expertos, apoyo VIP de viaje y coordinación para pacientes internacionales.",
+      description: "Atención médica y estética personalizada en Estambul con médicos expertos, apoyo VIP de viaje y coordinación para pacientes internacionales.",
       keywords: ["turismo de salud Estambul", "turismo médico Turquía", "GK InterCare"],
     },
     about: {
       title: "Sobre GK InterCare | Atención internacional dirigida por médicos",
-      description:
-        "Descubre cómo GK InterCare combina experiencia médica, coordinación premium y apoyo centrado en el paciente para viajes de salud internacionales.",
+      description: "Descubre cómo GK InterCare combina experiencia médica, coordinación premium y apoyo centrado en el paciente para viajes de salud internacionales.",
       keywords: ["sobre GK InterCare", "agencia médica dirigida por doctores", "atención internacional al paciente"],
     },
     treatments: {
       title: "Tratamientos | Cirugía plástica, dental, bariátrica y más",
-      description:
-        "Explora las áreas de tratamiento de GK InterCare, incluyendo cirugía plástica, odontología, cirugía bariátrica, ortopedia, neurología y oncología.",
+      description: "Explora las áreas de tratamiento de GK InterCare, incluyendo cirugía plástica, odontología, cirugía bariátrica, ortopedia, neurología y oncología.",
       keywords: ["tratamientos en Estambul", "cirugía plástica Turquía", "tratamiento dental Estambul"],
     },
     doctors: {
       title: "Nuestros doctores | Expertos médicos de GK InterCare",
-      description:
-        "Conoce a los médicos y especialistas experimentados que colaboran con GK InterCare para resultados seguros, personalizados y naturales.",
+      description: "Conoce a los médicos y especialistas experimentados que colaboran con GK InterCare para resultados seguros, personalizados y naturales.",
       keywords: ["doctores en Estambul", "expertos médicos Turquía", "doctores GK InterCare"],
     },
     patientJourney: {
@@ -1166,20 +917,17 @@ const spanishOverrides = {
     },
     beforeAfter: {
       title: "Antes y después | Resultados y testimonios de pacientes",
-      description:
-        "Descubre historias de transformación de GK InterCare, testimonios de pacientes y categorías de resultados de atención estética personalizada.",
+      description: "Descubre historias de transformación de GK InterCare, testimonios de pacientes y categorías de resultados de atención estética personalizada.",
       keywords: ["antes y después Turquía", "testimonios de pacientes", "resultados estéticos Estambul"],
     },
     partners: {
       title: "Para socios | Alianza sanitaria en Estambul",
-      description:
-        "Colabora con GK InterCare para ofrecer a tus pacientes servicios sanitarios confiables en Estambul, coordinación dedicada y soporte premium.",
+      description: "Colabora con GK InterCare para ofrecer a tus pacientes servicios sanitarios confiables en Estambul, coordinación dedicada y soporte premium.",
       keywords: ["socios sanitarios Estambul", "socio agencia turismo médico", "socios GK InterCare"],
     },
     contact: {
       title: "Contacta con GK InterCare | Consulta gratuita",
-      description:
-        "Contacta con GK InterCare para una consulta gratuita, soporte por WhatsApp y planificación personalizada de tu tratamiento en Estambul.",
+      description: "Contacta con GK InterCare para una consulta gratuita, soporte por WhatsApp y planificación personalizada de tu tratamiento en Estambul.",
       keywords: ["contactar GK InterCare", "consulta gratuita turismo médico", "WhatsApp turismo de salud"],
     },
   },
@@ -1188,8 +936,7 @@ const spanishOverrides = {
       label: "Tu viaje. Nuestra misión.",
       title: "Explora atención de confianza.",
       accent: "Crea un viaje de salud más seguro.",
-      description:
-        "Una experiencia premium de turismo de salud en Estambul, planificada alrededor de tu tratamiento, viaje, comodidad y cuidados posteriores.",
+      description: "Una experiencia premium de turismo de salud en Estambul, planificada alrededor de tu tratamiento, viaje, comodidad y cuidados posteriores.",
       primaryButton: "Empezar a planificar",
       secondaryButton: "Ver tratamientos",
       formLabel: "Consulta gratuita",
@@ -1257,8 +1004,7 @@ const spanishOverrides = {
       label: "Sobre nosotros",
       title: "Experiencia. Compasión.",
       accent: "Atención global.",
-      description:
-        "GK InterCare es una agencia internacional de salud dedicada a ofrecer servicios médicos de clase mundial con un enfoque personalizado y centrado en el paciente.",
+      description: "GK InterCare es una agencia internacional de salud dedicada a ofrecer servicios médicos de clase mundial con un enfoque personalizado y centrado en el paciente.",
       checklist: [
         "Más de 10 años de experiencia en servicios de salud",
         "Miles de pacientes internacionales satisfechos",
@@ -1296,12 +1042,7 @@ const spanishOverrides = {
         "Con más de una década de experiencia en turismo médico, GK InterCare se ha convertido en un socio de confianza para pacientes de todo el mundo.",
         "Trabajamos con una red cuidadosamente seleccionada de hospitales y especialistas líderes en Estambul para garantizar los más altos estándares de seguridad, calidad y atención.",
       ],
-      stats: [
-        { label: "Años de experiencia" },
-        { label: "Pacientes internacionales" },
-        { label: "Índice de satisfacción del paciente" },
-        { label: "Hospitales asociados en todo el mundo" },
-      ],
+      stats: [{ label: "Años de experiencia" }, { label: "Pacientes internacionales" }, { label: "Índice de satisfacción del paciente" }, { label: "Hospitales asociados en todo el mundo" }],
     },
     why: {
       label: "¿Por qué elegirnos?",
@@ -1332,22 +1073,14 @@ const spanishOverrides = {
       title: "La salud, vivida desde la perspectiva de un médico",
       text: "Creemos que los mejores resultados nacen de combinar excelencia médica con un enfoque personalizado. Nuestro equipo trabaja con perspectiva médica en cada etapa de tu viaje.",
       center: "Evaluamos, planificamos, coordinamos y cuidamos como lo haríamos con nuestra propia familia.",
-      quote:
-        "Nuestro objetivo es hacer accesible la atención sanitaria de clase mundial sin comprometer la calidad.",
+      quote: "Nuestro objetivo es hacer accesible la atención sanitaria de clase mundial sin comprometer la calidad.",
       highlight: "Calidad premium, hecha accesible.",
     },
     promise: {
       label: "Nuestra promesa para ti",
       title: "Calidad premium. Accesible para todos.",
-      description:
-        "Hacemos que los servicios sanitarios de alto nivel sean más accesibles sin comprometer la seguridad, la calidad ni la comodidad. Porque todos merecen la mejor atención.",
-      steps: [
-        "Consulta y planificación",
-        "Gestión de viaje y llegada",
-        "Coordinación del tratamiento",
-        "Recuperación y seguimiento",
-        "Cuidados posteriores y apoyo a largo plazo",
-      ],
+      description: "Hacemos que los servicios sanitarios de alto nivel sean más accesibles sin comprometer la seguridad, la calidad ni la comodidad. Porque todos merecen la mejor atención.",
+      steps: ["Consulta y planificación", "Gestión de viaje y llegada", "Coordinación del tratamiento", "Recuperación y seguimiento", "Cuidados posteriores y apoyo a largo plazo"],
     },
     cta: {
       title: "Tu viaje de salud merece experiencia en la que puedas confiar.",
@@ -1360,15 +1093,9 @@ const spanishOverrides = {
       label: "Nuestros tratamientos",
       title: "Atención integral.",
       accent: "Personalizada para ti.",
-      description:
-        "Colaboramos con hospitales y especialistas líderes en Estambul para ofrecer tratamientos de clase mundial en una amplia variedad de disciplinas médicas.",
+      description: "Colaboramos con hospitales y especialistas líderes en Estambul para ofrecer tratamientos de clase mundial en una amplia variedad de disciplinas médicas.",
       imageAlt: "Planificación de tratamientos de GK InterCare en Estambul",
-      badges: [
-        "Hospitales con acreditación internacional",
-        "Enfoque de tratamiento dirigido por médicos",
-        "Planes de atención personalizados",
-        "Soporte integral",
-      ],
+      badges: ["Hospitales con acreditación internacional", "Enfoque de tratamiento dirigido por médicos", "Planes de atención personalizados", "Soporte integral"],
     },
     header: {
       label: "Nuestras áreas de tratamiento",
@@ -1400,12 +1127,7 @@ const spanishOverrides = {
       description:
         "Nuestros médicos experimentados combinan conocimiento médico avanzado con un enfoque personalizado para ofrecer resultados seguros, eficaces y naturales que mejoran tu confianza y bienestar.",
       imageAlt: "Equipo médico y soluciones de salud de GK InterCare",
-      badges: [
-        "Especialistas experimentados",
-        "Estándares internacionales",
-        "Atención centrada en el paciente",
-        "Resultados comprobados",
-      ],
+      badges: ["Especialistas experimentados", "Estándares internacionales", "Atención centrada en el paciente", "Resultados comprobados"],
     },
     header: {
       label: "Conoce a nuestros expertos médicos",
@@ -1436,8 +1158,7 @@ const spanishOverrides = {
       label: "Viaje del paciente",
       title: "Tu viaje,",
       accent: "nuestra prioridad",
-      description:
-        "Una experiencia fluida diseñada alrededor de tu comodidad, seguridad y resultados excepcionales.",
+      description: "Una experiencia fluida diseñada alrededor de tu comodidad, seguridad y resultados excepcionales.",
       imageAlt: "Apoyo al viaje del paciente de GK InterCare",
     },
     cta: {
@@ -1472,8 +1193,7 @@ const spanishOverrides = {
       label: "Pacientes reales. Resultados reales.",
       title: "Fotos de antes y después",
       accent: "y videos testimoniales",
-      description:
-        "Cada transformación cuenta una historia. Descubre resultados reales logrados por nuestros pacientes con técnicas avanzadas y atención personalizada.",
+      description: "Cada transformación cuenta una historia. Descubre resultados reales logrados por nuestros pacientes con técnicas avanzadas y atención personalizada.",
     },
     filters: ["Todos", "Rostro", "Cuello", "Nariz", "Ojos", "Pecho", "Cuerpo"],
     labels: {
@@ -1516,18 +1236,15 @@ const spanishOverrides = {
     testimonials: [
       {
         country: "Reino Unido",
-        quote:
-          "Me hice una rinoplastia con el Prof. Dr. Gürkan Kayabaşoğlu y los resultados superaron mis expectativas. Mi nariz se ve muy natural y recuperé mi confianza.",
+        quote: "Me hice una rinoplastia con el Prof. Dr. Gürkan Kayabaşoğlu y los resultados superaron mis expectativas. Mi nariz se ve muy natural y recuperé mi confianza.",
       },
       {
         country: "Alemania",
-        quote:
-          "Desde la primera consulta hasta el resultado final, todo fue perfecto. El equipo es muy profesional y atento. Totalmente recomendable.",
+        quote: "Desde la primera consulta hasta el resultado final, todo fue perfecto. El equipo es muy profesional y atento. Totalmente recomendable.",
       },
       {
         country: "Italia",
-        quote:
-          "Me hice un lifting de cuello y la transformación es increíble. Me veo más joven y renovada. Gracias por todo.",
+        quote: "Me hice un lifting de cuello y la transformación es increíble. Me veo más joven y renovada. Gracias por todo.",
       },
     ],
     cta: {
@@ -1535,12 +1252,7 @@ const spanishOverrides = {
       title: "Tu historia de transformación podría ser la próxima.",
       text: "Creemos juntos tu mejor versión.",
       button: "Empieza tu transformación hoy",
-      features: [
-        "Resultados de aspecto natural",
-        "Técnicas avanzadas",
-        "Atención personalizada",
-        "Equipo experto",
-      ],
+      features: ["Resultados de aspecto natural", "Técnicas avanzadas", "Atención personalizada", "Equipo experto"],
     },
   },
   partnersPage: {
@@ -1548,8 +1260,7 @@ const spanishOverrides = {
       label: "Para socios",
       title: "Colabora con un proveedor sanitario de confianza",
       accent: "en Estambul",
-      description:
-        "Colaboramos con agencias y facilitadores de todo el mundo para ofrecer experiencias sanitarias excepcionales y resultados sobresalientes para tus pacientes.",
+      description: "Colaboramos con agencias y facilitadores de todo el mundo para ofrecer experiencias sanitarias excepcionales y resultados sobresalientes para tus pacientes.",
       imageAlt: "Alianza sanitaria internacional de GK InterCare",
       badges: ["Experiencia confiable", "Alianza fiable", "Calidad premium", "Colaboración global"],
       supportTitle: "Soporte dedicado para socios",
@@ -1562,22 +1273,12 @@ const spanishOverrides = {
         {
           title: "Envía tus pacientes a Estambul",
           text: "Ofrecemos servicios completos de viaje médico en Estambul con opciones VIP y económicas.",
-          points: [
-            "Alojamiento y traslados VIP",
-            "Citas prioritarias",
-            "Servicios de traducción y concierge",
-            "Cuidado posoperatorio y seguimiento",
-          ],
+          points: ["Alojamiento y traslados VIP", "Citas prioritarias", "Servicios de traducción y concierge", "Cuidado posoperatorio y seguimiento"],
         },
         {
           title: "Vamos a tu país",
           text: "Visitamos tu país para consultas e incluso cirugías en colaboración con hospitales locales.",
-          points: [
-            "Consultas presenciales para pacientes",
-            "Cirugías en hospitales asociados",
-            "Formación e intercambio de conocimiento",
-            "Colaboración a largo plazo",
-          ],
+          points: ["Consultas presenciales para pacientes", "Cirugías en hospitales asociados", "Formación e intercambio de conocimiento", "Colaboración a largo plazo"],
         },
       ],
     },
@@ -1598,11 +1299,7 @@ const spanishOverrides = {
       label: "Conviértete en socio",
       title: "Construyamos una colaboración exitosa",
       text: "Completa el formulario y nuestro equipo de alianzas se pondrá en contacto contigo para hablar sobre cómo podemos trabajar juntos y hacer crecer tu negocio.",
-      points: [
-        "Respuesta rápida en 24 horas",
-        "Gestor de alianzas dedicado",
-        "Colaboración a largo plazo y mutuamente beneficiosa",
-      ],
+      points: ["Respuesta rápida en 24 horas", "Gestor de alianzas dedicado", "Colaboración a largo plazo y mutuamente beneficiosa"],
       fields: [
         { label: "Nombre completo", placeholder: "Tu nombre completo" },
         { label: "Nombre de la empresa", placeholder: "Tu empresa" },
@@ -1625,8 +1322,7 @@ const spanishOverrides = {
       label: "Contacto",
       title: "Estamos aquí para ti,",
       accent: "en cada paso del camino",
-      description:
-        "¿Tienes preguntas o estás listo para empezar? Nuestro equipo está aquí para ayudarte en cualquier momento. Contáctanos y creemos juntos tu mejor versión.",
+      description: "¿Tienes preguntas o estás listo para empezar? Nuestro equipo está aquí para ayudarte en cualquier momento. Contáctanos y creemos juntos tu mejor versión.",
       imageAlt: "Soporte de contacto y consulta de GK InterCare",
       badges: [
         { title: "Atención confiable", text: "La seguridad del paciente es nuestra prioridad." },
@@ -1649,8 +1345,7 @@ const spanishOverrides = {
       subjectPlaceholder: "¿Sobre qué te gustaría consultar?",
       messageLabel: "Tu mensaje",
       messagePlaceholder: "Cuéntanos sobre ti y lo que estás buscando...",
-      consentText:
-        "Acepto el tratamiento de mis datos personales de acuerdo con la Política de Privacidad.",
+      consentText: "Acepto el tratamiento de mis datos personales de acuerdo con la Política de Privacidad.",
       button: "Enviar mensaje",
     },
     contactBox: {
@@ -1702,8 +1397,7 @@ const italianOverrides = {
     treatmentCards: {
       eyebrow: "Aree di trattamento",
       title: "Cure avanzate per un domani più sano",
-      description:
-        "Offriamo assistenza medica specialistica con tecnologia moderna e un approccio personalizzato per aiutarti a sentirti sicuro in ogni fase.",
+      description: "Offriamo assistenza medica specialistica con tecnologia moderna e un approccio personalizzato per aiutarti a sentirti sicuro in ogni fase.",
       badge: "Trattamento",
       buttonLabel: "Ricevi il tuo piano personalizzato",
       previousLabel: "Slide precedente",
@@ -1714,21 +1408,8 @@ const italianOverrides = {
     supportTitle: "Supporto",
     headOfficeTitle: "Sede centrale",
     socialTitle: "Social",
-    treatmentLinks: [
-      { label: "Chirurgia plastica" },
-      { label: "Odontoiatria" },
-      { label: "Chirurgia bariatrica" },
-      { label: "Ortopedia" },
-      { label: "Neurologia" },
-      { label: "Oncologia" },
-    ],
-    utilityLinks: [
-      { label: "Percorso del paziente" },
-      { label: "Prima e dopo" },
-      { label: "Per partner" },
-      { label: "Contatti" },
-      { label: "404" },
-    ],
+    treatmentLinks: [{ label: "Chirurgia plastica" }, { label: "Odontoiatria" }, { label: "Chirurgia bariatrica" }, { label: "Ortopedia" }, { label: "Neurologia" }, { label: "Oncologia" }],
+    utilityLinks: [{ label: "Percorso del paziente" }, { label: "Prima e dopo" }, { label: "Per partner" }, { label: "Contatti" }, { label: "404" }],
     newsletter: {
       title: "Rimani aggiornato",
       text: "Iscriviti per ricevere aggiornamenti sui viaggi sanitari.",
@@ -1739,107 +1420,51 @@ const italianOverrides = {
   stats: [
     {
       label: "Anni di esperienza",
-      description:
-        "Un decennio di viaggi medici coordinati e supporto sanitario centrato sul paziente.",
+      description: "Un decennio di viaggi medici coordinati e supporto sanitario centrato sul paziente.",
     },
     {
       label: "Pazienti internazionali",
-      description:
-        "Pazienti da tutto il mondo seguiti con pianificazione chiara e assistenza personale.",
+      description: "Pazienti da tutto il mondo seguiti con pianificazione chiara e assistenza personale.",
     },
     {
       label: "Ospedali partner",
-      description:
-        "Una rete medica affidabile con ospedali leader e cliniche specialistiche.",
+      description: "Una rete medica affidabile con ospedali leader e cliniche specialistiche.",
     },
     {
       label: "Tasso di soddisfazione dei pazienti",
-      description:
-        "Percorsi di cura costruiti attorno a comfort, sicurezza, comunicazione e risultati.",
+      description: "Percorsi di cura costruiti attorno a comfort, sicurezza, comunicazione e risultati.",
     },
   ],
   treatments: [
     {
       title: "Chirurgia plastica",
-      description:
-        "Valorizza la tua bellezza naturale e la tua sicurezza con procedure chirurgiche ed estetiche avanzate.",
-      tags: [
-        "Rinoplastica",
-        "Liposuzione",
-        "Lifting del viso",
-        "Addominoplastica",
-        "Chirurgia del seno",
-        "Brazilian Butt Lift",
-        "Chirurgia delle palpebre",
-        "Trapianto di capelli",
-      ],
+      description: "Valorizza la tua bellezza naturale e la tua sicurezza con procedure chirurgiche ed estetiche avanzate.",
+      tags: ["Rinoplastica", "Liposuzione", "Lifting del viso", "Addominoplastica", "Chirurgia del seno", "Brazilian Butt Lift", "Chirurgia delle palpebre", "Trapianto di capelli"],
     },
     {
       title: "Odontoiatria",
-      description:
-        "Ottieni un sorriso sano e bello con le nostre soluzioni complete di cura dentale.",
-      tags: [
-        "Impianti dentali",
-        "Corone e ponti",
-        "Faccette dentali",
-        "Ortodonzia",
-        "Hollywood Smile",
-        "Trattamenti gengivali",
-        "Sbiancamento dentale",
-        "Terapia canalare",
-      ],
+      description: "Ottieni un sorriso sano e bello con le nostre soluzioni complete di cura dentale.",
+      tags: ["Impianti dentali", "Corone e ponti", "Faccette dentali", "Ortodonzia", "Hollywood Smile", "Trattamenti gengivali", "Sbiancamento dentale", "Terapia canalare"],
     },
     {
       title: "Chirurgia bariatrica",
-      description:
-        "Procedure di perdita di peso sicure ed efficaci per una vita più sana e più lunga.",
-      tags: [
-        "Chirurgia bariatrica",
-        "Coaching sullo stile di vita",
-        "Valutazione preoperatoria",
-        "Follow-up postoperatorio",
-        "Consulenza nutrizionale",
-        "Supporto a lungo termine",
-      ],
+      description: "Procedure di perdita di peso sicure ed efficaci per una vita più sana e più lunga.",
+      tags: ["Chirurgia bariatrica", "Coaching sullo stile di vita", "Valutazione preoperatoria", "Follow-up postoperatorio", "Consulenza nutrizionale", "Supporto a lungo termine"],
     },
     {
       title: "Ortopedia",
-      description:
-        "Recupera la mobilità e vivi senza dolore con la nostra assistenza ortopedica specialistica.",
-      tags: [
-        "Protesi del ginocchio",
-        "Chirurgia della colonna",
-        "Protesi dell'anca",
-        "Infortuni sportivi",
-        "Artroscopia",
-        "Trattamenti per dolori articolari",
-      ],
+      description: "Recupera la mobilità e vivi senza dolore con la nostra assistenza ortopedica specialistica.",
+      tags: ["Protesi del ginocchio", "Chirurgia della colonna", "Protesi dell'anca", "Infortuni sportivi", "Artroscopia", "Trattamenti per dolori articolari"],
     },
     {
       title: "Neurologia",
-      description:
-        "Diagnosi e trattamenti avanzati per un'ampia gamma di condizioni neurologiche.",
-      tags: [
-        "Chirurgia cerebrale e spinale",
-        "Emicrania e cefalea",
-        "Trattamento dell'epilessia",
-        "Trattamento della neuropatia",
-        "Sclerosi multipla (SM)",
-        "Riabilitazione post-ictus",
-      ],
+      description: "Diagnosi e trattamenti avanzati per un'ampia gamma di condizioni neurologiche.",
+      tags: ["Chirurgia cerebrale e spinale", "Emicrania e cefalea", "Trattamento dell'epilessia", "Trattamento della neuropatia", "Sclerosi multipla (SM)", "Riabilitazione post-ictus"],
     },
     {
       title: "Oncologia",
-      description:
-        "Assistenza oncologica completa con supporto umano in ogni fase del percorso.",
-      tags: [
-        "Diagnosi del cancro",
-        "Terapia mirata",
-        "Chemioterapia",
-        "Radioterapia",
-        "Immunoterapia",
-        "Follow-up e supporto",
-      ],
+      description: "Assistenza oncologica completa con supporto umano in ogni fase del percorso.",
+      tags: ["Diagnosi del cancro", "Terapia mirata", "Chemioterapia", "Radioterapia", "Immunoterapia", "Follow-up e supporto"],
     },
   ],
   doctors: [
@@ -1847,39 +1472,19 @@ const italianOverrides = {
       specialty: "Chirurgo ORL",
       description:
         "Gürkan Kayabaşoğlu ha concentrato tutta la sua formazione e i suoi studi scientifici su una sola parte del corpo umano: il viso. Esegue interventi esclusivamente nell'area facciale. Per questo motivo ha ricevuto dal Ministero della Salute il Diploma di Specializzazione in Chirurgia Orale, Facciale e Maxillo-Facciale.",
-      expertise: [
-        "Rinoplastica",
-        "Lifting viso e collo",
-        "Chirurgia e impianto del mento",
-        "Lifting temporale",
-        "Chirurgia delle palpebre",
-        "Riduzione della fronte",
-      ],
+      expertise: ["Rinoplastica", "Lifting viso e collo", "Chirurgia e impianto del mento", "Lifting temporale", "Chirurgia delle palpebre", "Riduzione della fronte"],
     },
     {
       specialty: "Chirurgia plastica",
       description:
         "Il Dr. Mustafa è specializzato in procedure estetiche e ricostruttive con una forte attenzione alla sicurezza e alla soddisfazione del paziente. Si dedica a offrire cure personalizzate e risultati dall'aspetto naturale.",
-      expertise: [
-        "Rinoplastica",
-        "Lifting viso e collo",
-        "Chirurgia del seno",
-        "Liposuzione e rimodellamento corporeo",
-        "Trapianto di capelli",
-        "Addominoplastica",
-      ],
+      expertise: ["Rinoplastica", "Lifting viso e collo", "Chirurgia del seno", "Liposuzione e rimodellamento corporeo", "Trapianto di capelli", "Addominoplastica"],
     },
     {
       specialty: "Trapianto di capelli",
       description:
         "Il Dr. Bircan è un medico specialista nel suo campo e offre servizi sicuri, combinando una solida formazione accademica con esperienza professionale. Di conseguenza è diventato membro della International Society of Hair Restoration Surgery (ISHRS).",
-      expertise: [
-        "Trapianto FUE",
-        "Trapianto DHI",
-        "Trapianto di barba e baffi",
-        "Trapianto di sopracciglia",
-        "Trapianto di capelli femminile",
-      ],
+      expertise: ["Trapianto FUE", "Trapianto DHI", "Trapianto di barba e baffi", "Trapianto di sopracciglia", "Trapianto di capelli femminile"],
     },
     {
       specialty: "Chirurga ORL",
@@ -1897,89 +1502,70 @@ const italianOverrides = {
       specialty: "Chirurgia plastica",
       description:
         "Ha seguito migliaia di casi e maturato esperienza in un'ampia gamma di aree, dalla chirurgia ricostruttiva alla microchirurgia, dal trattamento delle ustioni agli interventi estetici. Ha completato la formazione e ottenuto il titolo di Specialista in Chirurgia Plastica, Ricostruttiva ed Estetica.",
-      expertise: [
-        "Chirurgia ricostruttiva",
-        "Microchirurgia",
-        "Trattamento delle ustioni",
-        "Interventi estetici",
-        "Rimodellamento corporeo",
-      ],
+      expertise: ["Chirurgia ricostruttiva", "Microchirurgia", "Trattamento delle ustioni", "Interventi estetici", "Rimodellamento corporeo"],
     },
   ],
   journeySteps: [
     {
       title: "Fai il primo passo",
-      description:
-        "Contattaci e condividi le tue aspettative. Il nostro team dedicato è qui per ascoltarti, comprenderti e guidarti fin dall'inizio.",
+      description: "Contattaci e condividi le tue aspettative. Il nostro team dedicato è qui per ascoltarti, comprenderti e guidarti fin dall'inizio.",
     },
     {
       title: "Piano medico personalizzato",
-      description:
-        "I nostri specialisti valutano attentamente il tuo caso e creano un piano di trattamento completamente su misura per le tue esigenze e il risultato desiderato.",
+      description: "I nostri specialisti valutano attentamente il tuo caso e creano un piano di trattamento completamente su misura per le tue esigenze e il risultato desiderato.",
     },
     {
       title: "Pianificazione intelligente insieme",
-      description:
-        "Programmiamo la procedura nel momento più comodo per te e organizziamo ogni dettaglio per garantire un'esperienza fluida e senza stress.",
+      description: "Programmiamo la procedura nel momento più comodo per te e organizziamo ogni dettaglio per garantire un'esperienza fluida e senza stress.",
     },
     {
       title: "Esperienza VIP all'arrivo",
-      description:
-        "Dal momento in cui atterri, tutto è già organizzato. Il nostro team di transfer privato ti accoglie in un Vito di lusso e ti accompagna durante tutto il percorso.",
+      description: "Dal momento in cui atterri, tutto è già organizzato. Il nostro team di transfer privato ti accoglie in un Vito di lusso e ti accompagna durante tutto il percorso.",
     },
     {
       title: "Vivi la trasformazione",
-      description:
-        "Rilassati e concentrati su te stesso mentre il nostro team esperto realizza risultati eccezionali e naturali. Devi solo vivere la trasformazione.",
+      description: "Rilassati e concentrati su te stesso mentre il nostro team esperto realizza risultati eccezionali e naturali. Devi solo vivere la trasformazione.",
     },
   ],
   metadata: {
     home: {
       title: "GK InterCare | Turismo sanitario premium a Istanbul",
-      description:
-        "Assistenza medica ed estetica personalizzata a Istanbul con medici esperti, supporto VIP per il viaggio e coordinamento per pazienti internazionali.",
+      description: "Assistenza medica ed estetica personalizzata a Istanbul con medici esperti, supporto VIP per il viaggio e coordinamento per pazienti internazionali.",
       keywords: ["turismo sanitario Istanbul", "turismo medico Turchia", "GK InterCare"],
     },
     about: {
       title: "Chi è GK InterCare | Assistenza internazionale guidata da medici",
-      description:
-        "Scopri come GK InterCare combina competenza medica, coordinamento premium e supporto centrato sul paziente per percorsi sanitari internazionali.",
+      description: "Scopri come GK InterCare combina competenza medica, coordinamento premium e supporto centrato sul paziente per percorsi sanitari internazionali.",
       keywords: ["chi è GK InterCare", "agenzia sanitaria guidata da medici", "assistenza pazienti internazionali"],
     },
     treatments: {
       title: "Trattamenti | Chirurgia plastica, dentale, bariatrica e altro",
-      description:
-        "Esplora le aree di trattamento di GK InterCare, tra cui chirurgia plastica, odontoiatria, chirurgia bariatrica, ortopedia, neurologia e oncologia.",
+      description: "Esplora le aree di trattamento di GK InterCare, tra cui chirurgia plastica, odontoiatria, chirurgia bariatrica, ortopedia, neurologia e oncologia.",
       keywords: ["trattamenti a Istanbul", "chirurgia plastica Turchia", "trattamento dentale Istanbul"],
     },
     doctors: {
       title: "I nostri medici | Esperti medici GK InterCare",
-      description:
-        "Conosci i medici e gli specialisti esperti che collaborano con GK InterCare per risultati sicuri, personalizzati e naturali.",
+      description: "Conosci i medici e gli specialisti esperti che collaborano con GK InterCare per risultati sicuri, personalizzati e naturali.",
       keywords: ["medici a Istanbul", "esperti medici Turchia", "medici GK InterCare"],
     },
     patientJourney: {
       title: "Percorso del paziente | Dalla consulenza al follow-up",
-      description:
-        "Scopri come GK InterCare supporta i pazienti internazionali dal primo contatto e dalla pianificazione fino all'arrivo VIP, al trattamento, al recupero e al follow-up.",
+      description: "Scopri come GK InterCare supporta i pazienti internazionali dal primo contatto e dalla pianificazione fino all'arrivo VIP, al trattamento, al recupero e al follow-up.",
       keywords: ["percorso paziente turismo medico", "viaggio medico VIP Istanbul", "follow-up Turchia"],
     },
     beforeAfter: {
       title: "Prima e dopo | Risultati e testimonianze dei pazienti",
-      description:
-        "Scopri storie di trasformazione GK InterCare, testimonianze dei pazienti e categorie di risultati da cure estetiche personalizzate.",
+      description: "Scopri storie di trasformazione GK InterCare, testimonianze dei pazienti e categorie di risultati da cure estetiche personalizzate.",
       keywords: ["prima dopo Turchia", "testimonianze pazienti", "risultati estetici Istanbul"],
     },
     partners: {
       title: "Per partner | Partnership sanitaria a Istanbul",
-      description:
-        "Collabora con GK InterCare per offrire ai tuoi pazienti servizi sanitari affidabili a Istanbul, coordinamento dedicato e supporto premium.",
+      description: "Collabora con GK InterCare per offrire ai tuoi pazienti servizi sanitari affidabili a Istanbul, coordinamento dedicato e supporto premium.",
       keywords: ["partner sanitari Istanbul", "partner agenzia turismo medico", "partner GK InterCare"],
     },
     contact: {
       title: "Contatta GK InterCare | Consulenza gratuita",
-      description:
-        "Contatta GK InterCare per una consulenza gratuita, supporto WhatsApp e pianificazione personalizzata del tuo percorso sanitario a Istanbul.",
+      description: "Contatta GK InterCare per una consulenza gratuita, supporto WhatsApp e pianificazione personalizzata del tuo percorso sanitario a Istanbul.",
       keywords: ["contatta GK InterCare", "consulenza gratuita turismo medico", "WhatsApp turismo sanitario"],
     },
   },
@@ -1988,8 +1574,7 @@ const italianOverrides = {
       label: "Il tuo percorso. La nostra missione.",
       title: "Scopri cure affidabili.",
       accent: "Crea un percorso sanitario più sicuro.",
-      description:
-        "Un'esperienza premium di turismo sanitario a Istanbul, pianificata attorno alle tue esigenze di trattamento, viaggio, comfort e assistenza post-trattamento.",
+      description: "Un'esperienza premium di turismo sanitario a Istanbul, pianificata attorno alle tue esigenze di trattamento, viaggio, comfort e assistenza post-trattamento.",
       primaryButton: "Inizia a pianificare",
       secondaryButton: "Vedi i trattamenti",
       formLabel: "Consulenza gratuita",
@@ -2057,8 +1642,7 @@ const italianOverrides = {
       label: "Chi siamo",
       title: "Esperienza. Empatia.",
       accent: "Cura globale.",
-      description:
-        "GK InterCare è un'agenzia sanitaria internazionale dedicata a offrire servizi medici di livello mondiale con un approccio personalizzato e centrato sul paziente.",
+      description: "GK InterCare è un'agenzia sanitaria internazionale dedicata a offrire servizi medici di livello mondiale con un approccio personalizzato e centrato sul paziente.",
       checklist: [
         "Oltre 10 anni di esperienza nei servizi sanitari",
         "Migliaia di pazienti internazionali soddisfatti",
@@ -2096,12 +1680,7 @@ const italianOverrides = {
         "Con oltre un decennio di esperienza nel turismo medico, GK InterCare è diventata un partner di fiducia per pazienti da tutto il mondo.",
         "Lavoriamo con una rete attentamente selezionata di ospedali e specialisti leader a Istanbul per garantire i più alti standard di sicurezza, qualità e cura.",
       ],
-      stats: [
-        { label: "Anni di esperienza" },
-        { label: "Pazienti internazionali" },
-        { label: "Tasso di soddisfazione dei pazienti" },
-        { label: "Ospedali partner nel mondo" },
-      ],
+      stats: [{ label: "Anni di esperienza" }, { label: "Pazienti internazionali" }, { label: "Tasso di soddisfazione dei pazienti" }, { label: "Ospedali partner nel mondo" }],
     },
     why: {
       label: "Perché sceglierci?",
@@ -2132,22 +1711,14 @@ const italianOverrides = {
       title: "La sanità vissuta attraverso la prospettiva di un medico",
       text: "Crediamo che i migliori risultati nascano dall'unione tra eccellenza medica e approccio personalizzato. Il nostro team lavora con una prospettiva medica in ogni fase del tuo percorso.",
       center: "Valutiamo, pianifichiamo, coordiniamo e ci prendiamo cura di te come faremmo con la nostra famiglia.",
-      quote:
-        "Il nostro obiettivo è rendere accessibile la sanità di livello mondiale senza compromettere la qualità.",
+      quote: "Il nostro obiettivo è rendere accessibile la sanità di livello mondiale senza compromettere la qualità.",
       highlight: "Qualità premium, resa accessibile.",
     },
     promise: {
       label: "La nostra promessa per te",
       title: "Qualità premium. Accessibile a tutti.",
-      description:
-        "Rendiamo i servizi sanitari di alto livello più accessibili senza compromettere sicurezza, qualità o comfort. Perché tutti meritano le migliori cure.",
-      steps: [
-        "Consulenza e pianificazione",
-        "Gestione viaggio e arrivo",
-        "Coordinamento del trattamento",
-        "Recupero e follow-up",
-        "Assistenza post-trattamento e supporto a lungo termine",
-      ],
+      description: "Rendiamo i servizi sanitari di alto livello più accessibili senza compromettere sicurezza, qualità o comfort. Perché tutti meritano le migliori cure.",
+      steps: ["Consulenza e pianificazione", "Gestione viaggio e arrivo", "Coordinamento del trattamento", "Recupero e follow-up", "Assistenza post-trattamento e supporto a lungo termine"],
     },
     cta: {
       title: "Il tuo percorso sanitario merita esperienza di cui fidarti.",
@@ -2160,15 +1731,9 @@ const italianOverrides = {
       label: "I nostri trattamenti",
       title: "Cura completa.",
       accent: "Personalizzata per te.",
-      description:
-        "Collaboriamo con ospedali e specialisti leader a Istanbul per offrire trattamenti di livello mondiale in un'ampia gamma di discipline mediche.",
+      description: "Collaboriamo con ospedali e specialisti leader a Istanbul per offrire trattamenti di livello mondiale in un'ampia gamma di discipline mediche.",
       imageAlt: "Pianificazione dei trattamenti GK InterCare a Istanbul",
-      badges: [
-        "Ospedali accreditati a livello internazionale",
-        "Approccio terapeutico guidato da medici",
-        "Piani di cura personalizzati",
-        "Supporto end-to-end",
-      ],
+      badges: ["Ospedali accreditati a livello internazionale", "Approccio terapeutico guidato da medici", "Piani di cura personalizzati", "Supporto end-to-end"],
     },
     header: {
       label: "Le nostre aree di trattamento",
@@ -2200,12 +1765,7 @@ const italianOverrides = {
       description:
         "I nostri medici esperti combinano competenze mediche avanzate con un approccio personalizzato per offrire risultati sicuri, efficaci e naturali che migliorano la tua fiducia e il tuo benessere.",
       imageAlt: "Team medico e soluzioni sanitarie GK InterCare",
-      badges: [
-        "Specialisti esperti",
-        "Standard internazionali",
-        "Cura centrata sul paziente",
-        "Risultati comprovati",
-      ],
+      badges: ["Specialisti esperti", "Standard internazionali", "Cura centrata sul paziente", "Risultati comprovati"],
     },
     header: {
       label: "Conosci i nostri esperti medici",
@@ -2236,8 +1796,7 @@ const italianOverrides = {
       label: "Percorso del paziente",
       title: "Il tuo percorso,",
       accent: "la nostra priorità",
-      description:
-        "Un'esperienza fluida progettata intorno al tuo comfort, alla tua sicurezza e a risultati eccezionali.",
+      description: "Un'esperienza fluida progettata intorno al tuo comfort, alla tua sicurezza e a risultati eccezionali.",
       imageAlt: "Supporto al percorso del paziente GK InterCare",
     },
     cta: {
@@ -2272,8 +1831,7 @@ const italianOverrides = {
       label: "Pazienti reali. Risultati reali.",
       title: "Foto prima e dopo",
       accent: "e video testimonianze",
-      description:
-        "Ogni trasformazione racconta una storia. Scopri risultati reali ottenuti dai nostri pazienti con tecniche avanzate e cure personalizzate.",
+      description: "Ogni trasformazione racconta una storia. Scopri risultati reali ottenuti dai nostri pazienti con tecniche avanzate e cure personalizzate.",
     },
     filters: ["Tutti", "Viso", "Collo", "Naso", "Occhi", "Seno", "Corpo"],
     labels: {
@@ -2316,18 +1874,15 @@ const italianOverrides = {
     testimonials: [
       {
         country: "Regno Unito",
-        quote:
-          "Ho fatto una rinoplastica con il Prof. Dr. Gürkan Kayabaşoğlu e i risultati hanno superato le mie aspettative. Il mio naso sembra così naturale e ho ritrovato fiducia.",
+        quote: "Ho fatto una rinoplastica con il Prof. Dr. Gürkan Kayabaşoğlu e i risultati hanno superato le mie aspettative. Il mio naso sembra così naturale e ho ritrovato fiducia.",
       },
       {
         country: "Germania",
-        quote:
-          "Dalla prima consulenza al risultato finale, tutto è stato perfetto. Il team è molto professionale e premuroso. Consigliatissimo.",
+        quote: "Dalla prima consulenza al risultato finale, tutto è stato perfetto. Il team è molto professionale e premuroso. Consigliatissimo.",
       },
       {
         country: "Italia",
-        quote:
-          "Ho fatto un lifting del collo e la trasformazione è incredibile. Sembro più giovane e fresca. Grazie di tutto.",
+        quote: "Ho fatto un lifting del collo e la trasformazione è incredibile. Sembro più giovane e fresca. Grazie di tutto.",
       },
     ],
     cta: {
@@ -2335,12 +1890,7 @@ const italianOverrides = {
       title: "La tua storia di trasformazione potrebbe essere la prossima.",
       text: "Creiamo insieme la tua versione migliore.",
       button: "Inizia oggi la tua trasformazione",
-      features: [
-        "Risultati dall'aspetto naturale",
-        "Tecniche avanzate",
-        "Cura personalizzata",
-        "Team esperto",
-      ],
+      features: ["Risultati dall'aspetto naturale", "Tecniche avanzate", "Cura personalizzata", "Team esperto"],
     },
   },
   partnersPage: {
@@ -2348,8 +1898,7 @@ const italianOverrides = {
       label: "Per partner",
       title: "Collabora con un provider sanitario affidabile",
       accent: "a Istanbul",
-      description:
-        "Collaboriamo con agenzie e facilitatori in tutto il mondo per offrire esperienze sanitarie eccezionali e risultati eccellenti ai tuoi pazienti.",
+      description: "Collaboriamo con agenzie e facilitatori in tutto il mondo per offrire esperienze sanitarie eccezionali e risultati eccellenti ai tuoi pazienti.",
       imageAlt: "Partnership sanitaria internazionale GK InterCare",
       badges: ["Competenza affidabile", "Partnership solida", "Qualità premium", "Collaborazione globale"],
       supportTitle: "Supporto dedicato ai partner",
@@ -2362,22 +1911,12 @@ const italianOverrides = {
         {
           title: "Invia i tuoi pazienti a Istanbul",
           text: "Forniamo servizi completi di viaggio medico a Istanbul con opzioni VIP ed economiche.",
-          points: [
-            "Alloggio e transfer VIP",
-            "Appuntamenti prioritari",
-            "Servizi di traduzione e concierge",
-            "Cura postoperatoria e follow-up",
-          ],
+          points: ["Alloggio e transfer VIP", "Appuntamenti prioritari", "Servizi di traduzione e concierge", "Cura postoperatoria e follow-up"],
         },
         {
           title: "Veniamo noi da te",
           text: "Visitiamo il tuo paese per consulenze e persino interventi chirurgici in collaborazione con ospedali locali.",
-          points: [
-            "Consulenze pazienti in loco",
-            "Interventi in ospedali partner",
-            "Formazione e condivisione delle conoscenze",
-            "Collaborazione a lungo termine",
-          ],
+          points: ["Consulenze pazienti in loco", "Interventi in ospedali partner", "Formazione e condivisione delle conoscenze", "Collaborazione a lungo termine"],
         },
       ],
     },
@@ -2398,11 +1937,7 @@ const italianOverrides = {
       label: "Diventa partner",
       title: "Costruiamo una partnership di successo",
       text: "Compila il modulo e il nostro team partnership ti contatterà per discutere come possiamo lavorare insieme e far crescere la tua attività.",
-      points: [
-        "Risposta rapida entro 24 ore",
-        "Partnership manager dedicato",
-        "Collaborazione a lungo termine e reciprocamente vantaggiosa",
-      ],
+      points: ["Risposta rapida entro 24 ore", "Partnership manager dedicato", "Collaborazione a lungo termine e reciprocamente vantaggiosa"],
       fields: [
         { label: "Nome completo", placeholder: "Il tuo nome completo" },
         { label: "Nome azienda", placeholder: "La tua azienda" },
@@ -2425,8 +1960,7 @@ const italianOverrides = {
       label: "Contatti",
       title: "Siamo qui per te,",
       accent: "in ogni fase del percorso",
-      description:
-        "Hai domande o sei pronto a iniziare il tuo percorso? Il nostro team è qui per aiutarti in qualsiasi momento. Contattaci e creiamo insieme la tua versione migliore.",
+      description: "Hai domande o sei pronto a iniziare il tuo percorso? Il nostro team è qui per aiutarti in qualsiasi momento. Contattaci e creiamo insieme la tua versione migliore.",
       imageAlt: "Supporto contatto e consulenza GK InterCare",
       badges: [
         { title: "Cura affidabile", text: "La sicurezza del paziente è la nostra priorità." },
@@ -2449,8 +1983,7 @@ const italianOverrides = {
       subjectPlaceholder: "Su cosa vorresti ricevere informazioni?",
       messageLabel: "Il tuo messaggio",
       messagePlaceholder: "Raccontaci di te e di cosa stai cercando...",
-      consentText:
-        "Acconsento al trattamento dei miei dati personali in conformità con l'Informativa Privacy.",
+      consentText: "Acconsento al trattamento dei miei dati personali in conformità con l'Informativa Privacy.",
       button: "Invia messaggio",
     },
     contactBox: {
@@ -2513,12 +2046,7 @@ function mergeContent(base, override) {
   if (isPlainObject(base) && isPlainObject(override)) {
     const keys = new Set([...Object.keys(base), ...Object.keys(override)]);
 
-    return Object.fromEntries(
-      Array.from(keys).map((key) => [
-        key,
-        key in base && key in override ? mergeContent(base[key], override[key]) : (override[key] ?? base[key]),
-      ]),
-    );
+    return Object.fromEntries(Array.from(keys).map((key) => [key, key in base && key in override ? mergeContent(base[key], override[key]) : (override[key] ?? base[key])]));
   }
 
   return override ?? base;
@@ -2556,12 +2084,7 @@ export function getPageMetadata(locale, pageKey) {
     keywords: metadata.keywords,
     alternates: {
       canonical,
-      languages: Object.fromEntries(
-        supportedLocales.map((supportedLocale) => [
-          supportedLocale,
-          localizedPath(supportedLocale, path),
-        ]),
-      ),
+      languages: Object.fromEntries(supportedLocales.map((supportedLocale) => [supportedLocale, localizedPath(supportedLocale, path)])),
     },
     openGraph: {
       title: metadata.title,

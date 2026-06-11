@@ -37,7 +37,7 @@ export default function ShowcaseSlider({
         </div>
         <h2 className="mt-8 text-4xl font-800 leading-[1.02] text-primary md:text-5xl">{title}</h2>
         {description ? <p className="mt-5 text-sm leading-7 text-muted md:text-base">{description}</p> : null}
-        <Link className="focus-ring mt-8 inline-flex h-11 items-center gap-2 rounded-[8px] bg-primary px-5 text-sm font-800 text-white transition hover:bg-primary-soft" href={ctaHref}>
+        <Link className="focus-ring mt-8 inline-flex h-11 items-center gap-2 rounded-[8px] bg-primary px-5 text-sm font-800 text-white! transition hover:bg-primary-soft" href={ctaHref}>
           {ctaLabel}
           <ArrowUpRight size={16} />
         </Link>
@@ -69,7 +69,7 @@ export default function ShowcaseSlider({
           {items.map((item, index) => (
             <SwiperSlide key={item.title}>
               <Link className={`group relative block overflow-hidden rounded-2xl bg-primary ${cardAspectClass}`} href={item.href || ctaHref}>
-                <Image src={item.image} alt={item.title} fill sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 92vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                <Image src={item.image} alt={item.title} fill quality={100} unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-black/5" />
                 {/* <span className="pointer-events-none absolute bottom-4 right-4 text-7xl font-800 leading-none tracking-[-0.06em] text-white/24 transition group-hover:text-white/32"> */}
                 <span className="pointer-events-none absolute bottom-4 right-4 text-8xl font-800 leading-none tracking-[-0.06em]  transition text-transparent bg-clip-text bg-linear-to-b from-white/30 to-primary/60">
