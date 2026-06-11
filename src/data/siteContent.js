@@ -292,6 +292,11 @@ const englishContent = {
           placeholder: "Tell us about the treatment you are considering.",
         },
       },
+      medicalBadges: [
+        { title: "Doctor-Led Planning", text: "Specialist guidance from day one" },
+        { title: "Partner Hospitals", text: "Trusted clinical network" },
+        { title: "Aftercare Support", text: "Follow-up through recovery" },
+      ],
       trustItems: [
         { title: "Best Price Guidance", text: "Clear planning before arrival" },
         { title: "24/7 Support", text: "WhatsApp patient assistance" },
@@ -953,6 +958,11 @@ const spanishOverrides = {
           placeholder: "Cuéntanos qué tratamiento estás considerando.",
         },
       },
+      medicalBadges: [
+        { title: "Planificación médica", text: "Guía especializada desde el primer día" },
+        { title: "Hospitales asociados", text: "Red clínica de confianza" },
+        { title: "Soporte postratamiento", text: "Seguimiento durante la recuperación" },
+      ],
       trustItems: [
         { title: "Guía de mejor precio", text: "Planificación clara antes de la llegada" },
         { title: "Soporte 24/7", text: "Asistencia al paciente por WhatsApp" },
@@ -1591,6 +1601,11 @@ const italianOverrides = {
           placeholder: "Raccontaci quale trattamento stai considerando.",
         },
       },
+      medicalBadges: [
+        { title: "Pianificazione medica", text: "Guida specialistica dal primo giorno" },
+        { title: "Ospedali partner", text: "Rete clinica affidabile" },
+        { title: "Supporto post-trattamento", text: "Follow-up durante il recupero" },
+      ],
       trustItems: [
         { title: "Guida al miglior prezzo", text: "Pianificazione chiara prima dell'arrivo" },
         { title: "Supporto 24/7", text: "Assistenza pazienti via WhatsApp" },
