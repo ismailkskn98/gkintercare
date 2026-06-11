@@ -79,7 +79,13 @@ export default function HeroSection({ content }) {
                 </clipPath>
               </defs>
             </svg>
-            <Image src="/images/logo/iconcuk.png" alt="Logo" width={120} height={120} className="object-contain object-center w-fit max-h-16 absolute top-1 right-6 opacity-100" />
+            <Image
+              src="/images/logo/iconcuk.png"
+              alt="Logo"
+              width={120}
+              height={120}
+              className="object-contain object-center w-fit max-h-16 absolute top-1 right-6 opacity-100 animate-heartbeat-soft"
+            />
             <form
               className="relative max-w-lg rounded-lg p-6 md:p-7 text-primary shadow-[0_28px_90px_rgba(0,0,0,0.24) bg-white rounded-lg border border-white/60"
               style={{ clipPath: "url(#form-notch)" }}

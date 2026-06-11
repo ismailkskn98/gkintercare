@@ -169,3 +169,32 @@ textarea {
   background: rgba(200, 169, 105, 0.28);
   color: var(--primary);
 }
+
+@keyframes heartbeat-soft {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(0.97);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(0.94);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat-soft {
+  animation: heartbeat-soft 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
