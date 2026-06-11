@@ -14,7 +14,7 @@ export default function HeroSection({ content }) {
     <section className="gridContainer relative bg-primary pt-20 text-white">
       <div className="fluid absolute inset-0">
         <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata">
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
+          <source src="/videos/hero-video-2.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/60" />
       </div>
