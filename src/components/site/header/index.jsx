@@ -7,6 +7,7 @@ import { useState } from "react";
 import { localeOptions, navigationItems } from "@/data/siteContent";
 import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
+import { MotionSlideUp } from "../common/animation";
 
 export default function Header({ locale }) {
   const t = useTranslations("Common");
@@ -41,7 +42,7 @@ export default function Header({ locale }) {
       initial={false}
       transition={{ duration: 0.24, ease: "easeOut" }}
     >
-      <nav className="gridContainer">
+      <MotionSlideUp className="gridContainer">
         <div className="flex min-h-[5.5rem] items-center justify-between gap-5">
           <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
             <Image src={isScrolled ? "/images/logo/logo.png" : "/images/logo/white-logo.png"} alt="GK InterCare Logo" width={200} height={200} className="h-10 w-fit object-center object-contain" />
@@ -117,7 +118,7 @@ export default function Header({ locale }) {
             {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-      </nav>
+      </MotionSlideUp>
 
       {isMenuOpen ? (
         <div className={`gridContainer border-t pb-5 xl:hidden ${isScrolled ? "border-primary/10 bg-white text-black" : "border-white/10 bg-primary text-white"}`}>

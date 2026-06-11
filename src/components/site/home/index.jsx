@@ -1,4 +1,6 @@
 import { Globe2, ShieldCheck, Sparkles, Stethoscope } from "lucide-react";
+import { Fragment } from "react";
+import { MotionFadeIn, MotionSlideUp, MotionStagger } from "../common/animation";
 import CtaBanner from "../common/ctaBanner";
 import HeroSection from "./heroSection";
 import SectionHeader from "../common/sectionHeader";
@@ -14,36 +16,44 @@ export default function HomeContent({ content }) {
     <>
       <HeroSection content={content} />
 
-      <section className="gridContainer pb-18 md:pb-24 pt-48">
+      <MotionSlideUp className="gridContainer pb-18 md:pb-24 pt-48">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader align="left" label={home.why.label} title={home.why.title} className="lg:pr-10" />
-          <div className="grid gap-4 sm:grid-cols-2">
+          <MotionStagger
+            childClassName="soft-card p-6"
+            className="grid gap-4 sm:grid-cols-2"
+            delay={0.12}
+          >
             {home.why.cards.map((card, index) => {
               const Icon = whyIcons[index] || ShieldCheck;
 
               return (
-                <article className="soft-card p-6" key={card.title}>
+                <Fragment key={card.title}>
                   <Icon className="text-accent" size={26} />
                   <h3 className="mt-5 text-xl font-800 text-primary">{card.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-muted">{card.text}</p>
-                </article>
+                </Fragment>
               );
             })}
-          </div>
+          </MotionStagger>
         </div>
-      </section>
+      </MotionSlideUp>
 
-      <section className="gridContainer bg-light-bg py-18 md:py-24">
+      <MotionSlideUp className="gridContainer bg-light-bg py-18 md:py-24">
         <div>
           <SectionHeader label={home.treatmentsHeader.label} title={home.treatmentsHeader.title} accent={home.treatmentsHeader.accent} />
           <div className="mt-10">
             <TreatmentCards treatments={treatments} labels={ui.treatmentCards} href="/treatments" />
           </div>
         </div>
-      </section>
+      </MotionSlideUp>
 
-      <StatsBar stats={stats} className="py-14" />
-      <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />
+      <MotionFadeIn>
+        <StatsBar stats={stats} className="py-14" />
+      </MotionFadeIn>
+      <MotionSlideUp>
+        <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />
+      </MotionSlideUp>
     </>
   );
 }

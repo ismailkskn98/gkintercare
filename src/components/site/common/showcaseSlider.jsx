@@ -6,6 +6,7 @@ import { useId } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "@/i18n/navigation";
+import ButtonLink, { AnimatedIcon, AnimatedLabel } from "./buttonLink";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -37,10 +38,9 @@ export default function ShowcaseSlider({
         </div>
         <h2 className="mt-8 text-4xl font-800 leading-[1.02] text-primary md:text-5xl">{title}</h2>
         {description ? <p className="mt-5 text-sm leading-7 text-muted md:text-base">{description}</p> : null}
-        <Link className="focus-ring mt-8 inline-flex h-11 items-center gap-2 rounded-[8px] bg-primary px-5 text-sm font-800 text-white! transition hover:bg-primary-soft" href={ctaHref}>
+        <ButtonLink className="mt-8 h-11" href={ctaHref} icon={ArrowUpRight} variant="dark">
           {ctaLabel}
-          <ArrowUpRight size={16} />
-        </Link>
+        </ButtonLink>
       </div>
 
       <div className="min-w-0 overflow-hidden lg:pl-8">
@@ -68,7 +68,7 @@ export default function ShowcaseSlider({
         >
           {items.map((item, index) => (
             <SwiperSlide key={item.title}>
-              <Link className={`group relative block overflow-hidden rounded-2xl bg-primary ${cardAspectClass}`} href={item.href || ctaHref}>
+              <Link className={`group group/action-link relative block overflow-hidden rounded-2xl bg-primary ${cardAspectClass}`} href={item.href || ctaHref}>
                 <Image src={item.image} alt={item.title} fill quality={100} unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-black/5" />
                 {/* <span className="pointer-events-none absolute bottom-4 right-4 text-7xl font-800 leading-none tracking-[-0.06em] text-white/24 transition group-hover:text-white/32"> */}
@@ -91,9 +91,9 @@ export default function ShowcaseSlider({
                         ))}
                       </div>
                     ) : null}
-                    <span className="mt-5 inline-flex h-10 items-center gap-2 rounded-[8px] bg-white px-4 text-sm font-800 text-primary transition group-hover:bg-accent group-hover:text-white">
-                      {item.ctaLabel || ctaLabel}
-                      <ArrowRight size={15} />
+                    <span className="mt-5 inline-flex h-10 items-center gap-2 rounded-[8px] bg-white px-4 text-sm font-800 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
+                      <AnimatedLabel>{item.ctaLabel || ctaLabel}</AnimatedLabel>
+                      <AnimatedIcon icon={ArrowRight} />
                     </span>
                   </div>
                 </article>
