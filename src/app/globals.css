@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --primary: #0b3c5d;
+  --primary-soft: #1f6f8a;
+  --accent: #c8a969;
+  --light-bg: #f6fafd;
+  --muted: #6b7380;
+  --border: rgba(11, 60, 93, 0.12);
+  --radius: 8px;
+  --shadow: 0 24px 70px rgba(11, 60, 93, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-light-bg: var(--light-bg);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
+}
+
+@utility gridContainer {
+  display: grid;
+  grid-template-columns: 1fr min(91%, 100rem) 1fr;
+
+  & > * {
+    grid-column: 2;
+  }
+
+  & > .fluid {
+    grid-column: 1 / -1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.font-600 {
+  font-weight: 600;
+}
+
+.font-700 {
+  font-weight: 700;
+}
+
+.font-800 {
+  font-weight: 800;
+}
+
+.top-13 {
+  top: 3.25rem;
+}
+
+.py-18 {
+  padding-bottom: 4.5rem;
+  padding-top: 4.5rem;
+}
+
+.py-22 {
+  padding-bottom: 5.5rem;
+  padding-top: 5.5rem;
+}
+
+.pb-18 {
+  padding-bottom: 4.5rem;
+}
+
+.pt-30 {
+  padding-top: 7.5rem;
+}
+
+.pt-34 {
+  padding-top: 8.5rem;
+}
+
+.min-h-34 {
+  min-height: 8.5rem;
+}
+
+.site-main {
+  background:
+    radial-gradient(circle at top left, rgba(31, 111, 138, 0.12), transparent 30rem),
+    linear-gradient(180deg, #ffffff 0%, #f6fafd 45%, #ffffff 100%);
+}
+
+.section-label {
+  color: var(--accent);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.serif-accent {
+  color: var(--accent);
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.soft-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 46px rgba(11, 60, 93, 0.08);
+}
+
+.medical-texture {
+  background-image:
+    linear-gradient(rgba(11, 60, 93, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 60, 93, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: var(--accent);
+}
+
+::selection {
+  background: rgba(200, 169, 105, 0.28);
+  color: var(--primary);
+}
