@@ -9,6 +9,7 @@ const variants = {
     "border border-primary/20 bg-white text-primary! hover:border-accent hover:bg-light-bg hover:text-primary-soft",
   light: "border border-white/35 bg-white text-primary! hover:bg-light-bg",
   dark: "bg-primary text-white! hover:bg-primary-soft",
+  "primary-soft": "bg-primary-soft text-white! hover:bg-primary",
 };
 
 const motionDuration = "duration-700";

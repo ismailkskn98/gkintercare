@@ -55,7 +55,7 @@ export default function Header({ locale }) {
               return (
                 <Link
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative text-sm font-700 transition hover:text-accent ${isActive ? "text-accent" : inactiveLinkColor}`}
+                  className={`relative text-sm font-700 transition hover:text-accent ${isActive ? "text-accent!" : inactiveLinkColor}`}
                   href={item.href}
                   key={item.href}
                 >

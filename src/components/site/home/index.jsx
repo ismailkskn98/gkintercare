@@ -10,7 +10,7 @@ import TreatmentCards from "../common/treatmentCards";
 const whyIcons = [Stethoscope, Globe2, ShieldCheck, Sparkles];
 
 export default function HomeContent({ content }) {
-  const { home, treatments, stats, ui } = content;
+  const { home, treatments, ui } = content;
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function HomeContent({ content }) {
       </MotionSlideUp>
 
       <MotionFadeIn>
-        <StatsBar stats={stats} className="py-14" />
+        <StatsBar stats={home.hero.trustItems} className="py-14" />
       </MotionFadeIn>
       <MotionSlideUp>
         <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />
