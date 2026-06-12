@@ -84,13 +84,13 @@ export default function HeroSection({ content }) {
               alt="Logo"
               width={120}
               height={120}
-              className="object-contain object-center fluid w-fit max-h-15 sm:max-h-16 absolute top-3 sm:top-1 right-[clamp(0rem,1vw,6rem)] opacity-100 animate-heartbeat-soft"
+              className="object-contain object-center w-fit max-w-15! max-h-15 sm:max-h-16 absolute top-3 sm:top-1 right-[clamp(0rem,1vw,6rem)] opacity-100 animate-heartbeat-soft"
             />
             <form className="relative max-w-lg p-6 md:p-7 text-primary bg-white rounded-lg border border-white/60" style={{ clipPath: "url(#form-notch)" }}>
               <div className="relative z-30 mb-5">
-                <span className="section-label text-primary-soft!">{hero.formLabel}</span>
-                <h2 className="mt-2 text-2xl font-800">{hero.formTitle}</h2>
-                <p className="mt-2 text-sm leading-6 text-muted">{hero.formText}</p>
+                <span className="section-label text-xs text-primary-soft!">{hero.formLabel}</span>
+                <h2 className="mt-2 text-xl sm:text-2xl font-800">{hero.formTitle}</h2>
+                <p className="mt-2 text-sm leading-relaxed sm:leading-6 text-muted">{hero.formText}</p>
               </div>
               <div className="relative z-30 grid gap-3">
                 <label className="grid gap-2 text-xs font-800 uppercase tracking-[0.1em] text-primary/62">
