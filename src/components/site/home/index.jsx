@@ -6,6 +6,7 @@ import HeroSection from "./heroSection";
 import SectionHeader from "../common/sectionHeader";
 import StatsBar from "../common/statsBar";
 import TreatmentCards from "../common/treatmentCards";
+import WorldPatientMap from "../common/worldPatientMap";
 
 const whyIcons = [Stethoscope, Globe2, ShieldCheck, Sparkles];
 
@@ -19,11 +20,7 @@ export default function HomeContent({ content }) {
       <MotionSlideUp className="gridContainer pb-18 md:pb-24 pt-48">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader align="left" label={home.why.label} title={home.why.title} className="lg:pr-10" />
-          <MotionStagger
-            childClassName="soft-card p-6"
-            className="grid gap-4 sm:grid-cols-2"
-            delay={0.12}
-          >
+          <MotionStagger childClassName="soft-card p-6" className="grid gap-4 sm:grid-cols-2" delay={0.12}>
             {home.why.cards.map((card, index) => {
               const Icon = whyIcons[index] || ShieldCheck;
 
@@ -47,7 +44,7 @@ export default function HomeContent({ content }) {
           </div>
         </div>
       </MotionSlideUp>
-
+      <WorldPatientMap />
       <MotionFadeIn>
         <StatsBar stats={home.hero.trustItems} className="py-14" />
       </MotionFadeIn>
