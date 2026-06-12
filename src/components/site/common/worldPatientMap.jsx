@@ -10,23 +10,31 @@ const countries = [
     name: "Germany",
     markerLabel: "Germany",
     coordinates: [10.4515, 51.1657],
-    markerOffset: [22, -17],
+    avatar: "/images/fake-avatar/user-avatar-1.webp",
     url: "/before-after?country=germany",
   },
   {
     name: "United Kingdom",
     markerLabel: "UK",
     coordinates: [-3.436, 55.3781],
-    markerOffset: [-18, -18],
+    avatar: "/images/fake-avatar/user-avatar-2.webp",
     url: "/before-after?country=uk",
   },
   {
     name: "France",
     markerLabel: "France",
     coordinates: [2.2137, 46.2276],
-    markerOffset: [-25, 8],
+    avatar: "/images/fake-avatar/user-avatar-3.webp",
     url: "/before-after?country=france",
   },
+];
+
+const continentLabels = [
+  { label: "AMERICA", coordinates: [-95, 10] },
+  { label: "EUROPE", coordinates: [5, 43] },
+  { label: "AFRICA", coordinates: [20, -12] },
+  { label: "ASIA", coordinates: [88, 35] },
+  { label: "OCEANIA", coordinates: [135, -27] },
 ];
 
 const baseCountry = {
@@ -89,22 +97,26 @@ export default function WorldPatientMap() {
   }
 
   return (
-    <section className="gridContainer flex-1 w-full">
+    <section className="flex-1 w-full">
       <div className="relative overflow-hidden py-4">
         <div className="relative overflow-hidden">
-          <ComposableMap className="h-auto w-full" height={430} projection="geoMercator" projectionConfig={{ center: [6, 24], scale: 128 }} width={1000}>
+          <ComposableMap className="block w-full h-auto" width={1000} height={430} projection="geoMercator" projectionConfig={{ center: [8, 40], scale: 100 }}>
             <defs>
-              <pattern id="patient-map-country-dots" width="6" height="6" patternUnits="userSpaceOnUse">
-                <rect width="6" height="6" fill="transparent" />
-                <circle cx="1.35" cy="1.35" r="0.68" fill="var(--light-bg)" opacity="1" />
+              <pattern id="soft-gray-dots" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="translate(0.5 0.5)">
+                <rect width="3" height="3" fill="transparent" />
+                <circle cx="2" cy="2" r="0.8" fill="#fff" />
               </pattern>
-              <pattern id="patient-map-active-country-dots" width="6" height="6" patternUnits="userSpaceOnUse">
-                <rect width="6" height="6" fill="var(--accent)" opacity="1" />
-                <circle cx="1.35" cy="1.35" r="0.86" fill="var(--light-bg)" opacity="1" />
+              <clipPath id="patient-avatar-clip" className="overflow-hidden rounded-full">
+                <circle cx="0" cy="0" r="10" />
+              </clipPath>
+              <pattern id="patient-map-active-country-dots" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="translate(0.5 0.5)">
+                <rect width="3" height="3" fill="var(--accent)" />
+                <circle cx="2" cy="2" r="0.85" fill="var(--light-bg)" />
               </pattern>
-              <pattern id="patient-map-base-country-dots" width="6" height="6" patternUnits="userSpaceOnUse">
-                <rect width="6" height="6" fill="var(--primary-soft)" opacity="1" />
-                <circle cx="1.35" cy="1.35" r="0.92" fill="var(--primary-soft)" opacity="1" />
+
+              <pattern id="patient-map-base-country-dots" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="translate(0.5 0.5)">
+                <rect width="3" height="3" fill="var(--primary-soft)" />
+                <circle cx="2" cy="2" r="0.85" fill="var(--primary)" />
               </pattern>
             </defs>
 
@@ -116,30 +128,9 @@ export default function WorldPatientMap() {
                     const patientCountry = countriesByGeographyName.get(geo.properties?.name);
                     const isBaseCountry = geo.properties?.name === baseCountry.name;
                     const isPatientCountry = Boolean(patientCountry);
+                    const fill = isBaseCountry ? "url(#patient-map-base-country-dots)" : isPatientCountry ? "url(#patient-map-active-country-dots)" : "url(#soft-gray-dots)";
 
-                    return (
-                      <Geography
-                        aria-label={geo.properties?.name}
-                        className={`outline-none transition-colors duration-300 ${isPatientCountry ? "cursor-pointer" : ""}`}
-                        fill={isBaseCountry ? "url(#patient-map-base-country-dots)" : isPatientCountry ? "url(#patient-map-active-country-dots)" : "url(#patient-map-country-dots)"}
-                        geography={geo}
-                        key={geo.rsmKey}
-                        onClick={patientCountry ? () => navigateToCountry(patientCountry.url) : undefined}
-                        onKeyDown={patientCountry ? (event) => handleKeyDown(event, patientCountry.url) : undefined}
-                        role={isPatientCountry ? "button" : undefined}
-                        stroke={isBaseCountry || isPatientCountry ? "rgba(11, 60, 93, 0.18)" : "rgba(11, 60, 93, 0.055)"}
-                        strokeWidth={isBaseCountry || isPatientCountry ? 0.28 : 0.18}
-                        style={{
-                          default: { outline: "none" },
-                          hover: {
-                            fill: isBaseCountry ? "url(#patient-map-base-country-dots)" : isPatientCountry ? "url(#patient-map-active-country-dots)" : "url(#patient-map-country-dots)",
-                            outline: "none",
-                          },
-                          pressed: { outline: "none" },
-                        }}
-                        tabIndex={isPatientCountry ? 0 : undefined}
-                      />
-                    );
+                    return <Geography aria-label={geo.properties?.name} className="outline-none" fill={fill} geography={geo} key={geo.rsmKey} stroke="transparent" strokeWidth={0} />;
                   })
               }
             </Geographies>
@@ -149,41 +140,44 @@ export default function WorldPatientMap() {
               <image height={22} href="/images/logo/icon.png" preserveAspectRatio="xMidYMid meet" width={22} x={-8} y={-20} />
             </Marker>
 
-            {countries.map((country) => (
-              <Marker
-                aria-label={`${country.name} patient results`}
-                className="group cursor-pointer outline-none"
-                coordinates={country.coordinates}
-                key={country.name}
-                onClick={() => navigateToCountry(country.url)}
-                onKeyDown={(event) => handleKeyDown(event, country.url)}
-                role="button"
-                tabIndex={0}
-              >
-                <title>{country.name}</title>
-                <g transform={`translate(${country.markerOffset[0]} ${country.markerOffset[1]})`}>
-                  <circle fill="white" r={13} stroke="rgba(11, 60, 93, 0.13)" strokeWidth={1.2} />
-                  <circle className="transition-colors duration-300 group-hover:fill-primary-soft" fill="var(--accent)" r={6.4} />
-                  <circle fill="var(--primary)" r={2.7} />
-                </g>
-                <g
-                  className="pointer-events-none opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100"
-                  transform={`translate(${country.markerOffset[0]} ${country.markerOffset[1] - 27})`}
-                >
-                  <rect
-                    fill="rgba(255, 255, 255, 0.98)"
-                    height={18}
-                    rx={9}
-                    stroke="rgba(11, 60, 93, 0.12)"
-                    width={country.markerLabel.length * 6.2 + 18}
-                    x={-(country.markerLabel.length * 6.2 + 18) / 2}
-                  />
-                  <text className="fill-primary text-[8px] font-800 uppercase tracking-[0.1em]" textAnchor="middle" y={12}>
-                    {country.markerLabel}
-                  </text>
-                </g>
+            {continentLabels.map((item) => (
+              <Marker key={item.label} coordinates={item.coordinates}>
+                <text textAnchor="middle" className="fill-accent text-[13px] font-semibold tracking-[0.18em]">
+                  {item.label}
+                </text>
               </Marker>
             ))}
+            {countries.map((country) => {
+              const clipId = `patient-avatar-clip-${country.name.replace(/\s+/g, "-").toLowerCase()}`;
+
+              return (
+                <Marker
+                  aria-label={`${country.name} patient results`}
+                  className="group cursor-pointer outline-none"
+                  coordinates={country.coordinates}
+                  key={country.name}
+                  onClick={() => navigateToCountry(country.url)}
+                  onKeyDown={(event) => handleKeyDown(event, country.url)}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <defs>
+                    <clipPath id={clipId}>
+                      <circle cx="0" cy="0" r="12" />
+                    </clipPath>
+                  </defs>
+
+                  <title>{country.name}</title>
+
+                  <circle r={14} fill="white" />
+                  <circle r={12} fill="none" stroke="#E5E5E5" strokeWidth={2} />
+
+                  <image href={country.avatar} width={24} height={24} x={-12} y={-12} clipPath={`url(#${clipId})`} preserveAspectRatio="xMidYMid slice" />
+
+                  <circle className="opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100" r={20} fill="none" stroke="#111" strokeWidth={1.5} />
+                </Marker>
+              );
+            })}
           </ComposableMap>
         </div>
       </div>
