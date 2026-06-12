@@ -84,7 +84,7 @@ export default function HeroSection({ content }) {
               alt="Logo"
               width={120}
               height={120}
-              className="object-contain object-center w-fit max-h-15 sm:max-h-16 absolute top-3 sm:top-1 right-[clamp(0rem,1vw,6rem)] opacity-100 animate-heartbeat-soft"
+              className="object-contain object-center w-fit max-h-15 sm:max-h-16 absolute top-3 sm:top-1 right-[clamp(0rem,1vw,6rem)] opacity-100 "
             />
             <form className="relative max-w-lg p-6 md:p-7 text-primary bg-white rounded-lg border border-white/60" style={{ clipPath: "url(#form-notch)" }}>
               <div className="relative z-30 mb-5">
