@@ -309,6 +309,64 @@ const englishContent = {
       title: "International patients plan their care journey with GK InterCare.",
       description: "Our Istanbul-based coordination team supports treatment planning, clinic matching, travel timing, and patient communication before arrival.",
     },
+    faq: {
+      label: "FAQ",
+      title: "Frequently Asked",
+      accent: "Questions",
+      description: "Find clear answers about treatment planning, partner clinics, travel coordination, pricing, and aftercare before you begin your journey.",
+      previousLabel: "Previous question",
+      nextLabel: "Next question",
+      items: [
+        {
+          question: "How does GK InterCare plan my treatment journey?",
+          answer: "We collect your medical goals, timing, and travel needs, then coordinate suitable clinic options and explain the next steps clearly before you arrive.",
+        },
+        {
+          question: "Are the doctors and clinics selected for each patient?",
+          answer: "Yes. We match patients with relevant doctors, hospitals, or specialist clinics according to the treatment area, availability, and care requirements.",
+        },
+        {
+          question: "Can I get a clear idea of costs before traveling?",
+          answer: "Our team shares the available treatment and travel planning details in advance so you can review the options before making a decision.",
+        },
+        {
+          question: "Do you help with accommodation and transfers?",
+          answer: "We can coordinate airport transfers, hotel options, appointment timing, and patient support so the non-medical parts of the trip feel organized.",
+        },
+        {
+          question: "What happens after the procedure?",
+          answer: "Your coordinator follows the recovery process, helps with communication, and supports follow-up guidance shared by the medical team.",
+        },
+        {
+          question: "How do I start the consultation process?",
+          answer: "Send your request through the consultation form or WhatsApp. Our coordination team will contact you and ask for the information needed to prepare the first plan.",
+        },
+        {
+          question: "Which treatments can you help coordinate?",
+          answer: "We support planning across several medical and aesthetic treatment areas through partner hospitals, specialist clinics, and experienced patient coordinators.",
+        },
+        {
+          question: "Can I share my medical reports before arrival?",
+          answer: "Yes. Reports, photos, and previous test results can help the medical team review your case and prepare a more accurate consultation path.",
+        },
+        {
+          question: "Will someone assist me during appointments?",
+          answer: "A patient coordinator helps organize appointment timing, communication, and daily guidance so you are not managing the process alone.",
+        },
+        {
+          question: "How long should I stay in Istanbul?",
+          answer: "The recommended stay depends on your treatment, doctor review, and recovery needs. We help clarify timing before you book travel.",
+        },
+        {
+          question: "Do you provide translation support?",
+          answer: "When needed, our coordination team supports communication between patients and medical teams so important details are understood clearly.",
+        },
+        {
+          question: "Is aftercare included in the planning?",
+          answer: "Aftercare guidance is part of the care journey. We help coordinate follow-up communication and recovery instructions shared by your medical team.",
+        },
+      ],
+    },
     features: [
       { title: "VIP Airport Transfer", text: "Private and comfortable arrivals" },
       { title: "5-Star Accommodation", text: "Luxury hotel partners" },
@@ -980,6 +1038,64 @@ const spanishOverrides = {
       title: "Pacientes internacionales planifican su viaje de atención con GK InterCare.",
       description: "Nuestro equipo de coordinación en Estambul apoya la planificación del tratamiento, la selección de clínicas, los tiempos de viaje y la comunicación antes de la llegada.",
     },
+    faq: {
+      label: "FAQ",
+      title: "Preguntas",
+      accent: "Frecuentes",
+      description: "Encuentra respuestas claras sobre planificación del tratamiento, clínicas asociadas, coordinación de viaje, precios y cuidados posteriores antes de comenzar.",
+      previousLabel: "Pregunta anterior",
+      nextLabel: "Siguiente pregunta",
+      items: [
+        {
+          question: "¿Cómo planifica GK InterCare mi viaje de tratamiento?",
+          answer: "Recopilamos tus objetivos médicos, fechas y necesidades de viaje, coordinamos opciones clínicas adecuadas y explicamos los siguientes pasos antes de tu llegada.",
+        },
+        {
+          question: "¿Los médicos y clínicas se seleccionan para cada paciente?",
+          answer: "Sí. Conectamos a cada paciente con médicos, hospitales o clínicas especializadas según el área de tratamiento, disponibilidad y necesidades de atención.",
+        },
+        {
+          question: "¿Puedo tener una idea clara de los costes antes de viajar?",
+          answer: "Nuestro equipo comparte por adelantado los detalles disponibles de tratamiento y planificación de viaje para que puedas revisar las opciones antes de decidir.",
+        },
+        {
+          question: "¿Ayudan con alojamiento y traslados?",
+          answer: "Podemos coordinar traslados desde el aeropuerto, opciones de hotel, horarios de citas y soporte al paciente para que el viaje esté bien organizado.",
+        },
+        {
+          question: "¿Qué ocurre después del procedimiento?",
+          answer: "Tu coordinador acompaña el proceso de recuperación, ayuda con la comunicación y apoya las indicaciones de seguimiento compartidas por el equipo médico.",
+        },
+        {
+          question: "¿Cómo inicio el proceso de consulta?",
+          answer: "Envía tu solicitud a través del formulario de consulta o WhatsApp. Nuestro equipo te contactará y pedirá la información necesaria para preparar el primer plan.",
+        },
+        {
+          question: "¿Qué tratamientos pueden coordinar?",
+          answer: "Apoyamos la planificación de varias áreas médicas y estéticas mediante hospitales asociados, clínicas especializadas y coordinadores de pacientes con experiencia.",
+        },
+        {
+          question: "¿Puedo compartir mis informes médicos antes de llegar?",
+          answer: "Sí. Informes, fotos y resultados previos pueden ayudar al equipo médico a revisar tu caso y preparar una ruta de consulta más precisa.",
+        },
+        {
+          question: "¿Alguien me ayuda durante las citas?",
+          answer: "Un coordinador de pacientes ayuda a organizar horarios, comunicación y orientación diaria para que no tengas que gestionar el proceso solo.",
+        },
+        {
+          question: "¿Cuánto tiempo debo quedarme en Estambul?",
+          answer: "La estancia recomendada depende del tratamiento, la revisión médica y las necesidades de recuperación. Te ayudamos a aclarar los tiempos antes de reservar.",
+        },
+        {
+          question: "¿Ofrecen apoyo de traducción?",
+          answer: "Cuando es necesario, nuestro equipo de coordinación facilita la comunicación entre pacientes y equipos médicos para que los detalles importantes queden claros.",
+        },
+        {
+          question: "¿Los cuidados posteriores están incluidos en la planificación?",
+          answer: "La guía postratamiento forma parte del viaje de atención. Ayudamos a coordinar la comunicación de seguimiento y las instrucciones compartidas por tu equipo médico.",
+        },
+      ],
+    },
     features: [
       { title: "Traslado VIP desde el aeropuerto", text: "Llegadas privadas y cómodas" },
       { title: "Alojamiento de 5 estrellas", text: "Hoteles de lujo asociados" },
@@ -1627,6 +1743,64 @@ const italianOverrides = {
       label: "Rete internazionale di pazienti",
       title: "Pazienti internazionali pianificano il proprio percorso di cura con GK InterCare.",
       description: "Il nostro team di coordinamento a Istanbul supporta la pianificazione del trattamento, la selezione delle cliniche, i tempi di viaggio e la comunicazione prima dell'arrivo.",
+    },
+    faq: {
+      label: "FAQ",
+      title: "Domande",
+      accent: "Frequenti",
+      description: "Trova risposte chiare su pianificazione del trattamento, cliniche partner, coordinamento del viaggio, costi e assistenza post-trattamento.",
+      previousLabel: "Domanda precedente",
+      nextLabel: "Domanda successiva",
+      items: [
+        {
+          question: "Come pianifica GK InterCare il mio percorso di trattamento?",
+          answer: "Raccogliamo obiettivi medici, tempistiche ed esigenze di viaggio, coordiniamo opzioni cliniche adatte e spieghiamo i passaggi prima del tuo arrivo.",
+        },
+        {
+          question: "Medici e cliniche vengono selezionati per ogni paziente?",
+          answer: "Sì. Abbiniamo ogni paziente a medici, ospedali o cliniche specialistiche in base all'area di trattamento, alla disponibilità e alle esigenze di cura.",
+        },
+        {
+          question: "Posso avere un'idea chiara dei costi prima di viaggiare?",
+          answer: "Il nostro team condivide in anticipo i dettagli disponibili sul trattamento e sulla pianificazione del viaggio, così puoi valutare le opzioni prima di decidere.",
+        },
+        {
+          question: "Aiutate con alloggio e transfer?",
+          answer: "Possiamo coordinare transfer aeroportuali, opzioni hotel, orari degli appuntamenti e supporto paziente per rendere il viaggio ben organizzato.",
+        },
+        {
+          question: "Cosa succede dopo la procedura?",
+          answer: "Il tuo coordinatore segue il recupero, facilita la comunicazione e supporta le indicazioni di follow-up condivise dal team medico.",
+        },
+        {
+          question: "Come posso iniziare il processo di consulenza?",
+          answer: "Invia una richiesta tramite il modulo di consulenza o WhatsApp. Il nostro team ti contatterà e chiederà le informazioni necessarie per preparare il primo piano.",
+        },
+        {
+          question: "Quali trattamenti potete coordinare?",
+          answer: "Supportiamo la pianificazione in diverse aree mediche ed estetiche tramite ospedali partner, cliniche specialistiche e coordinatori paziente esperti.",
+        },
+        {
+          question: "Posso condividere i miei referti medici prima dell'arrivo?",
+          answer: "Sì. Referti, foto e risultati precedenti possono aiutare il team medico a valutare il caso e preparare un percorso di consulenza più preciso.",
+        },
+        {
+          question: "Qualcuno mi assiste durante gli appuntamenti?",
+          answer: "Un coordinatore paziente aiuta a organizzare orari, comunicazione e guida quotidiana, così non devi gestire il processo da solo.",
+        },
+        {
+          question: "Quanto tempo dovrei restare a Istanbul?",
+          answer: "La permanenza consigliata dipende dal trattamento, dalla valutazione medica e dalle esigenze di recupero. Ti aiutiamo a chiarire i tempi prima di prenotare.",
+        },
+        {
+          question: "Offrite supporto per la traduzione?",
+          answer: "Quando necessario, il nostro team di coordinamento facilita la comunicazione tra pazienti e team medici, così i dettagli importanti restano chiari.",
+        },
+        {
+          question: "L'assistenza post-trattamento è inclusa nella pianificazione?",
+          answer: "La guida post-trattamento fa parte del percorso di cura. Aiutiamo a coordinare la comunicazione di follow-up e le istruzioni condivise dal team medico.",
+        },
+      ],
     },
     features: [
       { title: "Transfer VIP dall'aeroporto", text: "Arrivi privati e confortevoli" },

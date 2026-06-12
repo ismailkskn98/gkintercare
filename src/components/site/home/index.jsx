@@ -2,6 +2,7 @@ import { Globe2, ShieldCheck, Sparkles, Stethoscope } from "lucide-react";
 import { Fragment } from "react";
 import { MotionFadeIn, MotionSlideUp, MotionStagger } from "../common/animation";
 import CtaBanner from "../common/ctaBanner";
+import FaqSection from "./faqSection";
 import HeroSection from "./heroSection";
 import SectionHeader from "../common/sectionHeader";
 import StatsBar from "../common/statsBar";
@@ -57,6 +58,7 @@ export default function HomeContent({ content }) {
           </MotionFadeIn>
         </main>
       </section>
+      <FaqSection content={home.faq} />
       <MotionSlideUp className="mt-32">
         <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />
       </MotionSlideUp>

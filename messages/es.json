@@ -17,6 +17,12 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
     "language": "Idioma",
+    "languages": {
+      "label": "Idioma",
+      "english": "Inglés",
+      "spanish": "Español",
+      "italian": "Italiano"
+    },
     "whatsapp": "WhatsApp"
   }
 }

@@ -1,23 +1,21 @@
 "use client";
 
-import { ChevronDown, Globe2, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { localeOptions, navigationItems } from "@/data/siteContent";
+import { navigationItems } from "@/data/siteContent";
 import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import { MotionSlideUp } from "../common/animation";
-import { TbWorld } from "react-icons/tb";
+import LanguageSwitcher from "../common/languageSwitcher";
 
-export default function Header({ locale }) {
+export default function Header() {
   const t = useTranslations("Common");
   const pathname = usePathname() || "/";
   const { scrollY } = useScroll();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const currentLocale = localeOptions.find((item) => item.code === locale) || localeOptions[0];
 
   useMotionValueEvent(scrollY, "change", (latestScrollY) => {
     setIsScrolled(latestScrollY > 70);
@@ -82,29 +80,7 @@ export default function Header({ locale }) {
               >
                 {t("consultation")}
               </Link>
-              <button
-                className={`focus-ring cursor-pointer inline-flex h-11 items-center gap-2 rounded-lg border px-3 text-sm font-800 transition ${controlClass}`}
-                onClick={() => setIsLanguageOpen((value) => !value)}
-                type="button"
-              >
-                <TbWorld className="text-xl" />
-                {/* <ChevronDown size={15} /> */}
-              </button>
-              {isLanguageOpen ? (
-                <div className="absolute right-0 top-13 w-44 overflow-hidden rounded-lg border border-primary/10 bg-white p-1 text-primary shadow-xl">
-                  {localeOptions.map((item) => (
-                    <Link
-                      className={`block rounded-[6px] px-3 py-2 text-sm font-700 hover:bg-light-bg ${item.code === locale ? "text-accent" : ""}`}
-                      href={pathname}
-                      key={item.code}
-                      locale={item.code}
-                      onClick={() => setIsLanguageOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
+              <LanguageSwitcher bgWhite={isScrolled} />
             </div>
           </div>
 
