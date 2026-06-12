@@ -100,7 +100,13 @@ export default function WorldPatientMap() {
     <section className="flex-1 w-full">
       <div className="relative overflow-hidden py-4">
         <div className="relative overflow-hidden">
-          <ComposableMap className="block w-full h-auto" width={1000} height={430} projection="geoMercator" projectionConfig={{ center: [8, 40], scale: 100 }}>
+          <ComposableMap
+            className="block h-auto w-[138%] max-w-none -translate-x-[13.75%] sm:w-[118%] sm:-translate-x-[7.5%] md:w-full md:translate-x-0"
+            width={1000}
+            height={430}
+            projection="geoMercator"
+            projectionConfig={{ center: [8, 40], scale: 100 }}
+          >
             <defs>
               <pattern id="soft-gray-dots" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="translate(0.5 0.5)">
                 <rect width="3" height="3" fill="transparent" />

@@ -45,13 +45,13 @@ export default function HomeContent({ content }) {
           </div>
         </div>
       </MotionSlideUp>
-      <section className="fluid gridContainer bg-primary pt-18 md:pt-24 gap-y-16 overflow-hidden">
+      <section className="fluid gridContainer bg-primary pt-18 md:pt-24 gap-y-8 lg:gap-y-16 overflow-hidden">
         <article className="flex w-full flex-col items-center justify-center text-center text-white">
           <span className="section-label text-accent">{home.patientMap.label}</span>
           <h2 className="mt-3 max-w-3xl text-3xl font-800 leading-tight md:text-5xl">{home.patientMap.title}</h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 md:text-base">{home.patientMap.description}</p>
         </article>
-        <main className="w-full flex flex-col items-center gap-14">
+        <main className="w-full flex flex-col items-center gap-10 lg:gap-14">
           <WorldPatientMap />
           <MotionFadeIn className="w-full flex-1">
             <StatsBar stats={home.hero.trustItems} className="w-full" />
