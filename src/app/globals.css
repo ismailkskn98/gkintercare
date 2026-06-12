@@ -120,12 +120,6 @@ textarea {
   min-height: 8.5rem;
 }
 
-.site-main {
-  background:
-    radial-gradient(circle at top left, rgba(31, 111, 138, 0.12), transparent 30rem),
-    linear-gradient(180deg, #ffffff 0%, #f6fafd 45%, #ffffff 100%);
-}
-
 .section-label {
   color: var(--accent);
   display: inline-flex;

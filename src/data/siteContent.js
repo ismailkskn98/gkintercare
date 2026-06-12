@@ -298,11 +298,16 @@ const englishContent = {
         { title: "Aftercare Support", text: "Follow-up through recovery" },
       ],
       trustItems: [
-        { title: "Best Price Guidance", text: "Clear planning before arrival" },
-        { title: "24/7 Support", text: "WhatsApp patient assistance" },
-        { title: "Handpicked Clinics", text: "Trusted medical network" },
-        { title: "Flexible Booking", text: "Travel timing built around you" },
+        { title: "Best Price Guidance", text: "Clear planning before arrival, with treatment and travel options explained in simple terms.", icon: "price" },
+        { title: "24/7 Support", text: "WhatsApp patient assistance for questions, timing updates, and coordination needs during your journey.", icon: "support" },
+        { title: "Handpicked Clinics", text: "A trusted medical network selected around relevant specialists and reliable patient coordination.", icon: "clinics" },
+        { title: "Flexible Booking", text: "Travel and treatment timing planned around your availability whenever clinic schedules allow.", icon: "booking" },
       ],
+    },
+    patientMap: {
+      label: "Global Patient Network",
+      title: "International patients plan their care journey with GK InterCare.",
+      description: "Our Istanbul-based coordination team supports treatment planning, clinic matching, travel timing, and patient communication before arrival.",
     },
     features: [
       { title: "VIP Airport Transfer", text: "Private and comfortable arrivals" },
@@ -964,11 +969,16 @@ const spanishOverrides = {
         { title: "Soporte postratamiento", text: "Seguimiento durante la recuperación" },
       ],
       trustItems: [
-        { title: "Guía de mejor precio", text: "Planificación clara antes de la llegada" },
-        { title: "Soporte 24/7", text: "Asistencia al paciente por WhatsApp" },
-        { title: "Clínicas seleccionadas", text: "Red médica de confianza" },
-        { title: "Reserva flexible", text: "Fechas de viaje adaptadas a ti" },
+        { title: "Guía de mejor precio", text: "Planificación clara antes de la llegada, con opciones de tratamiento y viaje explicadas de forma sencilla." },
+        { title: "Soporte 24/7", text: "Asistencia por WhatsApp para preguntas, cambios de horario y necesidades de coordinación durante tu viaje." },
+        { title: "Clínicas seleccionadas", text: "Una red médica de confianza elegida según especialistas relevantes y coordinación fiable para pacientes." },
+        { title: "Reserva flexible", text: "Fechas de viaje y tratamiento planificadas alrededor de tu disponibilidad cuando los horarios de la clínica lo permitan." },
       ],
+    },
+    patientMap: {
+      label: "Red internacional de pacientes",
+      title: "Pacientes internacionales planifican su viaje de atención con GK InterCare.",
+      description: "Nuestro equipo de coordinación en Estambul apoya la planificación del tratamiento, la selección de clínicas, los tiempos de viaje y la comunicación antes de la llegada.",
     },
     features: [
       { title: "Traslado VIP desde el aeropuerto", text: "Llegadas privadas y cómodas" },
@@ -1607,11 +1617,16 @@ const italianOverrides = {
         { title: "Supporto post-trattamento", text: "Follow-up durante il recupero" },
       ],
       trustItems: [
-        { title: "Guida al miglior prezzo", text: "Pianificazione chiara prima dell'arrivo" },
-        { title: "Supporto 24/7", text: "Assistenza pazienti via WhatsApp" },
-        { title: "Cliniche selezionate", text: "Rete medica affidabile" },
-        { title: "Prenotazione flessibile", text: "Tempi di viaggio costruiti intorno a te" },
+        { title: "Guida al miglior prezzo", text: "Pianificazione chiara prima dell'arrivo, con opzioni di trattamento e viaggio spiegate in modo semplice." },
+        { title: "Supporto 24/7", text: "Assistenza via WhatsApp per domande, aggiornamenti sugli orari e necessità di coordinamento durante il percorso." },
+        { title: "Cliniche selezionate", text: "Una rete medica affidabile scelta in base a specialisti pertinenti e a una coordinazione paziente solida." },
+        { title: "Prenotazione flessibile", text: "Tempi di viaggio e trattamento pianificati intorno alla tua disponibilità quando gli orari della clinica lo consentono." },
       ],
+    },
+    patientMap: {
+      label: "Rete internazionale di pazienti",
+      title: "Pazienti internazionali pianificano il proprio percorso di cura con GK InterCare.",
+      description: "Il nostro team di coordinamento a Istanbul supporta la pianificazione del trattamento, la selezione delle cliniche, i tempi di viaggio e la comunicazione prima dell'arrivo.",
     },
     features: [
       { title: "Transfer VIP dall'aeroporto", text: "Arrivi privati e confortevoli" },

@@ -36,7 +36,7 @@ export default function HomeContent({ content }) {
         </div>
       </MotionSlideUp>
 
-      <MotionSlideUp className="gridContainer bg-light-bg py-18 md:py-24">
+      <MotionSlideUp className="gridContainer py-18 md:py-24">
         <div>
           <SectionHeader label={home.treatmentsHeader.label} title={home.treatmentsHeader.title} accent={home.treatmentsHeader.accent} />
           <div className="mt-10">
@@ -44,11 +44,20 @@ export default function HomeContent({ content }) {
           </div>
         </div>
       </MotionSlideUp>
-      <WorldPatientMap />
-      <MotionFadeIn>
-        <StatsBar stats={home.hero.trustItems} className="py-14" />
-      </MotionFadeIn>
-      <MotionSlideUp>
+      <section className="fluid gridContainer bg-primary pt-18 md:pt-24 gap-16">
+        <article className="flex w-full flex-col items-center justify-center text-center text-white">
+          <span className="section-label text-accent">{home.patientMap.label}</span>
+          <h2 className="mt-3 max-w-3xl text-3xl font-800 leading-tight md:text-5xl">{home.patientMap.title}</h2>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 md:text-base">{home.patientMap.description}</p>
+        </article>
+        <main className="w-full flex flex-col items-center gap-14">
+          <WorldPatientMap />
+          <MotionFadeIn className="w-full flex-1">
+            <StatsBar stats={home.hero.trustItems} className="w-full" />
+          </MotionFadeIn>
+        </main>
+      </section>
+      <MotionSlideUp className="mt-32">
         <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />
       </MotionSlideUp>
     </>

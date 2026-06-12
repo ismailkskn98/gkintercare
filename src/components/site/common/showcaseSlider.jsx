@@ -32,7 +32,6 @@ export default function ShowcaseSlider({
     <div className={`grid gap-8 lg:grid-cols-[0.52fr_1.48fr] lg:items-end ${className}`}>
       <div className="max-w-md self-center">
         <div className="flex items-center gap-3 text-xs font-800 uppercase tracking-[0.18em] text-muted">
-          <span>01</span>
           <span className="h-px w-12 bg-primary/18" />
           <span>{eyebrow}</span>
         </div>

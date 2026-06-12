@@ -8,6 +8,7 @@ import { localeOptions, navigationItems } from "@/data/siteContent";
 import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import { MotionSlideUp } from "../common/animation";
+import { TbWorld } from "react-icons/tb";
 
 export default function Header({ locale }) {
   const t = useTranslations("Common");
@@ -28,7 +29,6 @@ export default function Header({ locale }) {
   }));
 
   const headerColor = isScrolled ? "text-primary" : "text-white";
-  const mutedColor = isScrolled ? "text-primary/55" : "text-white/58";
   const inactiveLinkColor = isScrolled ? "text-primary/72" : "text-white/78";
   const controlClass = isScrolled ? "border-primary/12 text-primary hover:bg-light-bg" : "border-white/18 text-white hover:bg-white/10";
 
@@ -73,15 +73,22 @@ export default function Header({ locale }) {
           </div>
 
           <div className="hidden items-center gap-3 xl:flex">
-            <div className="relative">
+            <div className="relative flex items-center gap-2">
+              <Link
+                className={`focus-ring inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-800 transition ${
+                  isScrolled ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
+                }`}
+                href="/contact"
+              >
+                {t("consultation")}
+              </Link>
               <button
-                className={`focus-ring inline-flex h-11 items-center gap-2 rounded-lg border px-3 text-sm font-800 transition ${controlClass}`}
+                className={`focus-ring cursor-pointer inline-flex h-11 items-center gap-2 rounded-lg border px-3 text-sm font-800 transition ${controlClass}`}
                 onClick={() => setIsLanguageOpen((value) => !value)}
                 type="button"
               >
-                <Globe2 size={16} />
-                {currentLocale.shortLabel}
-                <ChevronDown size={15} />
+                <TbWorld className="text-xl" />
+                {/* <ChevronDown size={15} /> */}
               </button>
               {isLanguageOpen ? (
                 <div className="absolute right-0 top-13 w-44 overflow-hidden rounded-lg border border-primary/10 bg-white p-1 text-primary shadow-xl">
@@ -99,14 +106,6 @@ export default function Header({ locale }) {
                 </div>
               ) : null}
             </div>
-            <Link
-              className={`focus-ring inline-flex h-12 items-center justify-center gap-2 rounded-lg px-5 text-sm font-800 transition ${
-                isScrolled ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
-              }`}
-              href="/contact"
-            >
-              {t("consultation")}
-            </Link>
           </div>
 
           <button
