@@ -61,7 +61,7 @@ export default function HeroSection({ content }) {
           ) : null}
         </MotionFadeIn>
 
-        <MotionFadeIn className="w-full flex justify-end" delay={0.08}>
+        <MotionFadeIn className="w-full flex justify-start lg:justify-end" delay={0.08}>
           <div className="relative max-w-lg">
             {/* Sol Üst */}
             {/* <svg width="0" height="0" className="absolute">
@@ -84,7 +84,7 @@ export default function HeroSection({ content }) {
               alt="Logo"
               width={120}
               height={120}
-              className="object-contain object-center w-fit max-h-16 absolute top-1 right-6 opacity-100 animate-heartbeat-soft"
+              className="object-contain object-center w-fit max-h-16 absolute top-1 right-[clamp(12px,1vw,24px)] opacity-100 animate-heartbeat-soft"
             />
             <form className="relative max-w-lg p-6 md:p-7 text-primary bg-white rounded-lg border border-white/60" style={{ clipPath: "url(#form-notch)" }}>
               <div className="relative z-30 mb-5">

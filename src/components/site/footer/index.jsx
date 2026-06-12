@@ -10,7 +10,7 @@ export default async function Footer({ content }) {
   const { contact, footer } = content;
 
   return (
-    <footer className="gridContainer bg-white px-5 py-10 md:px-9 md:py-12">
+    <footer className="gridContainer bg-white px-5 py-10 md:px-9 md:py-12 overflow-hidden">
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.15fr]">
         <div>
           <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">

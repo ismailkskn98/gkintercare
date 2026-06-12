@@ -4,8 +4,7 @@ export default function TreatmentCards({ treatments, labels, buttonLabel, href =
   const sliderLabels = labels || {
     eyebrow: "Treatment Areas",
     title: "Advanced Care for a Healthier Tomorrow",
-    description:
-      "We provide expert medical care with modern technology and a personalized approach to help you feel confident at every stage.",
+    description: "We provide expert medical care with modern technology and a personalized approach to help you feel confident at every stage.",
     badge: "Treatment",
     buttonLabel: buttonLabel || "Get Your Personalized Plan",
     previousLabel: "Previous slide",
@@ -30,7 +29,7 @@ export default function TreatmentCards({ treatments, labels, buttonLabel, href =
       items={sliderItems}
       ctaLabel={resolvedButtonLabel}
       ctaHref={href}
-      cardAspectClass="min-h-[32rem] aspect-9/13"
+      cardAspectClass="h-[clamp(360px,70vw,520px)] md:h-[clamp(420px,48vw,560px)] xl:aspect-9/13 xl:h-auto"
       previousLabel={sliderLabels.previousLabel}
       nextLabel={sliderLabels.nextLabel}
     />

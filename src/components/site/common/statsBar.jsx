@@ -10,7 +10,7 @@ const statIcons = {
 
 export default function StatsBar({ stats, className = "" }) {
   return (
-    <section className={`relative gridContainer bg-white ${className} pt-6`}>
+    <section className={`relative gridContainer bg-white ${className} pt-16 pb-12`}>
       <article className="bg-primary absolute top-0 left-0 w-16 h-16 fluid rounded-br-3xl">
         <Image
           src={
@@ -69,7 +69,7 @@ export default function StatsBar({ stats, className = "" }) {
         alt="border cornea"
         className="object-contain fluid absolute -right-5 rotate-0 bottom-0"
       />
-      <div className="mx-auto w-full max-w-10/12 flex items-start justify-between gap-7">
+      <div className="mx-auto w-full max-w-11/12 xl:max-w-10/12 grid min-[500px]:grid-cols-2 place-content-stretch justify-items-stretch gap-y-4 sm:gap-y-8 gap-x-4 sm:gap-x-8 lg:flex lg:items-start lg:justify-center lg:gap-16">
         {stats.map((stat) => {
           const isMetric = Boolean(stat.value);
           const value = stat.value || stat.title;
@@ -78,17 +78,17 @@ export default function StatsBar({ stats, className = "" }) {
           const Icon = statIcons[stat.icon];
 
           return (
-            <article className="flex flex-col items-start gap-4 px-5 py-5 sm:px-6" key={`${value}-${label}`}>
+            <article className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4" key={`${value}-${label}`}>
               {Icon ? (
-                <span className="flex size-11 items-center justify-center rounded-lg bg-light-bg text-primary-soft">
-                  <Icon size={22} strokeWidth={2.2} />
+                <span className="flex size-10 xl:size-11 items-center justify-center rounded-lg bg-light-bg text-primary-soft">
+                  <Icon size={20} strokeWidth={2.2} />
                 </span>
               ) : null}
-              <div className="shrink-0 text-left sm:w-36">
-                <strong className={`block font-800 leading-none tracking-tight text-primary ${isMetric ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"}`}>{value}</strong>
+              <div className="shrink-0 text-center lg:text-left lg:w-36">
+                <strong className={`block font-800 leading-none tracking-tight text-primary ${isMetric ? "text-3xl xl:text-4xl" : "text-xl xl:text-2xl"}`}>{value}</strong>
                 {label ? <span className="mt-1.5 block text-[0.62rem] font-800 uppercase tracking-[0.12em] text-muted">{label}</span> : null}
               </div>
-              <p className="max-w-88 text-[0.8rem] leading-5 text-primary/64">{description}</p>
+              <p className="max-w-88 text-xs xl:text-[0.8rem] leading-5 text-primary/64">{description}</p>
             </article>
           );
         })}

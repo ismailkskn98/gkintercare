@@ -18,7 +18,7 @@ export default function ShowcaseSlider({
   items,
   ctaLabel = "Learn More",
   ctaHref = "/contact",
-  cardAspectClass = "min-h-[30rem]",
+  cardAspectClass = "min-h-[24rem] xl:min-h-[30rem]",
   className = "",
   previousLabel = "Previous slide",
   nextLabel = "Next slide",
@@ -30,19 +30,19 @@ export default function ShowcaseSlider({
 
   return (
     <div className={`grid gap-8 lg:grid-cols-[0.52fr_1.48fr] lg:items-end ${className}`}>
-      <div className="max-w-md self-center">
-        <div className="flex items-center gap-3 text-xs font-800 uppercase tracking-[0.18em] text-muted">
+      <div className="min-[300px]:min-w-2xs max-w-md self-center">
+        <div className="flex items-center gap-3 text-[clamp(10px,1vw,12px)] font-800 uppercase tracking-[0.18em] text-muted">
           <span className="h-px w-12 bg-primary/18" />
           <span>{eyebrow}</span>
         </div>
-        <h2 className="mt-8 text-4xl font-800 leading-[1.02] text-primary md:text-5xl">{title}</h2>
-        {description ? <p className="mt-5 text-sm leading-7 text-muted md:text-base">{description}</p> : null}
-        <ButtonLink className="mt-8 h-11" href={ctaHref} icon={ArrowUpRight} variant="dark">
+        <h2 className="mt-[clamp(16px,1vw,32px)] text-[clamp(28px,3.5vw,48px)] font-800 leading-[1.02] text-primary ">{title}</h2>
+        {description ? <p className="mt-5 text-sm leading-relaxed xl:leading-7 text-muted xl:text-base">{description}</p> : null}
+        <ButtonLink className="mt-[clamp(16px,1vw,32px)] h-11" href={ctaHref} icon={ArrowUpRight} variant="dark">
           {ctaLabel}
         </ButtonLink>
       </div>
 
-      <div className="min-w-0 overflow-hidden lg:pl-8">
+      <div className="min-w-0 overflow-hidden xl:pl-8">
         <Swiper
           modules={[Navigation, Autoplay]}
           autoplay={{
@@ -59,17 +59,17 @@ export default function ShowcaseSlider({
           slidesPerView={1.08}
           breakpoints={{
             640: { slidesPerView: 1.55 },
-            900: { slidesPerView: 2.2 },
+            900: { slidesPerView: 2, spaceBetween: 20 },
             1280: { slidesPerView: 2.65, spaceBetween: 30 },
           }}
           speed={700}
-          className="overflow-hidden!p-1.5!"
+          className="overflow-hidden! p-1.5!"
         >
           {items.map((item, index) => (
             <SwiperSlide key={item.title}>
               <Link className={`group group/action-link relative block overflow-hidden rounded-2xl bg-primary ${cardAspectClass}`} href={item.href || ctaHref}>
                 <Image src={item.image} alt={item.title} fill quality={100} unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-black/5" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 xl:via-primary/20 to-black/5" />
                 {/* <span className="pointer-events-none absolute bottom-4 right-4 text-7xl font-800 leading-none tracking-[-0.06em] text-white/24 transition group-hover:text-white/32"> */}
                 <span className="pointer-events-none absolute bottom-4 right-4 text-8xl font-800 leading-none tracking-[-0.06em]  transition text-transparent bg-clip-text bg-linear-to-b from-white/30 to-primary/60">
                   {String(index + 1).padStart(2, "0")}
@@ -90,7 +90,7 @@ export default function ShowcaseSlider({
                         ))}
                       </div>
                     ) : null}
-                    <span className="mt-5 inline-flex h-10 items-center gap-2 rounded-[8px] bg-white px-4 text-sm font-800 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
+                    <span className="mt-5 inline-flex h-10 items-center gap-2 rounded-lg bg-white px-4 text-[13px] xl:text-sm font-800 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
                       <AnimatedLabel>{item.ctaLabel || ctaLabel}</AnimatedLabel>
                       <AnimatedIcon icon={ArrowRight} />
                     </span>

@@ -45,7 +45,7 @@ export default function HomeContent({ content }) {
           </div>
         </div>
       </MotionSlideUp>
-      <section className="fluid gridContainer bg-primary pt-18 md:pt-24 gap-16">
+      <section className="fluid gridContainer bg-primary pt-18 md:pt-24 gap-y-16 overflow-hidden">
         <article className="flex w-full flex-col items-center justify-center text-center text-white">
           <span className="section-label text-accent">{home.patientMap.label}</span>
           <h2 className="mt-3 max-w-3xl text-3xl font-800 leading-tight md:text-5xl">{home.patientMap.title}</h2>
