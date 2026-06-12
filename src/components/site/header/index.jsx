@@ -43,7 +43,13 @@ export default function Header() {
       <MotionSlideUp className="gridContainer">
         <div className="flex min-h-[5.5rem] items-center justify-between gap-5">
           <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
-            <Image src={isScrolled ? "/images/logo/logo.png" : "/images/logo/white-logo.png"} alt="GK InterCare Logo" width={200} height={200} className="h-10 w-fit object-center object-contain" />
+            <Image
+              src={isScrolled ? "/images/logo/logo.png" : "/images/logo/white-logo.png"}
+              alt="GK InterCare Logo"
+              width={200}
+              height={200}
+              className="w-26.25 h-auto object-center object-contain"
+            />
           </Link>
 
           <div className="hidden items-center gap-7 xl:flex">
