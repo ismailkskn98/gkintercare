@@ -1,10 +1,9 @@
-import { Building2, CalendarDays, HeartPulse, Mail, MapPin, Phone, ShieldCheck, Star, Stethoscope, UserRound, Users } from "lucide-react";
-import { Fragment } from "react";
-import { MotionFadeIn, MotionStagger } from "../common/animation";
+import { Building2, HeartPulse, Mail, MapPin, Phone, ShieldCheck, Stethoscope, UserRound } from "lucide-react";
+import { MotionFadeIn } from "../common/animation";
 import ButtonLink from "../common/buttonLink";
 import Image from "next/image";
+import StatsSection from "./statsSection";
 
-const statsIcons = [CalendarDays, Users, Building2, Star];
 const medicalBadgeIcons = [Stethoscope, Building2, ShieldCheck];
 
 export default function HeroSection({ content }) {
@@ -148,27 +147,7 @@ export default function HeroSection({ content }) {
         </MotionFadeIn>
       </div>
 
-      <MotionStagger
-        childClassName="flex items-center gap-4 bg-white px-6 py-7 overflow-hidden"
-        className="relative z-20 -mb-14 min-h-32 overflow-hidden grid rounded-lg shadow-[0_24px_70px_rgba(11,60,93,0.18)] md:grid-cols-4"
-        delay={0.1}
-      >
-        {stats.map((stat, index) => {
-          const Icon = statsIcons[index] || ShieldCheck;
-
-          return (
-            <Fragment key={`${stat.value}-${stat.label}`}>
-              <span className="flex size-[3.25rem] shrink-0 items-center justify-center rounded-lg bg-light-bg text-primary">
-                <Icon size={22} className="text-primary-soft" />
-              </span>
-              <div>
-                <h2 className="text-2xl font-800 leading-none text-primary-soft">{stat.value}</h2>
-                <p className="mt-1 text-xs font-800 uppercase leading-5 tracking-[0.1em] text-muted">{stat.label}</p>
-              </div>
-            </Fragment>
-          );
-        })}
-      </MotionStagger>
+      <StatsSection stats={stats} />
     </section>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 
-import { Children } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { Children, useRef } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
 
-const revealEase = [0.22, 1, 0.36, 1];
-const revealDuration = 0.45;
-const staggerDelay = 0.12;
+const revealEase = [0.25, 0.46, 0.45, 0.94];
+const revealDuration = 0.55;
+const staggerDelay = 0.15;
 
 function getTransition(delay) {
   return {
@@ -22,13 +22,7 @@ function getViewport(once, amount) {
   };
 }
 
-export function MotionSlideUp({
-  children,
-  className = "",
-  delay = 0,
-  amount = 0.18,
-  once = true,
-}) {
+export function MotionSlideUp({ children, className = "", delay = 0, amount = 0.18, once = true }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -36,11 +30,7 @@ export function MotionSlideUp({
       className={className}
       initial={shouldReduceMotion ? false : { opacity: 0, y: 32 }}
       viewport={getViewport(once, amount)}
-      whileInView={
-        shouldReduceMotion
-          ? undefined
-          : { opacity: 1, y: 0, transition: getTransition(delay) }
-      }
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0, transition: getTransition(delay) }}
       style={shouldReduceMotion ? undefined : { willChange: "transform, opacity" }}
     >
       {children}
@@ -48,13 +38,7 @@ export function MotionSlideUp({
   );
 }
 
-export function MotionLeftView({
-  children,
-  className = "",
-  delay = 0,
-  amount = 0.18,
-  once = true,
-}) {
+export function MotionLeftView({ children, className = "", delay = 0, amount = 0.18, once = true }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -62,11 +46,7 @@ export function MotionLeftView({
       className={className}
       initial={shouldReduceMotion ? false : { opacity: 0, x: -32 }}
       viewport={getViewport(once, amount)}
-      whileInView={
-        shouldReduceMotion
-          ? undefined
-          : { opacity: 1, x: 0, transition: getTransition(delay) }
-      }
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0, transition: getTransition(delay) }}
       style={shouldReduceMotion ? undefined : { willChange: "transform, opacity" }}
     >
       {children}
@@ -74,13 +54,7 @@ export function MotionLeftView({
   );
 }
 
-export function MotionRightView({
-  children,
-  className = "",
-  delay = 0,
-  amount = 0.18,
-  once = true,
-}) {
+export function MotionRightView({ children, className = "", delay = 0, amount = 0.18, once = true }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -88,11 +62,7 @@ export function MotionRightView({
       className={className}
       initial={shouldReduceMotion ? false : { opacity: 0, x: 32 }}
       viewport={getViewport(once, amount)}
-      whileInView={
-        shouldReduceMotion
-          ? undefined
-          : { opacity: 1, x: 0, transition: getTransition(delay) }
-      }
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0, transition: getTransition(delay) }}
       style={shouldReduceMotion ? undefined : { willChange: "transform, opacity" }}
     >
       {children}
@@ -100,13 +70,7 @@ export function MotionRightView({
   );
 }
 
-export function MotionFadeIn({
-  children,
-  className = "",
-  delay = 0,
-  amount = 0.18,
-  once = true,
-}) {
+export function MotionFadeIn({ children, className = "", delay = 0, amount = 0.18, once = true }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -114,11 +78,7 @@ export function MotionFadeIn({
       className={className}
       initial={shouldReduceMotion ? false : { opacity: 0 }}
       viewport={getViewport(once, amount)}
-      whileInView={
-        shouldReduceMotion
-          ? undefined
-          : { opacity: 1, transition: getTransition(delay) }
-      }
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, transition: getTransition(delay) }}
       style={shouldReduceMotion ? undefined : { willChange: "opacity" }}
     >
       {children}
@@ -126,13 +86,7 @@ export function MotionFadeIn({
   );
 }
 
-export function MotionScaleIn({
-  children,
-  className = "",
-  delay = 0,
-  amount = 0.18,
-  once = true,
-}) {
+export function MotionScaleIn({ children, className = "", delay = 0, amount = 0.18, once = true }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -140,11 +94,7 @@ export function MotionScaleIn({
       className={className}
       initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.98 }}
       viewport={getViewport(once, amount)}
-      whileInView={
-        shouldReduceMotion
-          ? undefined
-          : { opacity: 1, scale: 1, transition: getTransition(delay) }
-      }
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1, transition: getTransition(delay) }}
       style={shouldReduceMotion ? undefined : { willChange: "transform, opacity" }}
     >
       {children}
@@ -152,15 +102,11 @@ export function MotionScaleIn({
   );
 }
 
-export function MotionStagger({
-  children,
-  className = "",
-  childClassName = "",
-  delay = 0,
-  amount = 0.18,
-  once = true,
-}) {
+export function MotionStagger({ children, className = "", childClassName = "", delay = 0, amount = 0.18, once = true }) {
   const shouldReduceMotion = useReducedMotion();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once, amount });
+
   const container = shouldReduceMotion
     ? undefined
     : {
@@ -175,25 +121,14 @@ export function MotionStagger({
   const item = shouldReduceMotion
     ? undefined
     : {
-        hidden: { opacity: 0, y: 24 },
+        hidden: { opacity: 0, y: 20 },
         show: { opacity: 1, y: 0, transition: getTransition(0) },
       };
 
   return (
-    <motion.div
-      className={className}
-      initial={shouldReduceMotion ? false : "hidden"}
-      variants={container}
-      viewport={getViewport(once, amount)}
-      whileInView={shouldReduceMotion ? undefined : "show"}
-    >
+    <motion.div ref={ref} className={className} initial={shouldReduceMotion ? false : "hidden"} animate={shouldReduceMotion ? undefined : isInView ? "show" : "hidden"} variants={container}>
       {Children.map(children, (child, index) => (
-        <motion.article
-          className={childClassName}
-          key={index}
-          variants={item}
-          style={shouldReduceMotion ? undefined : { willChange: "transform, opacity" }}
-        >
+        <motion.article className={childClassName} key={index} variants={item}>
           {child}
         </motion.article>
       ))}
