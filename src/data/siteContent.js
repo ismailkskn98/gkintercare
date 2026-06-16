@@ -391,7 +391,8 @@ const englishContent = {
       cards: [
         {
           title: "Expert Medical Team",
-          image: "/images/medical-team.webp",
+          // image: "/images/medical-team.webp",
+          image: "/images/medical-team-2.jpg",
           text: "Work with highly qualified doctors and specialists in their fields.",
         },
         {
