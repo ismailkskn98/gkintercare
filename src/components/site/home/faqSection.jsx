@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { useId, useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -73,17 +74,26 @@ export default function FaqSection({ content }) {
               const isActive = index === activeIndex;
 
               return (
-                <SwiperSlide className="h-auto! w-[18.5rem]! sm:w-[20rem]! lg:w-[22.5rem]! xl:w-[24rem]!" key={item.question}>
+                <SwiperSlide className="h-auto! w-74! sm:w-80! lg:w-90! xl:w-96!" key={item.question}>
                   <button
                     aria-pressed={isActive}
-                    className={`focus-ring group flex min-h-[21rem] w-full cursor-pointer flex-col justify-between rounded-lg border p-5 text-left transition duration-500 h-full md:p-7 ${
-                      isActive
-                        ? "border-primary bg-primary text-white shadow-[0_24px_70px_rgba(11,60,93,0.22)]"
-                        : "border-primary/8 bg-white/72 text-primary/62 backdrop-blur hover:border-primary/16 hover:bg-white"
+                    className={`focus-ring group relative isolate flex h-full min-h-84 w-full cursor-pointer flex-col justify-between overflow-hidden rounded-lg border p-5 text-left transition duration-500 md:p-7 ${
+                      isActive ? "border-primary bg-primary text-white" : "border-primary/8 bg-white/72 text-primary/62 backdrop-blur hover:border-primary/16 hover:bg-white"
                     }`}
                     onClick={() => activateCard(index)}
                     type="button"
                   >
+                    <div className="pointer-events-none absolute inset-0 -z-10">
+                      <Image
+                        alt=""
+                        className={`object-cover transition duration-700 ${isActive ? "scale-100 opacity-40" : "scale-105 opacity-30 group-hover:opacity-50"}`}
+                        fill
+                        sizes="(max-width: 640px) 18.5rem, (max-width: 1024px) 20rem, 24rem"
+                        src={item.image}
+                      />
+                      <div className={`absolute inset-0 ${isActive ? "bg-linear-to-t from-primary via-primary/62 to-primary/28" : "bg-linear-to-t from-white via-white/72 to-white/52"}`} />
+                    </div>
+
                     <div>
                       <span
                         className={`inline-flex size-8 items-center justify-center rounded-full text-xs font-800 transition ${

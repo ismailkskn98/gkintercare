@@ -95,7 +95,7 @@ const treatmentAreas = [
   {
     title: "Oncology",
     description: "Comprehensive cancer care with compassionate support every step of the way.",
-    image: "/images/treatments/oncology.webp",
+    image: "/images/treatments/oncologyy.webp",
     tags: ["Cancer Diagnosis", "Targeted Therapy", "Chemotherapy", "Radiotherapy", "Immunotherapy", "Follow-Up & Support"],
   },
 ];
@@ -319,50 +319,62 @@ const englishContent = {
       items: [
         {
           question: "How does GK InterCare plan my treatment journey?",
+          image: "/images/patient-journey1.avif",
           answer: "We collect your medical goals, timing, and travel needs, then coordinate suitable clinic options and explain the next steps clearly before you arrive.",
         },
         {
           question: "Are the doctors and clinics selected for each patient?",
+          image: "/images/prof-dr-gurkan-kayabasoglu.avif",
           answer: "Yes. We match patients with relevant doctors, hospitals, or specialist clinics according to the treatment area, availability, and care requirements.",
         },
         {
           question: "Can I get a clear idea of costs before traveling?",
+          image: "/images/gk-intercare-dental-treatments.avif",
           answer: "Our team shares the available treatment and travel planning details in advance so you can review the options before making a decision.",
         },
         {
           question: "Do you help with accommodation and transfers?",
+          image: "/images/patient-journey4.avif",
           answer: "We can coordinate airport transfers, hotel options, appointment timing, and patient support so the non-medical parts of the trip feel organized.",
         },
         {
           question: "What happens after the procedure?",
+          image: "/images/patient-journey5.avif",
           answer: "Your coordinator follows the recovery process, helps with communication, and supports follow-up guidance shared by the medical team.",
         },
         {
           question: "How do I start the consultation process?",
+          image: "/images/gk-intercare-health-solutions1.avif",
           answer: "Send your request through the consultation form or WhatsApp. Our coordination team will contact you and ask for the information needed to prepare the first plan.",
         },
         {
           question: "Which treatments can you help coordinate?",
+          image: "/images/gk-intercare-plastic-surgery.avif",
           answer: "We support planning across several medical and aesthetic treatment areas through partner hospitals, specialist clinics, and experienced patient coordinators.",
         },
         {
           question: "Can I share my medical reports before arrival?",
+          image: "/images/gk-intercare-neurology.avif",
           answer: "Yes. Reports, photos, and previous test results can help the medical team review your case and prepare a more accurate consultation path.",
         },
         {
           question: "Will someone assist me during appointments?",
+          image: "/images/for-partners1.avif",
           answer: "A patient coordinator helps organize appointment timing, communication, and daily guidance so you are not managing the process alone.",
         },
         {
           question: "How long should I stay in Istanbul?",
+          image: "/images/gk-intercare-bariatric-surgery.avif",
           answer: "The recommended stay depends on your treatment, doctor review, and recovery needs. We help clarify timing before you book travel.",
         },
         {
           question: "Do you provide translation support?",
+          image: "/images/for-partners2.avif",
           answer: "When needed, our coordination team supports communication between patients and medical teams so important details are understood clearly.",
         },
         {
           question: "Is aftercare included in the planning?",
+          image: "/images/gk-intercare-oncology.avif",
           answer: "Aftercare guidance is part of the care journey. We help coordinate follow-up communication and recovery instructions shared by your medical team.",
         },
       ],
@@ -379,18 +391,22 @@ const englishContent = {
       cards: [
         {
           title: "Expert Medical Team",
+          image: "/images/medical-team.webp",
           text: "Work with highly qualified doctors and specialists in their fields.",
         },
         {
           title: "International Standards",
+          image: "/images/hastane.webp",
           text: "We partner with leading hospitals and clinics that meet global standards.",
         },
         {
           title: "Personalized Care",
+          image: "/images/personalized-care.webp",
           text: "Every patient receives a tailored treatment plan designed around their needs.",
         },
         {
           title: "Proven Results",
+          image: "/images/patient-journey5.avif",
           text: "Our priority is your satisfaction and delivering natural, long-lasting results.",
         },
       ],

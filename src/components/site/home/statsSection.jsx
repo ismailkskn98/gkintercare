@@ -50,9 +50,9 @@ function StatCounter({ value, inView, delay }) {
 
   return (
     <span className="flex items-baseline gap-0.5 font-800 leading-none tracking-tight text-primary">
-      {prefix && <span className="text-3xl">{prefix}</span>}
-      <span className="text-[2.6rem]">{display}</span>
-      {suffix && <span className="text-3xl">{suffix}</span>}
+      {prefix && <span className="text-2xl md:text-3xl">{prefix}</span>}
+      <span className="text-[2rem] md:text-[2.6rem]">{display}</span>
+      {suffix && <span className="text-2xl md:text-3xl">{suffix}</span>}
     </span>
   );
 }
@@ -64,15 +64,24 @@ export default function StatsSection({ stats }) {
   const counterInView = useInView(counterRef, { once: true, amount: 0.85 });
 
   return (
-    <div ref={cardRef} className="relative z-20 -mb-14 grid overflow-hidden rounded-xl shadow-[0_24px_70px_rgba(11,60,93,0.18)] md:grid-cols-4">
+    <div ref={cardRef} className="relative z-20 -mb-14 grid grid-cols-2 overflow-hidden rounded-xl shadow-[0_24px_70px_rgba(11,60,93,0.18)] lg:grid-cols-4">
       {stats.map((stat, index) => {
         const Icon = statsIcons[index] ?? ShieldCheck;
+        // border logic: mobile 2-col, desktop 4-col
+        // mobile: bottom border except last row (index 2,3), right border except even index
+        // desktop: right border except last item
+        const borderClass = [
+          "border-b border-r border-primary/8", // 0: bottom+right (mobile), right (md)
+          "border-b border-primary/8", // 1: bottom (mobile), none right (md) → md:border-r added via md class
+          "border-r border-primary/8", // 2: right only (mobile last row)
+          "", // 3: nothing
+        ][index];
 
         return (
           <motion.div
             key={`${stat.value}-${stat.label}`}
             ref={index === 0 ? counterRef : null}
-            className="flex flex-col gap-5 border-b border-primary/8 bg-white px-7 py-8 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
+            className={`flex flex-col gap-3 bg-white px-5 py-6 lg:gap-5 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:px-7 lg:py-8 ${borderClass}`}
             initial={{ opacity: 0, y: 20 }}
             animate={cardInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{
@@ -81,14 +90,14 @@ export default function StatsSection({ stats }) {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-light-bg">
-              <Icon size={19} className="text-primary-soft" />
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-light-bg md:size-10">
+              <Icon size={16} className="text-primary-soft md:size-4.75" />
             </span>
             <div>
               <p className="leading-none">
                 <StatCounter value={stat.value} inView={counterInView} delay={index * 120} />
               </p>
-              <p className="mt-2 text-[10px] font-800 uppercase leading-5 tracking-[0.14em] text-muted">{stat.label}</p>
+              <p className="mt-1.5 text-[9px] font-800 uppercase leading-5 tracking-widest text-muted md:mt-2 md:text-[10px]">{stat.label}</p>
             </div>
           </motion.div>
         );
