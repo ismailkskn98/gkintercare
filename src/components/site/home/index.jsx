@@ -18,7 +18,7 @@ export default function HomeContent({ content }) {
 
       <MotionSlideUp className="gridContainer py-18 md:py-24">
         <div>
-          <SectionHeader label={home.treatmentsHeader.label} title={home.treatmentsHeader.title} accent={home.treatmentsHeader.accent} />
+          <SectionHeader title={home.treatmentsHeader.title} accent={home.treatmentsHeader.accent} accentNewLine />
           <div className="mt-10">
             <TreatmentCards treatments={treatments} labels={ui.treatmentCards} href="/treatments" />
           </div>

@@ -2,8 +2,15 @@ import { getTranslations } from "next-intl/server";
 import { navigationItems } from "@/data/siteContent";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
-const socialLinks = ["Fb", "In", "Li", "Yt", "Wa"];
+const socialLinks = [
+  { label: "Facebook", Icon: FaFacebookF, href: "#" },
+  { label: "Instagram", Icon: FaInstagram, href: "#" },
+  { label: "LinkedIn", Icon: FaLinkedinIn, href: "#" },
+  { label: "YouTube", Icon: FaYoutube, href: "#" },
+  { label: "WhatsApp", Icon: FaWhatsapp, href: "#" },
+];
 
 export default async function Footer({ content }) {
   const t = await getTranslations("Common");
@@ -40,10 +47,15 @@ export default async function Footer({ content }) {
 
           <div className="mt-8">
             <h4 className="text-xs font-700 text-[#8a8a8a]">{footer.socialTitle}</h4>
-            <div className="mt-3 flex gap-4 text-xs font-800 text-[#151515]">
+            <div className="mt-3 flex gap-2 text-[#151515]">
               {socialLinks.map((item) => (
-                <a className="transition hover:text-accent" href="#" key={item}>
-                  {item}
+                <a
+                  aria-label={item.label}
+                  className="flex size-8 items-center justify-center rounded-full border border-primary/10 text-sm transition hover:border-accent hover:text-accent"
+                  href={item.href}
+                  key={item.label}
+                >
+                  <item.Icon />
                 </a>
               ))}
             </div>

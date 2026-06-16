@@ -218,10 +218,10 @@ const englishContent = {
       { label: "404", href: "/404" },
     ],
     newsletter: {
-      title: "Stay in the loop!",
-      text: "Subscribe to get healthcare travel updates.",
-      placeholder: "Enter your email",
-      button: "Subscribe",
+      title: "Request a Call Back",
+      text: "Share your email and our patient coordination team will contact you with the next steps.",
+      placeholder: "Enter your email address",
+      button: "Request Contact",
     },
   },
   stats: coreStats,
@@ -856,10 +856,10 @@ const spanishOverrides = {
     treatmentLinks: [{ label: "Cirugía plástica" }, { label: "Odontología" }, { label: "Cirugía bariátrica" }, { label: "Ortopedia" }, { label: "Neurología" }, { label: "Oncología" }],
     utilityLinks: [{ label: "Viaje del paciente" }, { label: "Antes y después" }, { label: "Para socios" }, { label: "Contacto" }, { label: "404" }],
     newsletter: {
-      title: "Mantente al día",
-      text: "Suscríbete para recibir novedades sobre viajes de salud.",
-      placeholder: "Introduce tu email",
-      button: "Suscribirse",
+      title: "Solicita que te contactemos",
+      text: "Comparte tu correo y nuestro equipo de coordinacion se pondra en contacto contigo con los proximos pasos.",
+      placeholder: "Introduce tu correo",
+      button: "Solicitar contacto",
     },
   },
   stats: [
@@ -1563,10 +1563,10 @@ const italianOverrides = {
     treatmentLinks: [{ label: "Chirurgia plastica" }, { label: "Odontoiatria" }, { label: "Chirurgia bariatrica" }, { label: "Ortopedia" }, { label: "Neurologia" }, { label: "Oncologia" }],
     utilityLinks: [{ label: "Percorso del paziente" }, { label: "Prima e dopo" }, { label: "Per partner" }, { label: "Contatti" }, { label: "404" }],
     newsletter: {
-      title: "Rimani aggiornato",
-      text: "Iscriviti per ricevere aggiornamenti sui viaggi sanitari.",
+      title: "Richiedi di essere contattato",
+      text: "Condividi la tua email e il nostro team di coordinamento ti contattera con i prossimi passi.",
       placeholder: "Inserisci la tua email",
-      button: "Iscriviti",
+      button: "Richiedi contatto",
     },
   },
   stats: [

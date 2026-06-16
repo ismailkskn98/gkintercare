@@ -22,10 +22,10 @@ export default function HeroSection({ content }) {
 
       <div className="relative z-10 grid gap-16 pb-24 pt-12 lg:grid-cols-[0.92fr_0.72fr] lg:items-center lg:pt-16">
         <MotionFadeIn className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-xs font-800 uppercase tracking-[0.14em] text-white/82 backdrop-blur">
+          {/* <span className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-xs font-800 uppercase tracking-[0.14em] text-white/82 backdrop-blur">
             <HeartPulse size={15} className="text-accent" />
             {hero.label}
-          </span>
+          </span> */}
           <h1 className="mt-7 text-4xl font-800 leading-[1.03] md:text-7xl">
             {hero.title}
             <br />
