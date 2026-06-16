@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 
 const variants = {
   primary: "bg-accent text-white! shadow-[0_16px_34px_rgba(200,169,105,0.32)] hover:bg-[#b99855]",
-  secondary: "border border-white/35 bg-white/10 text-white! backdrop-blur hover:bg-white/18",
+  secondary: "border border-white/35 text-white! hover:bg-white/10",
   outline: "border border-primary/20 bg-white text-primary! hover:border-accent hover:bg-light-bg hover:text-primary-soft",
   light: "border border-white/35 bg-white text-primary! hover:bg-light-bg",
   dark: "bg-primary text-white! hover:bg-primary-soft",

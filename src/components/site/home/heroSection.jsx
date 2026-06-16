@@ -16,7 +16,7 @@ export default function HeroSection({ content }) {
     <section className="gridContainer relative bg-primary pt-20 text-white">
       <div className="fluid absolute inset-0">
         <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata">
-          <source src="/videos/hero-video-2.mp4" type="video/mp4" />
+          <source src="/videos/hero-video-last.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/60" />
       </div>
@@ -43,20 +43,25 @@ export default function HeroSection({ content }) {
           </div>
 
           {hero.medicalBadges?.length ? (
-            <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
-              {hero.medicalBadges.map((badge, index) => {
-                const Icon = medicalBadgeIcons[index] || ShieldCheck;
+            <div className="mt-9 max-w-2xl border-t border-white/14 pt-5">
+              <div className="grid gap-4 sm:grid-cols-3">
+                {hero.medicalBadges.map((badge, index) => {
+                  const Icon = medicalBadgeIcons[index] || ShieldCheck;
 
-                return (
-                  <article className="rounded-lg border border-white/16 bg-white/[0.08] p-3 text-white shadow-[0_14px_34px_rgba(0,0,0,0.16)] backdrop-blur-md" key={badge.title}>
-                    <span className="flex size-9 items-center justify-center rounded-lg border border-white/14 bg-primary-soft/70 text-white">
-                      <Icon size={18} className="text-accent" />
-                    </span>
-                    <h2 className="mt-3 text-sm font-800 leading-5">{badge.title}</h2>
-                    <p className="mt-1 text-xs leading-5 text-white/70">{badge.text}</p>
-                  </article>
-                );
-              })}
+                  return (
+                    <div key={badge.title} className="flex items-start gap-3">
+                      <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-white/8 ring-1 ring-white/12">
+                        <Icon size={16} className="text-accent" />
+                      </span>
+
+                      <div>
+                        <h2 className="text-sm font-800 leading-5 text-white">{badge.title}</h2>
+                        <p className="mt-1 text-xs leading-5 text-white/62">{badge.text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           ) : null}
         </MotionFadeIn>

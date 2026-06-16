@@ -17,7 +17,6 @@ export default function HomeContent({ content }) {
   return (
     <>
       <HeroSection content={content} />
-
       <MotionSlideUp className="gridContainer pb-18 md:pb-24 pt-48">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader align="left" label={home.why.label} title={home.why.title} className="lg:pr-10" />
