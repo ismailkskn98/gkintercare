@@ -38,7 +38,7 @@ export default function HomeContent({ content }) {
         </main>
       </section>
       <FaqSection content={home.faq} />
-      <MotionSlideUp className="mt-32">
+      <MotionSlideUp>
         <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />
       </MotionSlideUp>
     </>
