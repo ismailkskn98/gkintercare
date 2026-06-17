@@ -22,7 +22,7 @@ export default function FaqSection({ content }) {
   }
 
   return (
-    <section className="gridContainer py-[clamp(3.2rem,7vw,6rem)]">
+    <section className="gridContainer pb-[clamp(3.2rem,7vw,6rem)] pt-[clamp(1.5rem,7vw,6rem)]">
       <div className="overflow-hidden">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
           <div>

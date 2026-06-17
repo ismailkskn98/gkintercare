@@ -42,7 +42,7 @@ export default function HomeContent({ content }) {
       <JourneyTeaser content={home.journeyTeaser} />
       <FaqSection content={home.faq} />
       <MotionSlideUp>
-        <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-[clamp(3.5rem,7vw,6rem)]" />
+        <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-[clamp(2rem,7vw,6rem)]" />
       </MotionSlideUp>
     </>
   );
