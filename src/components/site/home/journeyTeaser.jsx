@@ -23,7 +23,7 @@ export default function JourneyTeaser({ content = {} }) {
 
   return (
     <MotionSlideUp className="gridContainer py-12 md:py-16">
-      <section className="overflow-hidden border-y border-primary/10 py-8 md:py-10">
+      <section className="overflow-hidden py-8 md:py-10">
         <div className="grid gap-8 lg:grid-cols-[0.7fr_1.08fr_0.9fr] lg:items-stretch">
           <header className="flex min-h-72 flex-col justify-between gap-8 lg:min-h-120">
             <div>
@@ -34,17 +34,17 @@ export default function JourneyTeaser({ content = {} }) {
               </h2>
             </div>
 
-            <p className="max-w-sm text-sm leading-7 text-muted md:text-base">{content.description}</p>
+            <p className="max-w-sm text-sm leading-relaxed lg:leading-7 text-muted">{content.description}</p>
           </header>
 
-          <div className="grid border-y border-primary/10 sm:grid-cols-2 lg:border-x lg:border-y-0">
+          <div className="grid border-y border-primary/10 sm:grid-cols-2 lg:border-x lg:border-y-0 p-0.5">
             {services.map((service, index) => {
               const isActive = index === activeIndex;
 
               return (
                 <button
                   aria-pressed={isActive}
-                  className={`focus-ring group flex min-h-36 flex-col justify-between border-primary/10 p-5 text-left transition sm:min-h-60 sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:min-h-0 lg:border-b lg:border-r-0 lg:[&:nth-child(2n)]:border-r-0 lg:last:border-b-0 ${
+                  className={`focus-ring group flex min-h-36 flex-col justify-between p-5 text-left transition sm:min-h-60 lg:min-h-0 ${
                     isActive ? "bg-primary text-white" : "bg-white text-primary hover:bg-light-bg"
                   }`}
                   key={service.title}
