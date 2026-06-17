@@ -35,7 +35,7 @@ export default function ShowcaseSlider({
           <span className="h-px w-12 bg-primary/18" />
           <span>{eyebrow}</span>
         </div>
-        <h2 className="mt-[clamp(16px,1vw,32px)] text-[clamp(28px,3.5vw,48px)] font-800 leading-[1.02] text-primary ">{title}</h2>
+        <h2 className="mt-[clamp(14px,1vw,32px)] text-[clamp(26px,3.5vw,48px)] font-800 leading-[1.04] text-primary lg:leading-[1.02]">{title}</h2>
         {description ? <p className="mt-5 text-sm leading-relaxed xl:leading-7 text-muted xl:text-base">{description}</p> : null}
         <ButtonLink className="mt-[clamp(16px,1vw,32px)] h-11" href={ctaHref} icon={ArrowUpRight} variant="dark">
           {ctaLabel}
@@ -71,24 +71,24 @@ export default function ShowcaseSlider({
                 <Image src={item.image} alt={item.title} fill unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-linear-to-t from-primary/90 via-primary/50 xl:via-primary/20 to-black/5" />
                 {/* <span className="pointer-events-none absolute bottom-4 right-4 text-7xl font-800 leading-none tracking-[-0.06em] text-white/24 transition group-hover:text-white/32"> */}
-                <span className="pointer-events-none absolute bottom-4 right-4 text-8xl font-800 leading-none tracking-[-0.06em]  transition text-transparent bg-clip-text bg-linear-to-b from-white/30 to-primary/60">
+                <span className="pointer-events-none absolute bottom-3 right-3 text-6xl font-800 leading-none tracking-[-0.06em] transition bg-linear-to-b from-white/30 to-primary/60 bg-clip-text text-transparent md:bottom-4 md:right-4 md:text-8xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <article className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <div className="w-full flex flex-col items-start max-w-2xs">
-                    <h3 className="text-2xl font-800 leading-tight">{item.title}</h3>
-                    <p className="mt-3 line-clamp-3 text-sm leading-6 text-white/76">{item.description}</p>
+                <article className="absolute inset-x-0 bottom-0 p-4 text-white md:p-5">
+                  <div className="flex w-full max-w-2xs flex-col items-start">
+                    <h3 className="text-[clamp(1.25rem,5vw,1.5rem)] font-800 leading-tight">{item.title}</h3>
+                    <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-white/76 md:mt-3 md:line-clamp-3 md:text-sm md:leading-6">{item.description}</p>
                     {item.meta?.length ? (
-                      <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="mt-3 flex flex-wrap gap-1.5 md:mt-4 md:gap-2">
                         {item.meta.slice(0, 3).map((metaItem) => (
-                          <span className="rounded-full border border-white/16 bg-white/10 px-3 py-1 text-xs font-700 text-white/78 backdrop-blur" key={metaItem}>
+                          <span className="rounded-full border border-white/16 bg-white/10 px-2.5 py-1 text-[11px] font-700 text-white/78 backdrop-blur md:px-3 md:text-xs" key={metaItem}>
                             {metaItem}
                           </span>
                         ))}
                       </div>
                     ) : null}
-                    <span className="mt-5 inline-flex h-10 items-center gap-2 rounded-lg bg-white px-4 text-[13px] xl:text-sm font-800 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
+                    <span className="mt-4 inline-flex h-9 items-center gap-2 rounded-lg bg-white px-3 text-xs font-800 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-white md:mt-5 md:h-10 md:px-4 md:text-[13px] xl:text-sm">
                       <AnimatedLabel>{item.ctaLabel || ctaLabel}</AnimatedLabel>
                       <AnimatedIcon icon={ArrowRight} />
                     </span>

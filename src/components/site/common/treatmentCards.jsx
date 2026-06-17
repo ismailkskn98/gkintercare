@@ -27,7 +27,7 @@ export default function TreatmentCards({ treatments, labels, buttonLabel, href =
       items={sliderItems}
       ctaLabel={resolvedButtonLabel}
       ctaHref={href}
-      cardAspectClass="h-[clamp(400px,70vw,520px)] md:h-[clamp(420px,48vw,560px)] xl:aspect-9/13 xl:h-auto"
+      cardAspectClass="h-[clamp(21.5rem,82vw,27rem)] sm:h-[clamp(23rem,58vw,30rem)] md:h-[clamp(26rem,48vw,34rem)] xl:aspect-9/13 xl:h-auto"
       previousLabel={sliderLabels.previousLabel}
       nextLabel={sliderLabels.nextLabel}
     />

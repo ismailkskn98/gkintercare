@@ -3,7 +3,7 @@
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navigationItems } from "@/data/siteContent";
 import { Link, usePathname } from "@/i18n/navigation";
 import { MotionSlideUp } from "../common/animation";
@@ -14,12 +14,29 @@ export default function Header() {
   const t = useTranslations("Common");
   const pathname = usePathname() || "/";
   const { scrollY } = useScroll();
+  const headerRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latestScrollY) => {
     setIsScrolled(latestScrollY > 70);
   });
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    function handlePointerDown(event) {
+      if (!headerRef.current?.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [isMenuOpen]);
 
   const navLinks = navigationItems.map((item) => ({
     ...item,
@@ -38,6 +55,7 @@ export default function Header() {
       }}
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md ${isScrolled ? "border-primary/10" : "border-white/10"} ${headerColor}`}
       initial={false}
+      ref={headerRef}
       transition={{ duration: 0.24, ease: "easeOut" }}
     >
       <MotionSlideUp className="gridContainer">

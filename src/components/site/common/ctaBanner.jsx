@@ -5,16 +5,16 @@ export default function CtaBanner({ title, text, button, eyebrow = "Take the fir
   return (
     <>
       <section className={`gridContainer ${className}`}>
-        <div className="relative min-h-[clamp(15rem,28vw,22rem)] overflow-hidden rounded-lg bg-primary px-[clamp(1.25rem,4vw,2.25rem)] py-[clamp(1.5rem,4vw,2.5rem)] text-white shadow-[0_22px_70px_rgba(11,60,93,0.16)]">
+        <div className="relative min-h-[clamp(14rem,28vw,22rem)] overflow-hidden rounded-lg bg-primary px-[clamp(1.1rem,4vw,2.25rem)] py-[clamp(1.25rem,4vw,2.5rem)] text-white shadow-[0_22px_70px_rgba(11,60,93,0.16)]">
           <Image src={image} alt={imageAlt} fill unoptimized className="object-cover object-[60%_50%] sm:object-center" />
           <div className="absolute inset-0 bg-linear-to-r from-primary/92 via-primary/68 to-primary/12" />
           <div className="absolute inset-0 bg-black/10" />
 
-          <div className="relative z-10 flex h-full max-w-xl flex-col justify-between gap-[clamp(8px,1vw,28px)]">
+          <div className="relative z-10 flex h-full max-w-xl flex-col justify-between gap-[clamp(0.75rem,2vw,1.75rem)]">
             <div>
-              <span className="section-label mt-[clamp(8px,1vw,12px)]">{eyebrow}</span>
-              <h3 className="mt-[clamp(0.5rem,1vw,1rem)] text-[clamp(1.75rem,4.2vw,3rem)] font-800 leading-tight">{title}</h3>
-              {text ? <p className="mt-[clamp(4px,1vw,16px)] max-w-md text-sm sm:leading-7 text-white/74">{text}</p> : null}
+              <span className="section-label text-[0.68rem] sm:text-[0.78rem]">{eyebrow}</span>
+              <h3 className="mt-[clamp(0.4rem,1vw,1rem)] text-[clamp(1.45rem,4.2vw,3rem)] font-800 leading-tight">{title}</h3>
+              {text ? <p className="mt-[clamp(0.45rem,1vw,1rem)] max-w-md text-[13px] leading-6 text-white/74 sm:text-sm sm:leading-7">{text}</p> : null}
             </div>
             <ButtonLink href={href} variant="light" className="w-max">
               {button}
