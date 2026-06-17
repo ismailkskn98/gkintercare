@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { navigationItems } from "@/data/siteContent";
 import { Link, usePathname } from "@/i18n/navigation";
-import Image from "next/image";
 import { MotionSlideUp } from "../common/animation";
 import LanguageSwitcher from "../common/languageSwitcher";
+import HeaderLogo from "./logo";
 
 export default function Header() {
   const t = useTranslations("Common");
@@ -42,16 +42,7 @@ export default function Header() {
     >
       <MotionSlideUp className="gridContainer">
         <div className="flex min-h-22 items-center justify-between gap-5">
-          <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
-            <Image
-              src={isScrolled ? "/images/logo/logo.png" : "/images/logo/white-logo.png"}
-              alt="GK InterCare Logo"
-              width={200}
-              height={200}
-              className="w-26.25 h-auto object-center object-contain"
-            />
-          </Link>
-
+          <HeaderLogo isScrolled={isScrolled} />
           <div className="hidden items-center gap-7 xl:flex">
             {navLinks.map((item) => {
               const isActive = pathname === item.href;
