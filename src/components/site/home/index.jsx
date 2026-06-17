@@ -2,6 +2,7 @@ import { MotionFadeIn, MotionSlideUp } from "../common/animation";
 import CtaBanner from "../common/ctaBanner";
 import FaqSection from "./faqSection";
 import HeroSection from "./heroSection";
+import JourneyTeaser from "./journeyTeaser";
 import SectionHeader from "../common/sectionHeader";
 import StatsBar from "../common/statsBar";
 import TreatmentCards from "../common/treatmentCards";
@@ -37,6 +38,7 @@ export default function HomeContent({ content }) {
           </MotionFadeIn>
         </main>
       </section>
+      <JourneyTeaser content={home.journeyTeaser} />
       <FaqSection content={home.faq} />
       <MotionSlideUp>
         <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />

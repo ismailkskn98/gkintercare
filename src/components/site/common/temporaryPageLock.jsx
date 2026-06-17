@@ -14,9 +14,10 @@ const pageLockCopy = {
 
 export default function TemporaryPageLock({ enabled = true }) {
   const pathname = usePathname() || "/";
+  const isExcluded = ["/", "/before-after"].includes(pathname);
 
   useEffect(() => {
-    if (!enabled || pathname === "/") return;
+    if (!enabled || isExcluded) return;
 
     const originalOverflow = document.body.style.overflow;
 
@@ -25,9 +26,9 @@ export default function TemporaryPageLock({ enabled = true }) {
     return () => {
       document.body.style.overflow = originalOverflow;
     };
-  }, [enabled, pathname]);
+  }, [enabled, isExcluded, pathname]);
 
-  if (!enabled || pathname === "/") return null;
+  if (!enabled || isExcluded) return null;
 
   return (
     <div className="fixed inset-0 z-90 grid place-items-center overflow-y-auto bg-white/45 px-5 py-8 text-primary backdrop-blur-xl">

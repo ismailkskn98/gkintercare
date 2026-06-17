@@ -309,6 +309,38 @@ const englishContent = {
       title: "International patients plan their care journey with GK InterCare.",
       description: "Our Istanbul-based coordination team supports treatment planning, clinic matching, travel timing, and patient communication before arrival.",
     },
+    journeyTeaser: {
+      label: "Personal Coordination",
+      title: "Every step,",
+      accent: "clearly planned.",
+      description: "From your first request to follow-up care, each detail is coordinated to help your treatment journey feel clear, calm, and well planned.",
+      services: [
+        {
+          title: "Case Review",
+          label: "Medical notes, photos, and expectations organized before the first recommendation.",
+          image: "/images/journey-teaser/case-review.webp",
+          detail: "Your first details are turned into a clear case brief, so every next step starts with context.",
+        },
+        {
+          title: "Appointment Flow",
+          label: "Consultations, treatment dates, and daily movement planned as one connected schedule.",
+          image: "/images/journey-teaser/appointment-flow.webp",
+          detail: "The journey is sequenced around timing, comfort, and the clinical path that fits your case.",
+        },
+        {
+          title: "Patient Liaison",
+          label: "A dedicated contact keeps communication clear between you and the medical team.",
+          image: "/images/journey-teaser/patient-liaison.webp",
+          detail: "Questions, updates, and handovers stay in one coordinated line instead of scattered messages.",
+        },
+        {
+          title: "Recovery Guidance",
+          label: "Post-treatment instructions and follow-up moments kept visible after the procedure.",
+          image: "/images/journey-teaser/recovery-guidance.webp",
+          detail: "Aftercare is not left as an afterthought; the recovery path stays part of the plan.",
+        },
+      ],
+    },
     faq: {
       label: "FAQ",
       title: "Frequently Asked",
@@ -1055,6 +1087,35 @@ const spanishOverrides = {
       title: "Pacientes internacionales planifican su viaje de atención con GK InterCare.",
       description: "Nuestro equipo de coordinación en Estambul apoya la planificación del tratamiento, la selección de clínicas, los tiempos de viaje y la comunicación antes de la llegada.",
     },
+    journeyTeaser: {
+      label: "Coordinación personal",
+      title: "Cada paso,",
+      accent: "claramente planificado.",
+      description: "Desde tu primera solicitud hasta el seguimiento posterior, cada detalle se coordina para que tu viaje de tratamiento sea claro, tranquilo y bien planificado.",
+      activeLabel: "Enfoque activo",
+      services: [
+        {
+          title: "Revisión del caso",
+          label: "Informes médicos, fotos y expectativas organizados antes de la primera recomendación.",
+          detail: "Tus primeros datos se convierten en un resumen claro del caso para que cada paso avance con contexto.",
+        },
+        {
+          title: "Flujo de citas",
+          label: "Consultas, fechas de tratamiento y movimientos diarios planificados como una agenda conectada.",
+          detail: "El viaje se ordena según tiempos, comodidad y el camino clínico que mejor encaja con tu caso.",
+        },
+        {
+          title: "Enlace con el paciente",
+          label: "Un contacto dedicado mantiene clara la comunicación entre tú y el equipo médico.",
+          detail: "Preguntas, actualizaciones y traspasos se mantienen en una línea coordinada, no en mensajes dispersos.",
+        },
+        {
+          title: "Guía de recuperación",
+          label: "Instrucciones posteriores al tratamiento y momentos de seguimiento siempre visibles.",
+          detail: "El cuidado posterior no queda como algo secundario; la recuperación sigue formando parte del plan.",
+        },
+      ],
+    },
     faq: {
       label: "FAQ",
       title: "Preguntas",
@@ -1760,6 +1821,35 @@ const italianOverrides = {
       label: "Rete internazionale di pazienti",
       title: "Pazienti internazionali pianificano il proprio percorso di cura con GK InterCare.",
       description: "Il nostro team di coordinamento a Istanbul supporta la pianificazione del trattamento, la selezione delle cliniche, i tempi di viaggio e la comunicazione prima dell'arrivo.",
+    },
+    journeyTeaser: {
+      label: "Coordinamento personale",
+      title: "Ogni fase,",
+      accent: "pianificata con chiarezza.",
+      description: "Dalla prima richiesta all'assistenza di follow-up, ogni dettaglio viene coordinato per rendere il tuo percorso di cura chiaro, sereno e ben pianificato.",
+      activeLabel: "Focus attivo",
+      services: [
+        {
+          title: "Revisione del caso",
+          label: "Note mediche, foto e aspettative organizzate prima della prima raccomandazione.",
+          detail: "Le tue prime informazioni diventano un quadro chiaro del caso, così ogni fase parte dal giusto contesto.",
+        },
+        {
+          title: "Flusso appuntamenti",
+          label: "Consulti, date del trattamento e spostamenti quotidiani pianificati come un programma unico.",
+          detail: "Il percorso viene ordinato intorno a tempi, comfort e al piano clinico più adatto al tuo caso.",
+        },
+        {
+          title: "Referente paziente",
+          label: "Un contatto dedicato mantiene chiara la comunicazione tra te e il team medico.",
+          detail: "Domande, aggiornamenti e passaggi restano in una linea coordinata invece che in messaggi sparsi.",
+        },
+        {
+          title: "Guida al recupero",
+          label: "Istruzioni post-trattamento e momenti di follow-up sempre ben visibili.",
+          detail: "L'assistenza successiva non resta un dettaglio secondario; il recupero continua a far parte del piano.",
+        },
+      ],
     },
     faq: {
       label: "FAQ",
