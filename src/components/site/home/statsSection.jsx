@@ -61,7 +61,7 @@ export default function StatsSection({ stats }) {
   const cardRef = useRef(null);
   const counterRef = useRef(null);
   const cardInView = useInView(cardRef, { once: true, amount: 0.25 });
-  const counterInView = useInView(counterRef, { once: true, amount: 0.85 });
+  const counterInView = useInView(counterRef, { once: true, amount: 0.62 });
 
   return (
     <div ref={cardRef} className="relative z-20 -mb-14 grid grid-cols-2 overflow-hidden rounded-xl shadow-[0_24px_70px_rgba(11,60,93,0.18)] lg:grid-cols-4">

@@ -215,7 +215,7 @@ const englishContent = {
       { label: "Before & After", href: "/before-after" },
       { label: "For Partners", href: "/partners" },
       { label: "Contact", href: "/contact" },
-      { label: "404", href: "/404" },
+      // { label: "404", href: "/404" },
     ],
     newsletter: {
       title: "Request a Call Back",
