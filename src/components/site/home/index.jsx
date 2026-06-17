@@ -16,23 +16,23 @@ export default function HomeContent({ content }) {
   return (
     <>
       <HeroSection content={content} />
-      <StatsSection stats={content.stats} className="mx-[4.5%] -mt-10 mb-14 lg:hidden" overlap={false} />
+      <StatsSection stats={content.stats} className="mx-[4.5%] -mt-8 mb-[clamp(2.75rem,7vw,3.5rem)] lg:hidden" overlap={false} />
       <WhySection why={home.why} />
-      <MotionSlideUp className="gridContainer py-18 md:py-24">
+      <MotionSlideUp className="gridContainer py-[clamp(3.5rem,7vw,6rem)]">
         <div>
           <SectionHeader title={home.treatmentsHeader.title} accent={home.treatmentsHeader.accent} accentNewLine />
-          <div className="mt-10">
+          <div className="mt-[clamp(2rem,4vw,2.5rem)]">
             <TreatmentCards treatments={treatments} labels={ui.treatmentCards} href="/treatments" />
           </div>
         </div>
       </MotionSlideUp>
-      <section className="fluid gridContainer bg-primary pt-18 md:pt-24 gap-y-8 lg:gap-y-16 overflow-hidden">
+      <section className="fluid gridContainer bg-primary pt-[clamp(3.5rem,7vw,6rem)] gap-y-[clamp(2rem,5vw,4rem)] overflow-hidden">
         <article className="flex w-full flex-col items-center justify-center text-center text-white">
           <span className="section-label text-accent">{home.patientMap.label}</span>
-          <h2 className="mt-3 max-w-3xl text-3xl font-800 leading-tight md:text-5xl">{home.patientMap.title}</h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 md:text-base">{home.patientMap.description}</p>
+          <h2 className="mt-3 max-w-3xl text-[clamp(1.9rem,4.2vw,3rem)] font-800 leading-tight">{home.patientMap.title}</h2>
+          <p className="mt-4 max-w-2xl text-[clamp(0.9rem,1.3vw,1rem)] leading-7 text-white/70">{home.patientMap.description}</p>
         </article>
-        <main className="w-full flex flex-col items-center gap-10 lg:gap-14">
+        <main className="w-full flex flex-col items-center gap-[clamp(2rem,4vw,3.5rem)]">
           <WorldPatientMap />
           <MotionFadeIn className="w-full flex-1">
             <StatsBar stats={home.hero.trustItems} className="w-full" />
@@ -42,7 +42,7 @@ export default function HomeContent({ content }) {
       <JourneyTeaser content={home.journeyTeaser} />
       <FaqSection content={home.faq} />
       <MotionSlideUp>
-        <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-18 md:pb-24" />
+        <CtaBanner {...home.cta} eyebrow={ui.ctaEyebrow} className="pb-[clamp(3.5rem,7vw,6rem)]" />
       </MotionSlideUp>
     </>
   );

@@ -5,7 +5,7 @@ export default function CtaBanner({ title, text, button, eyebrow = "Take the fir
   return (
     <>
       <section className={`gridContainer ${className}`}>
-        <div className="relative overflow-hidden rounded-lg bg-primary px-6 py-[clamp(10px,2vw,40px)] text-white shadow-[0_22px_70px_rgba(11,60,93,0.16)] md:px-9 min-h-[clamp(200px,4vw,350px)] max-h-100">
+        <div className="relative min-h-[clamp(15rem,28vw,22rem)] overflow-hidden rounded-lg bg-primary px-[clamp(1.25rem,4vw,2.25rem)] py-[clamp(1.5rem,4vw,2.5rem)] text-white shadow-[0_22px_70px_rgba(11,60,93,0.16)]">
           <Image src={image} alt={imageAlt} fill unoptimized className="object-cover object-[60%_50%] sm:object-center" />
           <div className="absolute inset-0 bg-linear-to-r from-primary/92 via-primary/68 to-primary/12" />
           <div className="absolute inset-0 bg-black/10" />
@@ -13,7 +13,7 @@ export default function CtaBanner({ title, text, button, eyebrow = "Take the fir
           <div className="relative z-10 flex h-full max-w-xl flex-col justify-between gap-[clamp(8px,1vw,28px)]">
             <div>
               <span className="section-label mt-[clamp(8px,1vw,12px)]">{eyebrow}</span>
-              <h3 className="mt-[clamp(4px,1vw,16px)] text-[clamp(16px,3vw,48px)] font-800 leading-tight">{title}</h3>
+              <h3 className="mt-[clamp(0.5rem,1vw,1rem)] text-[clamp(1.75rem,4.2vw,3rem)] font-800 leading-tight">{title}</h3>
               {text ? <p className="mt-[clamp(4px,1vw,16px)] max-w-md text-sm sm:leading-7 text-white/74">{text}</p> : null}
             </div>
             <ButtonLink href={href} variant="light" className="w-max">

@@ -17,14 +17,14 @@ export default async function Footer({ content }) {
   const { contact, footer } = content;
 
   return (
-    <footer className="gridContainer bg-white px-5 py-10 md:px-9 md:py-12 overflow-hidden">
-      <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.15fr]">
+    <footer className="gridContainer overflow-hidden bg-white py-[clamp(2.5rem,5vw,3rem)]">
+      <div className="grid gap-[clamp(2rem,5vw,3rem)] lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.15fr]">
         <div>
           <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
             <Image src="/images/logo/black-logo.png" alt="GK InterCare Logo" width={200} height={200} className="h-auto w-25.75 object-center object-contain" />
           </Link>
 
-          <div className="mt-9">
+          <div className="mt-[clamp(1.75rem,4vw,2.25rem)]">
             <h4 className="text-xs font-700 text-[#8a8a8a]">{footer.supportTitle}</h4>
             <div className="mt-3 grid gap-1.5 text-xs leading-5 text-[#5d5d5d]">
               <a className="transition hover:text-primary" href={contact.emailHref}>
@@ -36,7 +36,7 @@ export default async function Footer({ content }) {
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-[clamp(1.5rem,3vw,2rem)]">
             <h4 className="text-xs font-700 text-[#8a8a8a]">{footer.headOfficeTitle}</h4>
             <p className="mt-3 max-w-44 text-xs leading-5 text-[#5d5d5d]">
               {contact.address}
@@ -45,7 +45,7 @@ export default async function Footer({ content }) {
             </p>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-[clamp(1.5rem,3vw,2rem)]">
             <h4 className="text-xs font-700 text-[#8a8a8a]">{footer.socialTitle}</h4>
             <div className="mt-3 flex gap-2 text-[#151515]">
               {socialLinks.map((item) => (
@@ -96,18 +96,18 @@ export default async function Footer({ content }) {
         </div>
 
         <div>
-          <h3 className="text-2xl font-800 tracking-tight">{footer.newsletter.title}</h3>
+          <h3 className="text-[clamp(1.35rem,3vw,1.5rem)] font-800 tracking-tight">{footer.newsletter.title}</h3>
           <p className="mt-2 text-xs leading-5 text-[#5d5d5d]">{footer.newsletter.text}</p>
-          <form className="mt-5 flex max-w-md bg-[#f3f3f3] p-1">
+          <form className="mt-5 flex max-w-md flex-col gap-1 bg-[#f3f3f3] p-1 min-[420px]:flex-row">
             <input className="min-w-0 flex-1 bg-transparent px-4 py-3 text-xs text-[#151515] outline-none placeholder:text-[#9a9a9a]" placeholder={footer.newsletter.placeholder} type="email" />
-            <button className="focus-ring bg-[#151515] px-4 text-xs font-800 text-white transition hover:bg-primary" type="button">
+            <button className="focus-ring bg-[#151515] px-4 py-3 text-xs font-800 text-white transition hover:bg-primary min-[420px]:py-0" type="button">
               {footer.newsletter.button}
             </button>
           </form>
         </div>
       </div>
 
-      <div className="mt-14 flex flex-col gap-2 text-[0.68rem] text-[#a0a0a0] md:flex-row md:items-center md:justify-between">
+      <div className="mt-[clamp(2.5rem,5vw,3.5rem)] flex flex-col gap-2 text-[0.68rem] text-[#a0a0a0] md:flex-row md:items-center md:justify-between">
         <span>© 2024 GK InterCare. {t("rights")}</span>
         <span>
           {t("privacy")} | {t("terms")}

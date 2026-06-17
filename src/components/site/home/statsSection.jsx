@@ -50,9 +50,9 @@ function StatCounter({ value, inView, delay }) {
 
   return (
     <span className="flex items-baseline gap-0.5 font-800 leading-none tracking-tight text-primary">
-      {prefix && <span className="text-2xl md:text-3xl">{prefix}</span>}
-      <span className="text-[2rem] md:text-[2.6rem]">{display}</span>
-      {suffix && <span className="text-2xl md:text-3xl">{suffix}</span>}
+      {prefix && <span className="text-[clamp(1.25rem,3.2vw,1.875rem)]">{prefix}</span>}
+      <span className="text-[clamp(1.75rem,5vw,2.6rem)]">{display}</span>
+      {suffix && <span className="text-[clamp(1.25rem,3.2vw,1.875rem)]">{suffix}</span>}
     </span>
   );
 }
@@ -81,7 +81,7 @@ export default function StatsSection({ stats, className = "", overlap = true }) 
           <motion.div
             key={`${stat.value}-${stat.label}`}
             ref={index === 0 ? counterRef : null}
-            className={`flex flex-col gap-3 bg-white px-5 py-6 lg:gap-5 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:px-7 lg:py-8 ${borderClass}`}
+            className={`flex flex-col gap-3 bg-white px-[clamp(1rem,3vw,1.75rem)] py-[clamp(1.25rem,3vw,2rem)] lg:gap-5 lg:border-b-0 lg:border-r lg:last:border-r-0 ${borderClass}`}
             initial={{ opacity: 0, y: 20 }}
             animate={cardInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{

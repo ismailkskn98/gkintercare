@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { navigationItems } from "@/data/siteContent";
@@ -92,22 +92,50 @@ export default function Header() {
         </div>
       </MotionSlideUp>
 
-      {isMenuOpen ? (
-        <div className={`gridContainer border-t pb-5 xl:hidden ${isScrolled ? "border-primary/10 bg-white text-black" : "border-white/10 bg-primary text-white"}`}>
-          <div className="flex flex-col gap-1 pt-3">
-            {navLinks.map((item) => (
-              <Link
-                className={`rounded-lg px-3 py-3 text-sm font-700 ${isScrolled ? "text-primary/78 hover:bg-light-bg hover:text-primary" : "text-white/82 hover:bg-white/8 hover:text-white"}`}
-                href={item.href}
-                key={item.href}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      ) : null}
+      <AnimatePresence initial={false}>
+        {isMenuOpen ? (
+          <motion.div
+            animate={{ height: "auto", opacity: 1, y: 0 }}
+            className={`gridContainer overflow-hidden border-t xl:hidden ${isScrolled ? "border-primary/10 bg-white text-black" : "border-white/10 bg-primary text-white"}`}
+            exit={{ height: 0, opacity: 0, y: -8 }}
+            initial={{ height: 0, opacity: 0, y: -8 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="pb-5 pt-3">
+              <div className="flex flex-col gap-1">
+                {navLinks.map((item, index) => (
+                  <motion.div
+                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -8 }}
+                    key={item.href}
+                    transition={{ delay: 0.04 + index * 0.025, duration: 0.22, ease: "easeOut" }}
+                  >
+                    <Link
+                      className={`block rounded-lg px-3 py-3 text-sm font-700 transition ${isScrolled ? "text-primary/78 hover:bg-light-bg hover:text-primary" : "text-white/82 hover:bg-white/8 hover:text-white"}`}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className={`mt-3 border-t pt-4 ${isScrolled ? "border-primary/10" : "border-white/12"}`}>
+                <Link
+                  className={`focus-ring flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-800 transition ${
+                    isScrolled ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
+                  }`}
+                  href="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("consultation")}
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </motion.header>
   );
 }

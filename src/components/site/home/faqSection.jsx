@@ -22,12 +22,12 @@ export default function FaqSection({ content }) {
   }
 
   return (
-    <section className="gridContainer py-18 md:py-24">
+    <section className="gridContainer py-[clamp(3.5rem,7vw,6rem)]">
       <div className="overflow-hidden">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
           <div>
             <span className="section-label">{content.label}</span>
-            <h2 className="mt-4 max-w-3xl text-4xl font-800 leading-[1.04] text-primary md:text-6xl">
+            <h2 className="mt-4 max-w-3xl text-[clamp(2rem,5vw,3.75rem)] font-800 leading-[1.04] text-primary">
               {content.title} <span className="text-primary-soft">{content.accent}</span>
             </h2>
           </div>
@@ -53,7 +53,7 @@ export default function FaqSection({ content }) {
           </div>
         </div>
 
-        <div className="mt-11 min-w-0">
+        <div className="mt-[clamp(2rem,4vw,2.75rem)] min-w-0">
           <Swiper
             modules={[Navigation]}
             navigation={{
@@ -102,7 +102,7 @@ export default function FaqSection({ content }) {
                       >
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <h3 className={`mt-8 text-2xl font-800 leading-tight transition md:text-3xl ${isActive ? "text-white" : "text-primary/72 group-hover:text-primary"}`}>{item.question}</h3>
+                      <h3 className={`mt-[clamp(1.75rem,3vw,2rem)] text-[clamp(1.35rem,3vw,1.875rem)] font-800 leading-tight transition ${isActive ? "text-white" : "text-primary/72 group-hover:text-primary"}`}>{item.question}</h3>
                     </div>
 
                     <p className={`mt-8 text-sm leading-7 transition ${isActive ? "text-white/78" : "line-clamp-4 text-muted/78 group-hover:text-muted"}`}>{item.answer}</p>

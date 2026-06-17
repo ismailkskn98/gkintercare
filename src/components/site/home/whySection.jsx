@@ -33,16 +33,16 @@ function WhyCard({ card, index, globalInView }) {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col justify-center p-7">
+        <div className="flex flex-col justify-center p-[clamp(1.25rem,3vw,1.75rem)]">
           <span className="flex size-11 items-center justify-center rounded-xl bg-accent/10 transition-colors duration-300 group-hover:bg-accent/18">
             <Icon className="text-accent" size={22} />
           </span>
-          <h3 className="mt-5 text-lg font-800 leading-snug text-primary">{card.title}</h3>
-          <p className="mt-3 text-sm leading-7 text-muted">{card.text}</p>
+          <h3 className="mt-[clamp(1rem,2vw,1.25rem)] text-[clamp(1rem,2vw,1.125rem)] font-800 leading-snug text-primary">{card.title}</h3>
+          <p className="mt-3 text-sm leading-6 text-muted md:leading-7">{card.text}</p>
 
           {/* Inline accent line */}
           <motion.div
-            className="mt-6 h-px w-0 bg-linear-to-r from-accent/60 to-accent/10"
+            className="mt-[clamp(1.25rem,2.4vw,1.5rem)] h-px w-0 bg-linear-to-r from-accent/60 to-accent/10"
             animate={triggered ? { width: "100%" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.5 + index * 0.1, ease }}
           />
@@ -57,8 +57,8 @@ export default function WhySection({ why }) {
   const sectionInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   return (
-    <section className="gridContainer pb-18 pt-48 md:pb-24">
-      <div ref={sectionRef} className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <section className="gridContainer pb-[clamp(3.5rem,7vw,6rem)] pt-[clamp(3.75rem,9vw,7rem)] lg:pt-[clamp(7rem,10vw,11rem)]">
+      <div ref={sectionRef} className="grid gap-[clamp(2.5rem,5vw,3rem)] lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         {/* Left: sticky on desktop, normal on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -68,7 +68,7 @@ export default function WhySection({ why }) {
         >
           <SectionHeader align="left" label={why.label} title={why.title} className="lg:pr-10" />
 
-          <div className="mt-10 flex items-center gap-6 border-t border-primary/10 pt-8">
+          <div className="mt-[clamp(2rem,4vw,2.5rem)] flex items-center gap-[clamp(1rem,3vw,1.5rem)] border-t border-primary/10 pt-[clamp(1.5rem,3vw,2rem)]">
             <div className="shrink-0 text-center">
               <p className="text-3xl font-800 leading-none text-primary">4</p>
               <p className="mt-1 text-[10px] font-800 uppercase tracking-widest text-muted">Core pillars</p>

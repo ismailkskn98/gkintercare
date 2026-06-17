@@ -12,7 +12,7 @@ export default function HeroSection({ content }) {
   const fields = hero.formFields;
 
   return (
-    <section className="gridContainer relative bg-primary pt-20 text-white">
+    <section className="gridContainer relative bg-primary pt-[clamp(4.75rem,10vw,5.75rem)] text-white">
       <div className="fluid absolute inset-0">
         <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata">
           <source src="/videos/hero-video-last.mp4" type="video/mp4" />
@@ -20,19 +20,19 @@ export default function HeroSection({ content }) {
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="relative z-10 grid gap-16 pb-24 pt-12 lg:grid-cols-[0.92fr_0.72fr] lg:items-center lg:pt-16">
+      <div className="relative z-10 grid gap-[clamp(2.5rem,5vw,4rem)] pb-[clamp(4rem,8vw,6rem)] pt-[clamp(2rem,5vw,4rem)] lg:grid-cols-[0.92fr_0.72fr] lg:items-center">
         <MotionFadeIn className="max-w-3xl">
           {/* <span className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-xs font-800 uppercase tracking-[0.14em] text-white/82 backdrop-blur">
             <HeartPulse size={15} className="text-accent" />
             {hero.label}
           </span> */}
-          <h1 className="mt-7 text-4xl font-800 leading-[1.03] md:text-7xl">
+          <h1 className="mt-[clamp(1rem,2vw,1.75rem)] text-[clamp(2.35rem,7vw,4.5rem)] font-800 leading-[1.03]">
             {hero.title}
             <br />
             <span className="serif-accent text-accent">{hero.accent}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-8 text-white/78 md:text-lg">{hero.description}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <p className="mt-[clamp(1.125rem,2.2vw,1.5rem)] max-w-xl text-[clamp(0.95rem,1.5vw,1.125rem)] leading-7 text-white/78 md:leading-8">{hero.description}</p>
+          <div className="mt-[clamp(1.5rem,3vw,2rem)] flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact" variant="primary-soft">
               {hero.primaryButton}
             </ButtonLink>
@@ -42,7 +42,7 @@ export default function HeroSection({ content }) {
           </div>
 
           {hero.medicalBadges?.length ? (
-            <div className="mt-9 max-w-2xl border-t border-white/14 pt-5">
+            <div className="mt-[clamp(1.75rem,3vw,2.25rem)] max-w-2xl border-t border-white/14 pt-5">
               <div className="grid gap-4 sm:grid-cols-3">
                 {hero.medicalBadges.map((badge, index) => {
                   const Icon = medicalBadgeIcons[index] || ShieldCheck;

@@ -22,19 +22,19 @@ export default function JourneyTeaser({ content = {} }) {
   }
 
   return (
-    <MotionSlideUp className="gridContainer py-12 md:py-16">
-      <section className="overflow-hidden py-8 md:py-10">
-        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.08fr_0.9fr] lg:items-stretch">
-          <header className="flex min-h-72 flex-col justify-between gap-8 lg:min-h-120">
+    <MotionSlideUp className="gridContainer py-[clamp(3.5rem,7vw,6rem)]">
+      <section className="overflow-hidden">
+        <div className="grid gap-[clamp(2rem,4vw,3rem)] lg:grid-cols-[0.7fr_1.08fr_0.9fr] lg:items-stretch">
+          <header className="flex min-h-0 flex-col justify-between gap-[clamp(2rem,4vw,3rem)] lg:min-h-120">
             <div>
               <span className="section-label">{content.label}</span>
-              <h2 className="mt-4 max-w-md text-4xl font-800 leading-[0.98] text-primary md:text-6xl">
+              <h2 className="mt-4 max-w-md text-[clamp(2rem,5vw,3.75rem)] font-800 leading-[1.02] text-primary lg:leading-[0.98]">
                 {content.title}
                 <span className="serif-accent block text-primary-soft">{content.accent}</span>
               </h2>
             </div>
 
-            <p className="max-w-sm text-sm leading-relaxed lg:leading-7 text-muted">{content.description}</p>
+            <p className="max-w-sm text-sm leading-7 text-muted">{content.description}</p>
           </header>
 
           <div className="grid border-y border-primary/10 sm:grid-cols-2 lg:border-x lg:border-y-0 p-0.5">
@@ -44,7 +44,7 @@ export default function JourneyTeaser({ content = {} }) {
               return (
                 <button
                   aria-pressed={isActive}
-                  className={`focus-ring group flex min-h-36 flex-col justify-between p-5 text-left transition sm:min-h-60 lg:min-h-0 ${
+                  className={`focus-ring group flex min-h-34 flex-col justify-between p-[clamp(1rem,2.5vw,1.25rem)] text-left transition sm:min-h-52 lg:min-h-0 ${
                     isActive ? "bg-primary text-white" : "bg-white text-primary hover:bg-light-bg"
                   }`}
                   key={service.title}
@@ -53,7 +53,7 @@ export default function JourneyTeaser({ content = {} }) {
                 >
                   <span className={`text-xs font-800 ${isActive ? "text-accent" : "text-primary/30"}`}>{String(index + 1).padStart(2, "0")}</span>
                   <div>
-                    <h3 className={`text-xl font-800 leading-tight md:text-2xl ${isActive ? "text-white" : "text-primary"}`}>{service.title}</h3>
+                    <h3 className={`text-[clamp(1.1rem,2vw,1.5rem)] font-800 leading-tight ${isActive ? "text-white" : "text-primary"}`}>{service.title}</h3>
                     <p className={`mt-3 text-xs leading-6 md:text-sm ${isActive ? "text-white/68" : "text-muted"}`}>{service.label}</p>
                   </div>
                 </button>

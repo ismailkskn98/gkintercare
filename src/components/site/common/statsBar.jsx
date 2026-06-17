@@ -10,7 +10,7 @@ const statIcons = {
 
 export default function StatsBar({ stats, className = "" }) {
   return (
-    <section className={`relative gridContainer bg-white ${className} pt-16 pb-12`}>
+    <section className={`relative gridContainer bg-white ${className} py-[clamp(2.75rem,5vw,4rem)]`}>
       <article className="bg-primary absolute top-0 left-0 w-16 h-16 fluid rounded-br-3xl">
         <Image
           src={
