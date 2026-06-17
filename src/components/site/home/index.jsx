@@ -16,7 +16,7 @@ export default function HomeContent({ content }) {
   return (
     <>
       <HeroSection content={content} />
-      <StatsSection stats={content.stats} className="mx-[4.5%] -mt-10 mb-14 md:hidden" overlap={false} />
+      <StatsSection stats={content.stats} className="mx-[4.5%] -mt-10 mb-14 lg:hidden" overlap={false} />
       <WhySection why={home.why} />
       <MotionSlideUp className="gridContainer py-18 md:py-24">
         <div>

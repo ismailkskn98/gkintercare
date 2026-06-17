@@ -12,22 +12,21 @@ export default function HeroSection({ content }) {
   const fields = hero.formFields;
 
   return (
-    <section className="gridContainer relative overflow-hidden bg-primary pt-20 text-white">
-      <div className="fluid absolute inset-x-0 top-0 h-[38rem] md:h-[42rem] lg:inset-0 lg:h-auto">
-        <video className="h-full w-full object-cover object-center" autoPlay muted loop playsInline preload="metadata">
+    <section className="gridContainer relative bg-primary pt-20 text-white">
+      <div className="fluid absolute inset-0">
+        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata">
           <source src="/videos/hero-video-last.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-linear-to-b from-transparent to-primary lg:hidden" />
       </div>
 
-      <div className="relative z-10 grid gap-10 pb-20 pt-10 md:gap-12 md:pt-14 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[0.92fr_0.72fr] lg:items-center lg:gap-16 lg:pb-24 lg:pt-16">
+      <div className="relative z-10 grid gap-16 pb-24 pt-12 lg:grid-cols-[0.92fr_0.72fr] lg:items-center lg:pt-16">
         <MotionFadeIn className="max-w-3xl">
           {/* <span className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-xs font-800 uppercase tracking-[0.14em] text-white/82 backdrop-blur">
             <HeartPulse size={15} className="text-accent" />
             {hero.label}
           </span> */}
-          <h1 className="mt-7 text-4xl font-800 leading-[1.03] md:text-6xl lg:text-7xl">
+          <h1 className="mt-7 text-4xl font-800 leading-[1.03] md:text-7xl">
             {hero.title}
             <br />
             <span className="serif-accent text-accent">{hero.accent}</span>
@@ -66,17 +65,8 @@ export default function HeroSection({ content }) {
           ) : null}
         </MotionFadeIn>
 
-        <MotionFadeIn className="w-full flex justify-start lg:justify-end" delay={0.08}>
+        <MotionFadeIn className="w-full hidden lg:flex justify-start lg:justify-end" delay={0.08}>
           <div className="relative max-w-lg">
-            {/* Sol Üst */}
-            {/* <svg width="0" height="0" className="absolute">
-              <defs>
-                <clipPath id="form-notch" clipPathUnits="objectBoundingBox">
-                  <path d="M 0.22 0 H 1 V 1 H 0 V 0.16 Q 0 0.13 0.04 0.13 H 0.15 Q 0.19 0.13 0.19 0.09 V 0.04 Q 0.19 0 0.22 0 Z" />
-                </clipPath>
-              </defs>
-            </svg> */}
-            {/* Sağ Üst */}
             <svg width="0" height="0" className="absolute">
               <defs>
                 <clipPath id="form-notch" clipPathUnits="objectBoundingBox">
@@ -148,7 +138,7 @@ export default function HeroSection({ content }) {
         </MotionFadeIn>
       </div>
 
-      <StatsSection stats={stats} className="hidden md:grid" />
+      <StatsSection stats={stats} className="hidden lg:grid" />
     </section>
   );
 }
