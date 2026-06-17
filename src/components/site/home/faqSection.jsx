@@ -74,10 +74,10 @@ export default function FaqSection({ content }) {
               const isActive = index === activeIndex;
 
               return (
-                <SwiperSlide className="h-auto! w-[17rem]! sm:w-80! lg:w-90! xl:w-96!" key={item.question}>
+                <SwiperSlide className="h-auto! w-72! sm:w-84! lg:w-92! xl:w-98!" key={item.question}>
                   <button
                     aria-pressed={isActive}
-                    className={`focus-ring group relative isolate flex h-full min-h-76 w-full cursor-pointer flex-col justify-between overflow-hidden rounded-lg border p-4 text-left transition duration-500 sm:min-h-82 md:p-7 ${
+                    className={`focus-ring group relative isolate flex h-full min-h-88 w-full cursor-pointer flex-col justify-between overflow-hidden rounded-lg border p-4 text-left transition duration-500 sm:min-h-96 md:p-7 ${
                       isActive ? "border-primary bg-primary text-white" : "border-primary/8 bg-white/72 text-primary/62 backdrop-blur hover:border-primary/16 hover:bg-white"
                     }`}
                     onClick={() => activateCard(index)}
@@ -110,7 +110,7 @@ export default function FaqSection({ content }) {
                     </div>
 
                     <p
-                      className={`mt-5 text-[13px] leading-6 transition md:mt-8 md:text-sm md:leading-7 ${isActive ? "line-clamp-3 text-white/78 md:line-clamp-none" : "line-clamp-3 text-muted/78 group-hover:text-muted md:line-clamp-4"}`}
+                      className={`mt-5 text-[13px] leading-6 transition md:mt-8 md:text-sm md:leading-7 ${isActive ? "text-white/78" : "text-muted/78 group-hover:text-muted"}`}
                     >
                       {item.answer}
                     </p>
