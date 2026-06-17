@@ -5,6 +5,7 @@ import HeroSection from "./heroSection";
 import JourneyTeaser from "./journeyTeaser";
 import SectionHeader from "../common/sectionHeader";
 import StatsBar from "../common/statsBar";
+import StatsSection from "./statsSection";
 import TreatmentCards from "../common/treatmentCards";
 import WhySection from "./whySection";
 import WorldPatientMap from "../common/worldPatientMap";
@@ -15,6 +16,7 @@ export default function HomeContent({ content }) {
   return (
     <>
       <HeroSection content={content} />
+      <StatsSection stats={content.stats} className="mx-[4.5%] -mt-10 mb-14 md:hidden" overlap={false} />
       <WhySection why={home.why} />
       <MotionSlideUp className="gridContainer py-18 md:py-24">
         <div>

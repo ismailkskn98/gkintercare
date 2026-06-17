@@ -75,8 +75,6 @@ export default function ShowcaseSlider({
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                {item.badge ? <span className="absolute left-4 top-4 rounded-md bg-white px-3 py-1.5 text-xs font-800 text-primary">{item.badge}</span> : null}
-
                 <article className="absolute inset-x-0 bottom-0 p-5 text-white">
                   <div className="w-full flex flex-col items-start max-w-2xs">
                     <h3 className="text-2xl font-800 leading-tight">{item.title}</h3>

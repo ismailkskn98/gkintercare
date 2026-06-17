@@ -21,7 +21,7 @@ export default async function Footer({ content }) {
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.15fr]">
         <div>
           <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
-            <Image src="/images/logo/black-logo.png" alt="GK InterCare Logo" width={200} height={200} className="h-10 w-fit object-center object-contain" />
+            <Image src="/images/logo/black-logo.png" alt="GK InterCare Logo" width={200} height={200} className="h-auto w-25.75 object-center object-contain" />
           </Link>
 
           <div className="mt-9">
