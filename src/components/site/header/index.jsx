@@ -41,7 +41,7 @@ export default function Header() {
       transition={{ duration: 0.24, ease: "easeOut" }}
     >
       <MotionSlideUp className="gridContainer">
-        <div className="flex min-h-[5.5rem] items-center justify-between gap-5">
+        <div className="flex min-h-22 items-center justify-between gap-5">
           <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home">
             <Image
               src={isScrolled ? "/images/logo/logo.png" : "/images/logo/white-logo.png"}

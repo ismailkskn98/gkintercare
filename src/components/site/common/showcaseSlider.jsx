@@ -68,14 +68,14 @@ export default function ShowcaseSlider({
           {items.map((item, index) => (
             <SwiperSlide key={item.title}>
               <Link className={`group group/action-link relative block overflow-hidden rounded-2xl bg-primary ${cardAspectClass}`} href={item.href || ctaHref}>
-                <Image src={item.image} alt={item.title} fill quality={100} unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 xl:via-primary/20 to-black/5" />
+                <Image src={item.image} alt={item.title} fill unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-linear-to-t from-primary/90 via-primary/50 xl:via-primary/20 to-black/5" />
                 {/* <span className="pointer-events-none absolute bottom-4 right-4 text-7xl font-800 leading-none tracking-[-0.06em] text-white/24 transition group-hover:text-white/32"> */}
                 <span className="pointer-events-none absolute bottom-4 right-4 text-8xl font-800 leading-none tracking-[-0.06em]  transition text-transparent bg-clip-text bg-linear-to-b from-white/30 to-primary/60">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                {item.badge ? <span className="absolute left-4 top-4 rounded-[6px] bg-white px-3 py-1.5 text-xs font-800 text-primary">{item.badge}</span> : null}
+                {item.badge ? <span className="absolute left-4 top-4 rounded-md bg-white px-3 py-1.5 text-xs font-800 text-primary">{item.badge}</span> : null}
 
                 <article className="absolute inset-x-0 bottom-0 p-5 text-white">
                   <div className="w-full flex flex-col items-start max-w-2xs">

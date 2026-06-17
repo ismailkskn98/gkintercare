@@ -28,9 +28,9 @@ export const navigationItems = [
 ];
 
 export const contact = {
-  phone: "+90 532 123 45 67",
-  phoneHref: "tel:+905321234567",
-  whatsappHref: "https://wa.me/905321234567",
+  phone: "+90 542 522 49 54",
+  phoneHref: "tel:+905425224954",
+  whatsappHref: "https://wa.me/905425224954",
   email: "info@gkintercare.com",
   emailHref: "mailto:info@gkintercare.com",
   address: "Levent Mah. Büyükdere Cad. No: 199",
