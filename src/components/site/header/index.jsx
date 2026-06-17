@@ -86,6 +86,7 @@ export default function Header() {
             onClick={() => setIsMenuOpen((value) => !value)}
             type="button"
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
