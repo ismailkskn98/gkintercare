@@ -16,7 +16,6 @@ export default function HomeContent({ content }) {
     <>
       <HeroSection content={content} />
       <WhySection why={home.why} />
-
       <MotionSlideUp className="gridContainer py-18 md:py-24">
         <div>
           <SectionHeader title={home.treatmentsHeader.title} accent={home.treatmentsHeader.accent} accentNewLine />
