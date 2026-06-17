@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MessageCircleMore } from "lucide-react";
 
-export default function TawkChatLauncher({ websiteId, logoSrc = "/images/logo/icon.png" }) {
+export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/icon.png" }) {
   const [isReady, setIsReady] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const hideTimersRef = useRef([]);
@@ -150,7 +150,7 @@ export default function TawkChatLauncher({ websiteId, logoSrc = "/images/logo/ic
         <Image alt="GK InterCare" fill sizes="36px" src={logoSrc} className="object-contain p-1" />
       </span>
       <span className="pr-1 text-xs font-800 tracking-wide">Live Chat</span>
-      <MessageCircleMore className={`size-4 ${isReady ? "text-accent" : "text-primary/45"}`} />
+      {/* <MessageCircleMore className={`size-4 ${isReady ? "text-accent" : "text-primary/45"}`} /> */}
     </button>
   );
 }
