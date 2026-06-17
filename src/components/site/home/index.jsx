@@ -18,7 +18,7 @@ export default function HomeContent({ content }) {
       <HeroSection content={content} />
       <StatsSection stats={content.stats} className="mx-[4.5%] -mt-8 mb-[clamp(2.75rem,7vw,3.5rem)] lg:hidden" overlap={false} />
       <WhySection why={home.why} />
-      <MotionSlideUp className="gridContainer py-[clamp(3.5rem,7vw,6rem)]">
+      <MotionSlideUp className="gridContainer py-[clamp(3.2rem,7vw,6rem)]">
         <div>
           <SectionHeader title={home.treatmentsHeader.title} accent={home.treatmentsHeader.accent} accentNewLine />
           <div className="mt-[clamp(2rem,4vw,2.5rem)]">

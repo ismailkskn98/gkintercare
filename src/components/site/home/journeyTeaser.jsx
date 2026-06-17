@@ -22,7 +22,7 @@ export default function JourneyTeaser({ content = {} }) {
   }
 
   return (
-    <MotionSlideUp className="gridContainer py-[clamp(3.5rem,7vw,6rem)]">
+    <MotionSlideUp className="gridContainer py-[clamp(3.2rem,7vw,6rem)]">
       <section className="overflow-hidden">
         <div className="grid gap-[clamp(1rem,4vw,3rem)] lg:grid-cols-[0.7fr_1.08fr_0.9fr] lg:items-stretch">
           <header className="flex min-h-0 flex-col justify-between gap-4 lg:min-h-120 lg:gap-[clamp(2rem,4vw,3rem)]">

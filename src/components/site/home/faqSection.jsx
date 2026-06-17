@@ -22,7 +22,7 @@ export default function FaqSection({ content }) {
   }
 
   return (
-    <section className="gridContainer py-[clamp(3.5rem,7vw,6rem)]">
+    <section className="gridContainer py-[clamp(3.2rem,7vw,6rem)]">
       <div className="overflow-hidden">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
           <div>
@@ -102,10 +102,18 @@ export default function FaqSection({ content }) {
                       >
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <h3 className={`mt-[clamp(1.25rem,3vw,2rem)] text-[clamp(1.15rem,5vw,1.875rem)] font-800 leading-tight transition ${isActive ? "text-white" : "text-primary/72 group-hover:text-primary"}`}>{item.question}</h3>
+                      <h3
+                        className={`mt-[clamp(1.25rem,3vw,2rem)] text-[clamp(1.15rem,5vw,1.875rem)] font-800 leading-tight transition ${isActive ? "text-white" : "text-primary/72 group-hover:text-primary"}`}
+                      >
+                        {item.question}
+                      </h3>
                     </div>
 
-                    <p className={`mt-5 text-[13px] leading-6 transition md:mt-8 md:text-sm md:leading-7 ${isActive ? "line-clamp-3 text-white/78 md:line-clamp-none" : "line-clamp-3 text-muted/78 group-hover:text-muted md:line-clamp-4"}`}>{item.answer}</p>
+                    <p
+                      className={`mt-5 text-[13px] leading-6 transition md:mt-8 md:text-sm md:leading-7 ${isActive ? "line-clamp-3 text-white/78 md:line-clamp-none" : "line-clamp-3 text-muted/78 group-hover:text-muted md:line-clamp-4"}`}
+                    >
+                      {item.answer}
+                    </p>
                   </button>
                 </SwiperSlide>
               );
