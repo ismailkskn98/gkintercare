@@ -81,7 +81,7 @@ export default function ShowcaseSlider({
                     <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-white/76 md:mt-3 md:line-clamp-3 md:text-sm md:leading-6">{item.description}</p>
                     {item.meta?.length ? (
                       <div className="mt-3 flex flex-wrap gap-1.5 md:mt-4 md:gap-2">
-                        {item.meta.slice(0, 3).map((metaItem) => (
+                        {item.meta.slice(0, 2).map((metaItem) => (
                           <span className="rounded-full border border-white/16 bg-white/10 px-2.5 py-1 text-[11px] font-700 text-white/78 backdrop-blur md:px-3 md:text-xs" key={metaItem}>
                             {metaItem}
                           </span>
