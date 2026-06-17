@@ -13,23 +13,16 @@ export default function BeforeAfterContent({ content }) {
         <div className="mx-auto max-w-4xl py-16 text-center md:py-22">
           <span className="section-label">{beforeAfterPage.hero.label}</span>
           <h1 className="mt-5 text-4xl font-800 leading-tight md:text-6xl">
-            {beforeAfterPage.hero.title}{" "}
-            <span className="serif-accent">{beforeAfterPage.hero.accent}</span>
+            {beforeAfterPage.hero.title} <span className="serif-accent">{beforeAfterPage.hero.accent}</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/72">
-            {beforeAfterPage.hero.description}
-          </p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/72">{beforeAfterPage.hero.description}</p>
         </div>
       </section>
 
       <section className="gridContainer py-10">
         <div className="flex flex-wrap justify-center gap-2">
           {beforeAfterPage.filters.map((filter) => (
-            <button
-              className="rounded-full border border-primary/12 bg-white px-4 py-2 text-sm font-800 text-primary shadow-sm"
-              key={filter}
-              type="button"
-            >
+            <button className="rounded-full border border-primary/12 bg-white px-4 py-2 text-sm font-800 text-primary shadow-sm" key={filter} type="button">
               {filter}
             </button>
           ))}
@@ -42,22 +35,16 @@ export default function BeforeAfterContent({ content }) {
             <article className="soft-card overflow-hidden" key={`${item.title}-${index}`}>
               <div className="grid min-h-60 grid-cols-2 bg-light-bg">
                 <div className="flex flex-col justify-between border-r border-primary/10 p-5">
-                  <span className="text-xs font-800 uppercase tracking-[0.12em] text-muted">
-                    {beforeAfterPage.labels.before}
-                  </span>
+                  <span className="text-xs font-800 uppercase tracking-[0.12em] text-muted">{beforeAfterPage.labels.before}</span>
                   <span className="text-5xl font-800 text-primary/12">0{index + 1}</span>
                 </div>
                 <div className="flex flex-col justify-between p-5">
-                  <span className="text-xs font-800 uppercase tracking-[0.12em] text-muted">
-                    {beforeAfterPage.labels.after}
-                  </span>
+                  <span className="text-xs font-800 uppercase tracking-[0.12em] text-muted">{beforeAfterPage.labels.after}</span>
                   <span className="text-5xl font-800 text-accent/35">0{index + 1}</span>
                 </div>
               </div>
               <div className="p-6">
-                <span className="text-xs font-800 uppercase tracking-[0.12em] text-accent">
-                  {item.category}
-                </span>
+                <span className="text-xs font-800 uppercase tracking-[0.12em] text-accent">{item.category}</span>
                 <h2 className="mt-2 text-2xl font-800 text-primary">{item.title}</h2>
                 <p className="mt-2 text-sm text-muted">{item.detail}</p>
                 <ButtonLink className="mt-5" href="/contact" variant="outline">
@@ -71,7 +58,7 @@ export default function BeforeAfterContent({ content }) {
 
       <StatsBar stats={beforeAfterPage.stats} className="pb-14" />
 
-      <section className="gridContainer bg-light-bg py-18 md:py-24">
+      {/* <section className="gridContainer bg-light-bg py-18 md:py-24">
         <div>
           <SectionHeader
             label={beforeAfterPage.testimonialsHeader.label}
@@ -108,15 +95,9 @@ export default function BeforeAfterContent({ content }) {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <CtaBanner
-        title={beforeAfterPage.cta.title}
-        text={beforeAfterPage.cta.text}
-        button={beforeAfterPage.cta.button}
-        eyebrow={ui.ctaEyebrow}
-        className="py-18 md:py-24"
-      />
+      <CtaBanner title={beforeAfterPage.cta.title} text={beforeAfterPage.cta.text} button={beforeAfterPage.cta.button} eyebrow={ui.ctaEyebrow} className="py-18 md:py-24" />
     </>
   );
 }
