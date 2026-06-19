@@ -4,11 +4,13 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-import { navigationItems } from "@/data/siteContent";
+import { navigationItems, pagePaths } from "@/data/siteContent";
 import { Link, usePathname } from "@/i18n/navigation";
 import { MotionSlideUp } from "../common/animation";
 import LanguageSwitcher from "../common/languageSwitcher";
 import HeaderLogo from "./logo";
+
+const primaryHeaderPathnames = [pagePaths.doctors];
 
 export default function Header() {
   const t = useTranslations("Common");
@@ -46,11 +48,12 @@ export default function Header() {
   const headerColor = isScrolled ? "text-primary" : "text-white";
   const inactiveLinkColor = isScrolled ? "text-primary/72" : "text-white/78";
   const controlClass = isScrolled ? "border-primary/12 text-primary hover:bg-light-bg" : "border-white/18 text-white hover:bg-white/10";
+  const isPrimaryHeaderAtTop = !isScrolled && primaryHeaderPathnames.includes(pathname);
 
   return (
     <motion.header
       animate={{
-        backgroundColor: isScrolled ? "rgba(255,255,255,0.96)" : "rgba(255,255,255,0)",
+        backgroundColor: isScrolled ? "rgba(255,255,255,0.96)" : isPrimaryHeaderAtTop ? "rgba(11,60,93,1)" : "rgba(255,255,255,0)",
         boxShadow: isScrolled ? "0 16px 42px rgba(11,60,93,0.10)" : "0 0 0 rgba(0,0,0,0)",
       }}
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md ${isScrolled ? "border-primary/10" : "border-white/10"} ${headerColor}`}

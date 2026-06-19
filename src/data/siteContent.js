@@ -104,7 +104,7 @@ const doctors = [
   {
     name: "Prof. Gürkan Kayabaşoğlu",
     specialty: "ENT Surgeon",
-    image: "/images/prof-dr-gurkan-kayabasoglu.avif",
+    image: "/images/doctors/prof-dr-gurkan-kayabasoglu.webp",
     description:
       "Gürkan Kayabaşoğlu has concentrated all his education and scientific studies on only one part of the human body, namely the face. He only performs surgeries on the facial area. For this reason, he was given the Oral, Facial and Maxillofacial Surgery Specialization Diploma by the Ministry of Health.",
     expertise: ["Rhinoplasty", "Facelift & Neck Lift", "Chin Surgery & Implant", "Temporal Lift", "Eyelid Surgery", "Forehead Reduction"],
@@ -112,7 +112,7 @@ const doctors = [
   {
     name: "Dr. Mustafa",
     specialty: "Plastic Surgery",
-    image: "/images/dr-mustafa.avif",
+    image: "/images/doctors/dr-mustafa.webp",
     description:
       "Dr. Mustafa specializes in aesthetic and reconstructive procedures with a strong focus on patient safety and satisfaction. He is dedicated to providing personalized care and achieving natural-looking results.",
     expertise: ["Rhinoplasty", "Facelift & Neck Lift", "Breast Surgery", "Liposuction & Body Contouring", "Hair Transplantation", "Tummy Tuck"],
@@ -120,7 +120,7 @@ const doctors = [
   {
     name: "Dr. Bircan",
     specialty: "Hair Transplant",
-    image: "/images/dr-bircan.avif",
+    image: "/images/doctors/dr-bircan.webp",
     description:
       "Dr. Bircan is a physician who is a specialist in his field and provides safe services, combining a successful academic education with professional experience. As a result, he became a member of the International Society of Hair Restoration Surgery (ISHRS).",
     expertise: ["FUE Hair Transplant", "DHI Hair Transplant", "Beard and Moustache Transplant", "Eyebrow Transplant", "Women Hair Transplant"],
@@ -128,7 +128,7 @@ const doctors = [
   {
     name: "Dr. Mehtap",
     specialty: "ENT Surgeon",
-    image: "/images/dr-mehtap.avif",
+    image: "/images/doctors/dr-mehtap.webp",
     description:
       "She earned European Board Certification in Otolaryngology-Head and Neck Surgery by passing both the written exam in Genoa, Italy, and the oral exam in Vienna, Austria. She is also a member of the European Academy of Facial Plastic Surgery (EAFPS) and the Turkish Society of Facial Plastic Surgery.",
     expertise: ["Rhinoplasty", "Blepharoplasty", "Otoplasty", "Bichectomy", "Chin Aesthetics"],
@@ -136,7 +136,7 @@ const doctors = [
   {
     name: "Dr. Oğuzhan",
     specialty: "ENT Surgeon",
-    image: "/images/dr-oguzhan.avif",
+    image: "/images/doctors/dr-oguzhan.webp",
     description:
       "Assistant Professor Dr. Oğuzhan OĞUZ, a member of the Turkish Society of Otorhinolaryngology and Head and Neck Surgery, the Rhinology Society, the Sleep Society, and the Facial Plastic Surgery Society, also continues his academic work as a part-time faculty member at Nişantaşı University.",
     expertise: ["ENT Surgery", "Rhinology", "Head & Neck Surgery", "Otology", "Laryngology"],
@@ -144,7 +144,7 @@ const doctors = [
   {
     name: "Dr. Ali",
     specialty: "Plastic Surgery",
-    image: "/images/dr-ali.avif",
+    image: "/images/doctors/dr-ali.webp",
     description:
       "He accompanied thousands of cases and gained experience in a wide range of areas, from reconstructive surgery to microsurgery, from burn treatment to aesthetic operations. He completed his training and received the title of Plastic, Reconstructive and Aesthetic Surgery Specialist.",
     expertise: ["Reconstructive Surgery", "Microsurgery", "Burn Treatment", "Aesthetic Operations", "Body Contouring"],
