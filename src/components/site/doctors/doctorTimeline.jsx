@@ -9,7 +9,7 @@ function DoctorTimelineCard({ doctor, index, labels }) {
   return (
     <>
       <span className="absolute left-0 top-5 z-10 flex size-8 items-center justify-center rounded-full border border-primary/10 bg-white text-[0.68rem] font-800 text-accent shadow-[0_10px_24px_rgba(11,60,93,0.1)]">
-        {String(index + 1).padStart(2, "0")}
+        <span className="bg-accent size-2 rounded-full"></span>
       </span>
 
       <div className="group border-b border-primary/10 pb-[clamp(1.5rem,4vw,2.4rem)] transition duration-300 hover:border-accent/45">
@@ -64,9 +64,7 @@ export default function DoctorTimeline({ doctorsPage, doctors }) {
       <div className="grid gap-[clamp(2rem,5vw,3.5rem)] lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
         <MotionFadeIn className="lg:sticky lg:top-32 lg:self-start">
           <div className="relative max-w-md overflow-hidden border-l border-primary/10 pl-6 pb-2">
-            <span className="pointer-events-none absolute -right-2 top-16 text-[clamp(5rem,12vw,9rem)] font-800 leading-none text-primary/[0.035]">
-              {String(doctors.length).padStart(2, "0")}
-            </span>
+            <span className="pointer-events-none absolute -right-2 top-16 text-[clamp(5rem,12vw,9rem)] font-800 leading-none text-primary/[0.035]">{String(doctors.length).padStart(2, "0")}</span>
             <span className="section-label">{doctorsPage.header.label}</span>
             <h2 className="mt-3 text-[clamp(1.9rem,4.2vw,3rem)] font-800 leading-tight text-primary">
               {doctorsPage.header.title}
