@@ -14,7 +14,7 @@ const medicalHeroPatternStyle = {
 
 export default function CompactDoctorsIntro({ hero }) {
   return (
-    <section className="gridContainer relative overflow-hidden bg-white pt-[clamp(5.75rem,10vw,7.5rem)] text-foreground">
+    <section className="gridContainer relative overflow-hidden bg-white pt-[clamp(7.75rem,10vw,7.5rem)] text-foreground">
       <div className="fluid pointer-events-none absolute left-1/2 top-1/2 z-0 h-[145%] w-[145%] -translate-x-1/2 -translate-y-1/2 opacity-80" style={medicalHeroPatternStyle} />
       <div className="fluid absolute inset-x-0 top-0 h-px bg-primary/10" />
       <div className="fluid pointer-events-none absolute inset-x-0 top-0 h-28 bg-linear-to-b from-primary/5 to-transparent" />
