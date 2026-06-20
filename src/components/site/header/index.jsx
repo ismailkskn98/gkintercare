@@ -10,7 +10,8 @@ import { MotionSlideUp } from "../common/animation";
 import LanguageSwitcher from "../common/languageSwitcher";
 import HeaderLogo from "./logo";
 
-const primaryHeaderPathnames = [pagePaths.doctors, pagePaths.partners];
+const primaryHeaderPathnames = [pagePaths.doctors];
+const transparentLightHeaderPathnames = [pagePaths.partners];
 
 export default function Header() {
   const t = useTranslations("Common");
@@ -45,10 +46,12 @@ export default function Header() {
     label: t(item.key),
   }));
 
-  const headerColor = isScrolled ? "text-primary" : "text-white";
-  const inactiveLinkColor = isScrolled ? "text-primary/72" : "text-white/78";
-  const controlClass = isScrolled ? "border-primary/12 text-primary hover:bg-light-bg" : "border-white/18 text-white hover:bg-white/10";
   const isPrimaryHeaderAtTop = !isScrolled && primaryHeaderPathnames.includes(pathname);
+  const isTransparentLightHeaderAtTop = !isScrolled && transparentLightHeaderPathnames.includes(pathname);
+  const hasLightHeaderContext = isScrolled || isTransparentLightHeaderAtTop;
+  const headerColor = hasLightHeaderContext ? "text-primary" : "text-white";
+  const inactiveLinkColor = hasLightHeaderContext ? "text-primary/72" : "text-white/78";
+  const controlClass = hasLightHeaderContext ? "border-primary/12 text-primary hover:bg-light-bg" : "border-white/18 text-white hover:bg-white/10";
 
   return (
     <motion.header
@@ -56,14 +59,14 @@ export default function Header() {
         backgroundColor: isScrolled ? "rgba(255,255,255,0.96)" : isPrimaryHeaderAtTop ? "rgba(11,60,93,1)" : "rgba(255,255,255,0)",
         boxShadow: isScrolled ? "0 16px 42px rgba(11,60,93,0.10)" : "0 0 0 rgba(0,0,0,0)",
       }}
-      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md ${isScrolled ? "border-primary/10" : "border-white/10"} ${headerColor}`}
+      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md ${hasLightHeaderContext ? "border-primary/10" : "border-white/10"} ${headerColor}`}
       initial={false}
       ref={headerRef}
       transition={{ duration: 0.24, ease: "easeOut" }}
     >
       <MotionSlideUp className="gridContainer">
         <div className="flex min-h-22 items-center justify-between gap-5">
-          <HeaderLogo isScrolled={isScrolled} />
+          <HeaderLogo isLight={hasLightHeaderContext} />
           <div className="hidden items-center gap-7 xl:flex">
             {navLinks.map((item) => {
               const isActive = pathname === item.href;
@@ -92,13 +95,13 @@ export default function Header() {
             <div className="relative flex items-center gap-2">
               <Link
                 className={`focus-ring inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-800 transition ${
-                  isScrolled ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
+                  hasLightHeaderContext ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
                 }`}
                 href="/contact"
               >
                 {t("consultation")}
               </Link>
-              <LanguageSwitcher bgWhite={isScrolled} />
+              <LanguageSwitcher bgWhite={hasLightHeaderContext} />
             </div>
           </div>
 
@@ -118,7 +121,7 @@ export default function Header() {
         {isMenuOpen ? (
           <motion.div
             animate={{ height: "auto", opacity: 1, y: 0 }}
-            className={`gridContainer overflow-hidden border-t xl:hidden ${isScrolled ? "border-primary/10 bg-white text-black" : "border-white/10 bg-primary text-white"}`}
+            className={`gridContainer overflow-hidden border-t xl:hidden ${hasLightHeaderContext ? "border-primary/10 bg-white text-black" : "border-white/10 bg-primary text-white"}`}
             exit={{ height: 0, opacity: 0, y: -8 }}
             initial={{ height: 0, opacity: 0, y: -8 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
@@ -128,7 +131,7 @@ export default function Header() {
                 {navLinks.map((item, index) => (
                   <motion.div animate={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: -8 }} key={item.href} transition={{ delay: 0.04 + index * 0.025, duration: 0.22, ease: "easeOut" }}>
                     <Link
-                      className={`block rounded-lg px-3 py-3 text-sm font-700 transition ${isScrolled ? "text-primary/78 hover:bg-light-bg hover:text-primary" : "text-white/82 hover:bg-white/8 hover:text-white"}`}
+                      className={`block rounded-lg px-3 py-3 text-sm font-700 transition ${hasLightHeaderContext ? "text-primary/78 hover:bg-light-bg hover:text-primary" : "text-white/82 hover:bg-white/8 hover:text-white"}`}
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -138,10 +141,10 @@ export default function Header() {
                 ))}
               </div>
 
-              <div className={`mt-3 border-t pt-4 ${isScrolled ? "border-primary/10" : "border-white/12"}`}>
+              <div className={`mt-3 border-t pt-4 ${hasLightHeaderContext ? "border-primary/10" : "border-white/12"}`}>
                 <Link
                   className={`focus-ring flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-800 transition ${
-                    isScrolled ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
+                    hasLightHeaderContext ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
                   }`}
                   href="/contact"
                   onClick={() => setIsMenuOpen(false)}

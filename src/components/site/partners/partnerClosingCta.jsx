@@ -9,7 +9,7 @@ export default function PartnerClosingCta({ cta, whatsappHref }) {
       <div className="fluid absolute inset-0">
         <Image src={cta.image} alt={cta.imageAlt} fill sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-primary/88" />
-        <div className="absolute inset-0 bg-linear-to-r from-primary/96 via-primary/78 to-primary/46" />
+        <div className="absolute inset-0 bg-linear-to-r from-primary/48 via-primary/28 to-primary/10" />
       </div>
       <MotionSlideUp className="relative flex max-w-4xl flex-col items-start gap-6">
         <span className="section-label text-accent">{cta.label}</span>

@@ -14,7 +14,7 @@ function DoctorTimelineCard({ doctor, index, labels }) {
 
       <div className="group border-b border-primary/10 pb-[clamp(1.5rem,4vw,2.4rem)] transition duration-300 hover:border-accent/45">
         <div className="grid gap-5 rounded-xl p-2 transition duration-300 group-hover:bg-light-bg/70 sm:p-3 md:grid-cols-[clamp(8.75rem,16vw,12rem)_1fr] md:items-start">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-72 overflow-hidden rounded-xl bg-light-bg md:max-w-none">
+          <div className="relative mx-auto aspect-4/5 w-full max-w-72 overflow-hidden rounded-xl bg-light-bg md:max-w-none">
             <Image
               src={doctor.image}
               alt={doctor.name}

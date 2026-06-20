@@ -294,6 +294,7 @@ const englishContent = {
         error: "We could not send your request. Please try again.",
         required: "This field is required.",
         invalidEmail: "Enter a valid email address.",
+        validationError: "Please check the highlighted fields.",
       },
       formFields: {
         fullName: { label: "Full Name", placeholder: "Your full name" },
@@ -773,12 +774,12 @@ const englishContent = {
       accent: "GK InterCare?",
       description: "A dependable clinical network, with the communication and flexibility your local team needs.",
       items: [
-        { title: "Competitive Commissions", text: "Earn up to 20% per patient" },
-        { title: "Flexible Pricing", text: "Personalized pricing for each case" },
-        { title: "Top Medical Experts", text: "Access to leading surgeons" },
-        { title: "VIP Patient Experience", text: "High-end service for your patients" },
-        { title: "Marketing & Materials Support", text: "We provide you with promotional tools" },
-        { title: "Fast & Easy Communication", text: "Quick response via WhatsApp" },
+        { title: "Competitive Commissions", text: "Earn up to 20% per patient", image: "/images/gk-intercare-for-partners.avif" },
+        { title: "Flexible Pricing", text: "Personalized pricing for each case", image: "/images/journey-teaser/case-review.webp" },
+        { title: "Top Medical Experts", text: "Access to leading surgeons", image: "/images/medical-team-2.jpg" },
+        { title: "VIP Patient Experience", text: "High-end service for your patients", image: "/images/personalized-care.webp" },
+        { title: "Marketing & Materials Support", text: "We provide you with promotional tools", image: "/images/journey-teaser/appointment-flow.webp" },
+        { title: "Fast & Easy Communication", text: "Quick response via WhatsApp", image: "/images/journey-teaser/patient-liaison.webp" },
       ],
     },
     form: {
@@ -815,15 +816,18 @@ const englishContent = {
       },
       message: { label: "How would you like to work together? (Optional)", placeholder: "Tell us about your patients, treatment focus, or partnership goals." },
       consent: "I agree that GK InterCare may contact me about this partnership enquiry.",
+      panelText: "Share the essentials and our partnership team will take care of the next step.",
       secureNote: "Your partnership enquiry is reviewed by a dedicated GK InterCare coordinator.",
-      process: {
-        label: "What happens next",
-        steps: ["Share your organisation", "We review the fit", "Your coordinator contacts you"],
+      sections: {
+        organisation: "Organisation profile",
+        contact: "Contact details",
+        context: "Partnership context",
       },
       validation: {
         required: "This field is required.",
         invalidEmail: "Enter a valid email address.",
         consent: "Please confirm that we may contact you.",
+        summary: "Please check the highlighted fields.",
       },
       status: {
         sending: "Sending request...",
@@ -836,7 +840,7 @@ const englishContent = {
       label: "A direct line to our partnership team",
       title: "Together, we can provide life-changing experiences to more patients.",
       button: "Get in Touch on WhatsApp",
-      image: "/images/medical-team-2.jpg",
+      image: "/images/for-parters-cta.webp",
       imageAlt: "GK InterCare medical team",
     },
   },
@@ -1123,6 +1127,7 @@ const spanishOverrides = {
         error: "No pudimos enviar tu solicitud. Intentalo de nuevo.",
         required: "Este campo es obligatorio.",
         invalidEmail: "Introduce un correo electronico valido.",
+        validationError: "Revisa los campos resaltados.",
       },
       formFields: {
         fullName: { label: "Nombre completo", placeholder: "Tu nombre completo" },
@@ -1608,15 +1613,18 @@ const spanishOverrides = {
       },
       message: { label: "Como te gustaria colaborar? (Opcional)", placeholder: "Cuentanos sobre tus pacientes, tratamientos o metas de colaboracion." },
       consent: "Acepto que GK InterCare se ponga en contacto conmigo sobre esta solicitud de colaboracion.",
+      panelText: "Comparte lo esencial y nuestro equipo de alianzas se encargara del siguiente paso.",
       secureNote: "Un coordinador especializado de GK InterCare revisara tu solicitud de colaboracion.",
-      process: {
-        label: "Que sucede despues",
-        steps: ["Comparte tu organizacion", "Revisamos la colaboracion", "Tu coordinador te contacta"],
+      sections: {
+        organisation: "Perfil de la organizacion",
+        contact: "Datos de contacto",
+        context: "Contexto de la colaboracion",
       },
       validation: {
         required: "Este campo es obligatorio.",
         invalidEmail: "Introduce un correo electronico valido.",
         consent: "Confirma que podemos contactarte.",
+        summary: "Revisa los campos resaltados.",
       },
       status: {
         sending: "Enviando solicitud...",
@@ -1907,6 +1915,7 @@ const italianOverrides = {
         error: "Non siamo riusciti a inviare la richiesta. Riprova.",
         required: "Questo campo e obbligatorio.",
         invalidEmail: "Inserisci un indirizzo email valido.",
+        validationError: "Controlla i campi evidenziati.",
       },
       formFields: {
         fullName: { label: "Nome completo", placeholder: "Il tuo nome completo" },
@@ -2392,15 +2401,18 @@ const italianOverrides = {
       },
       message: { label: "Come vorresti collaborare? (Facoltativo)", placeholder: "Parlaci dei tuoi pazienti, dei trattamenti o degli obiettivi della partnership." },
       consent: "Accetto che GK InterCare mi contatti in merito a questa richiesta di partnership.",
+      panelText: "Condividi le informazioni essenziali e il nostro team partnership si occupera del prossimo passo.",
       secureNote: "La tua richiesta di partnership sara esaminata da un coordinatore GK InterCare dedicato.",
-      process: {
-        label: "Cosa succede dopo",
-        steps: ["Condividi la tua organizzazione", "Valutiamo la partnership", "Il tuo coordinatore ti contatta"],
+      sections: {
+        organisation: "Profilo dell'organizzazione",
+        contact: "Dati di contatto",
+        context: "Contesto della partnership",
       },
       validation: {
         required: "Questo campo e obbligatorio.",
         invalidEmail: "Inserisci un indirizzo email valido.",
         consent: "Conferma che possiamo contattarti.",
+        summary: "Controlla i campi evidenziati.",
       },
       status: {
         sending: "Invio della richiesta...",

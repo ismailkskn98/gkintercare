@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useLenis } from "@/lib/lenis";
 import { Link, usePathname } from "@/i18n/navigation";
 
-export default function HeaderLogo({ isScrolled }) {
+export default function HeaderLogo({ isLight }) {
   const pathname = usePathname() || "/";
   const lenis = useLenis();
   const isHomePage = pathname === "/";
@@ -25,7 +25,7 @@ export default function HeaderLogo({ isScrolled }) {
   return (
     <Link className="flex items-center gap-3" href="/" aria-label="GK InterCare home" onClick={handleClick}>
       <Image
-        src={isScrolled ? "/images/logo/logo.png" : "/images/logo/white-logo.png"}
+        src={isLight ? "/images/logo/logo.png" : "/images/logo/white-logo.png"}
         alt="GK InterCare Logo"
         width={200}
         height={200}
