@@ -3,6 +3,7 @@ import { navigationItems } from "@/data/siteContent";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import CallbackRequestForm from "./callbackRequestForm";
 
 const socialLinks = [
   { label: "Facebook", Icon: FaFacebookF, href: "#" },
@@ -98,12 +99,7 @@ export default async function Footer({ content }) {
         <div>
           <h3 className="text-[clamp(1.35rem,3vw,1.5rem)] font-800 tracking-tight">{footer.newsletter.title}</h3>
           <p className="mt-2 text-xs leading-5 text-[#5d5d5d]">{footer.newsletter.text}</p>
-          <form className="mt-5 flex max-w-md flex-col gap-1 bg-[#f3f3f3] p-1 min-[420px]:flex-row">
-            <input className="min-w-0 flex-1 bg-transparent px-4 py-3 text-xs text-[#151515] outline-none placeholder:text-[#9a9a9a]" placeholder={footer.newsletter.placeholder} type="email" />
-            <button className="focus-ring bg-[#151515] px-4 py-3 text-xs font-800 text-white transition hover:bg-primary min-[420px]:py-0" type="button">
-              {footer.newsletter.button}
-            </button>
-          </form>
+          <CallbackRequestForm content={footer.newsletter} />
         </div>
       </div>
 

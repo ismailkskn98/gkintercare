@@ -10,7 +10,7 @@ import { MotionSlideUp } from "../common/animation";
 import LanguageSwitcher from "../common/languageSwitcher";
 import HeaderLogo from "./logo";
 
-const primaryHeaderPathnames = [pagePaths.doctors];
+const primaryHeaderPathnames = [pagePaths.doctors, pagePaths.partners];
 
 export default function Header() {
   const t = useTranslations("Common");
@@ -126,12 +126,7 @@ export default function Header() {
             <div className="pb-5 pt-3">
               <div className="flex flex-col gap-1">
                 {navLinks.map((item, index) => (
-                  <motion.div
-                    animate={{ opacity: 1, x: 0 }}
-                    initial={{ opacity: 0, x: -8 }}
-                    key={item.href}
-                    transition={{ delay: 0.04 + index * 0.025, duration: 0.22, ease: "easeOut" }}
-                  >
+                  <motion.div animate={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: -8 }} key={item.href} transition={{ delay: 0.04 + index * 0.025, duration: 0.22, ease: "easeOut" }}>
                     <Link
                       className={`block rounded-lg px-3 py-3 text-sm font-700 transition ${isScrolled ? "text-primary/78 hover:bg-light-bg hover:text-primary" : "text-white/82 hover:bg-white/8 hover:text-white"}`}
                       href={item.href}

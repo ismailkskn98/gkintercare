@@ -1,7 +1,9 @@
-import { Building2, HeartPulse, Mail, MapPin, Phone, ShieldCheck, Stethoscope, UserRound } from "lucide-react";
+import { Building2, ShieldCheck, Stethoscope } from "lucide-react";
 import { MotionFadeIn } from "../common/animation";
 import ButtonLink from "../common/buttonLink";
 import Image from "next/image";
+import HeroBackgroundMedia from "./heroBackgroundMedia";
+import HomeConsultationForm from "./homeConsultationForm";
 import StatsSection from "./statsSection";
 
 const medicalBadgeIcons = [Stethoscope, Building2, ShieldCheck];
@@ -9,16 +11,9 @@ const medicalBadgeIcons = [Stethoscope, Building2, ShieldCheck];
 export default function HeroSection({ content }) {
   const { hero } = content.home;
   const { stats } = content;
-  const fields = hero.formFields;
-
   return (
     <section className="gridContainer relative bg-primary pt-[clamp(4.75rem,10vw,5.75rem)] text-white">
-      <div className="fluid absolute inset-0">
-        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata">
-          <source src="/videos/hero-video-last.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+      <HeroBackgroundMedia />
 
       <div className="relative z-10 grid gap-[clamp(2.5rem,5vw,4rem)] pb-[clamp(4rem,8vw,6rem)] pt-[clamp(2rem,5vw,4rem)] lg:grid-cols-[0.92fr_0.72fr] lg:items-center">
         <MotionFadeIn className="max-w-3xl">
@@ -81,63 +76,10 @@ export default function HeroSection({ content }) {
               height={120}
               className="object-contain object-center w-fit max-w-15! max-h-15 sm:max-h-16 absolute top-3 sm:top-1 right-[clamp(0rem,1vw,6rem)] opacity-100 animate-heartbeat-soft"
             />
-            <form className="relative max-w-lg p-6 md:p-7 text-primary bg-white rounded-lg border border-white/60" style={{ clipPath: "url(#form-notch)" }}>
-              <div className="relative z-30 mb-5">
-                <span className="section-label text-xs text-primary-soft!">{hero.formLabel}</span>
-                <h2 className="mt-2 text-xl sm:text-2xl font-800">{hero.formTitle}</h2>
-                <p className="mt-2 text-sm leading-relaxed sm:leading-6 text-muted">{hero.formText}</p>
-              </div>
-              <div className="relative z-30 grid gap-3">
-                <label className="grid gap-2 text-xs font-800 uppercase tracking-[0.1em] text-primary/62">
-                  {fields.fullName.label}
-                  <span className="flex items-center gap-3 rounded-lg border border-primary/10 bg-light-bg px-4 py-3">
-                    <UserRound size={17} className="text-primary-soft" />
-                    <input className="w-full bg-transparent text-sm font-600 text-primary outline-none placeholder:text-muted" placeholder={fields.fullName.placeholder} type="text" />
-                  </span>
-                </label>
-
-                <div className="grid gap-3 md:grid-cols-2">
-                  <label className="grid gap-2 text-xs font-800 uppercase tracking-[0.1em] text-primary/62">
-                    {fields.email.label}
-                    <span className="flex items-center gap-3 rounded-lg border border-primary/10 bg-light-bg px-4 py-3">
-                      <Mail size={17} className="text-primary-soft" />
-                      <input className="w-full bg-transparent text-sm font-600 text-primary outline-none placeholder:text-muted" placeholder={fields.email.placeholder} type="email" />
-                    </span>
-                  </label>
-
-                  <label className="grid gap-2 text-xs font-800 uppercase tracking-[0.1em] text-primary/62">
-                    {fields.phone.label}
-                    <span className="flex items-center gap-3 rounded-lg border border-primary/10 bg-light-bg px-4 py-3">
-                      <Phone size={17} className="text-primary-soft" />
-                      <input className="w-full bg-transparent text-sm font-600 text-primary outline-none placeholder:text-muted" placeholder={fields.phone.placeholder} type="tel" />
-                    </span>
-                  </label>
-                </div>
-
-                <label className="grid gap-2 text-xs font-800 uppercase tracking-[0.1em] text-primary/62">
-                  {fields.country.label}
-                  <span className="flex items-center gap-3 rounded-lg border border-primary/10 bg-light-bg px-4 py-3">
-                    <MapPin size={17} className="text-primary-soft" />
-                    <input className="w-full bg-transparent text-sm font-600 text-primary outline-none placeholder:text-muted" placeholder={fields.country.placeholder} type="text" />
-                  </span>
-                </label>
-
-                <label className="grid gap-2 text-xs font-800 uppercase tracking-[0.1em] text-primary/62">
-                  {fields.message.label}
-                  <textarea
-                    className="min-h-28 rounded-lg border border-primary/10 bg-light-bg px-4 py-3 text-sm font-600 text-primary outline-none placeholder:text-muted"
-                    placeholder={fields.message.placeholder}
-                  />
-                </label>
-              </div>
-              <ButtonLink className="relative z-30 mt-5 w-full" href="/contact" variant="primary-soft">
-                {hero.formButton}
-              </ButtonLink>
-            </form>
+            <HomeConsultationForm hero={hero} />
           </div>
         </MotionFadeIn>
       </div>
-
       <StatsSection stats={stats} className="hidden lg:grid" />
     </section>
   );
