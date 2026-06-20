@@ -7,10 +7,10 @@ import FormSubmitButton from "../forms/formSubmitButton";
 import { useFormSubmissionStore } from "@/stores/formSubmissionStore";
 
 const inputClassName = "focus-ring w-full rounded-md border border-primary/10 bg-[#f3f7f9] px-4 py-3 text-sm font-600 text-primary outline-none transition placeholder:text-muted focus:border-accent focus:bg-white";
-const fieldLabelClassName = "relative grid gap-2 pb-9 text-[0.68rem] font-800 uppercase tracking-[0.1em] text-primary/64";
+const fieldLabelClassName = "grid gap-2 text-[0.68rem] font-800 uppercase tracking-[0.1em] text-primary/64";
 
 function FieldError({ id, error }) {
-  return error ? <span className="absolute bottom-0 left-0 min-h-8 text-xs font-700 leading-4 normal-case tracking-normal text-[#b53a3a]" id={id}>{error.message}</span> : null;
+  return error ? <span className="text-xs font-700 leading-4 normal-case tracking-normal text-[#b53a3a]" id={id}>{error.message}</span> : null;
 }
 
 function PartnerProcess({ process }) {
@@ -142,13 +142,11 @@ export default function PartnerRequestForm({ form }) {
           <textarea className={`${inputClassName} min-h-28 resize-y`} id={`${formId}-message`} maxLength="2000" placeholder={form.message.placeholder} {...register("message")} />
         </label>
 
-        <div className="relative pb-9">
-          <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-muted" htmlFor={`${formId}-consent`}>
-            <input className="focus-ring mt-1 size-4 shrink-0 accent-accent" id={`${formId}-consent`} type="checkbox" aria-describedby={errors.consent ? `${formId}-consent-error` : undefined} {...register("consent", { required: form.validation.consent })} />
-            <span>{form.consent}</span>
-          </label>
-          <FieldError id={`${formId}-consent-error`} error={errors.consent} />
-        </div>
+        <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-muted" htmlFor={`${formId}-consent`}>
+          <input className="focus-ring mt-1 size-4 shrink-0 accent-accent" id={`${formId}-consent`} type="checkbox" aria-describedby={errors.consent ? `${formId}-consent-error` : undefined} {...register("consent", { required: form.validation.consent })} />
+          <span>{form.consent}</span>
+        </label>
+        <FieldError id={`${formId}-consent-error`} error={errors.consent} />
       </fieldset>
 
       <div className="flex flex-col gap-3 border-t border-primary/10 px-[clamp(1rem,4vw,2rem)] py-5 sm:flex-row sm:items-center sm:justify-between">

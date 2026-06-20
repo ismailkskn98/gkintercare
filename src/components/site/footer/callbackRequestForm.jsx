@@ -38,7 +38,7 @@ export default function CallbackRequestForm({ content }) {
   }
 
   return (
-    <form className="relative mt-5 pb-9" noValidate onSubmit={handleSubmit(onSubmit)}>
+    <form className="mt-5" noValidate onSubmit={handleSubmit(onSubmit)}>
       <label className="sr-only" htmlFor={`${formId}-email`}>
         {content.emailLabel}
       </label>
@@ -60,7 +60,7 @@ export default function CallbackRequestForm({ content }) {
           {isSubmitting ? content.sending : content.button}
         </FormSubmitButton>
       </div>
-      <p className={errors.email || status === "error" ? "absolute bottom-0 left-0 min-h-8 text-xs font-700 leading-4 text-[#b53a3a]" : "absolute bottom-0 left-0 min-h-8 text-xs font-700 leading-4 text-primary-soft"} id={`${formId}-email-error`} aria-live="polite">
+      <p className={errors.email || status === "error" ? "mt-2 text-xs font-700 text-[#b53a3a]" : "mt-2 text-xs font-700 text-primary-soft"} id={`${formId}-email-error`} aria-live="polite">
         {errors.email?.message || (status === "success" ? content.success : status === "error" ? content.error : null)}
       </p>
     </form>

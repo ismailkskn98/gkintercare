@@ -7,11 +7,11 @@ import FormSubmitButton from "../forms/formSubmitButton";
 import { useFormSubmissionStore } from "@/stores/formSubmissionStore";
 
 const inputClassName = "w-full bg-transparent text-sm font-600 text-primary outline-none placeholder:text-muted";
-const fieldLabelClassName = "relative grid gap-2 pb-9 text-xs font-800 uppercase tracking-[0.1em] text-primary/62";
+const fieldLabelClassName = "grid gap-2 text-xs font-800 uppercase tracking-[0.1em] text-primary/62";
 
 function FieldError({ error, id }) {
   return error ? (
-    <span className="absolute bottom-0 left-0 min-h-8 text-xs font-700 leading-4 normal-case tracking-normal text-[#b53a3a]" id={id}>
+    <span className="text-xs font-700 leading-4 normal-case tracking-normal text-[#b53a3a]" id={id}>
       {error.message}
     </span>
   ) : null;
