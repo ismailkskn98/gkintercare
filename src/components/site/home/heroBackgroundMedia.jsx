@@ -5,50 +5,37 @@ import Image from "next/image";
 
 const videoSource = "/videos/hero-video-last.mp4";
 const fallbackImage = "/videos/hero-video-poster.jpg";
+const revealAfterSeconds = 0.15;
 
 export default function HeroBackgroundMedia() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [requiresAutoplayFallback, setRequiresAutoplayFallback] = useState(false);
-  const [hasPlaybackFailure, setHasPlaybackFailure] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
 
-    if (!video) {
-      return undefined;
-    }
+    if (!video) return undefined;
 
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "");
+    const revealVideoWhenReady = () => {
+      const hasVisibleFrame = video.currentTime >= revealAfterSeconds && video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA;
 
-    const isAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    setRequiresAutoplayFallback(isAppleMobile);
-
-    function handlePlaybackFailure() {
-      setHasPlaybackFailure(true);
-    }
-
-    function tryToPlay() {
-      const playAttempt = video.play();
-
-      if (playAttempt) {
-        playAttempt.catch(handlePlaybackFailure);
+      if (!video.paused && hasVisibleFrame) {
+        setIsVideoReady(true);
       }
-    }
+    };
+    const showFallback = () => setIsVideoReady(false);
 
-    tryToPlay();
-    video.addEventListener("error", handlePlaybackFailure);
+    video.addEventListener("playing", revealVideoWhenReady);
+    video.addEventListener("timeupdate", revealVideoWhenReady);
+    video.addEventListener("error", showFallback);
+    revealVideoWhenReady();
 
     return () => {
-      video.removeEventListener("error", handlePlaybackFailure);
+      video.removeEventListener("playing", revealVideoWhenReady);
+      video.removeEventListener("timeupdate", revealVideoWhenReady);
+      video.removeEventListener("error", showFallback);
     };
   }, []);
-
-  const shouldShowFallback = hasPlaybackFailure || (requiresAutoplayFallback && !isPlaying);
 
   return (
     <div className="fluid absolute inset-0 overflow-hidden bg-primary">
@@ -61,14 +48,8 @@ export default function HeroBackgroundMedia() {
         loop
         muted
         playsInline
-        poster={fallbackImage}
         preload="auto"
-        className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${shouldShowFallback ? "opacity-0" : "opacity-100"}`}
-        onError={() => setHasPlaybackFailure(true)}
-        onPlaying={() => {
-          setIsPlaying(true);
-          setHasPlaybackFailure(false);
-        }}
+        className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-out ${isVideoReady ? "opacity-100" : "opacity-0"}`}
       >
         <source src={videoSource} type="video/mp4" />
       </video>
