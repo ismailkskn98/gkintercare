@@ -11,7 +11,7 @@ const variants = {
 export default function FormSubmitButton({ children, isSubmitting, variant = "primary", className = "" }) {
   return (
     <button
-      className={`focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-800 transition disabled:cursor-not-allowed disabled:opacity-65 ${variants[variant]} ${className}`}
+      className={`focus-ring inline-flex min-h-10 xl:min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-2.5 xl:py-3 text-sm! xl:text-base! font-800 transition disabled:cursor-not-allowed disabled:opacity-65 ${variants[variant]} ${className}`}
       disabled={isSubmitting}
       type="submit"
     >

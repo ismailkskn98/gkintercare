@@ -7,8 +7,8 @@ import FormSubmitButton from "../forms/formSubmitButton";
 import { useFormSubmissionStore } from "@/stores/formSubmissionStore";
 
 const inputClassName = "w-full bg-transparent text-sm font-600 text-primary outline-none placeholder:text-muted";
-const fieldLabelClassName = "grid gap-2 text-xs font-800 uppercase tracking-[0.1em]";
-const inputShellClassName = "flex items-center gap-3 rounded-lg border bg-light-bg px-4 py-3 transition";
+const fieldLabelClassName = "grid gap-1 xl:gap-2 text-[11px] xl:text-xs! font-800 uppercase tracking-[0.1em]";
+const inputShellClassName = "flex items-center gap-3 rounded-lg border bg-light-bg px-3.5 xl:px-4 py-2.5 xl:py-3 transition";
 
 function getFieldLabelClass(error) {
   return `${fieldLabelClassName} ${error ? "text-[#b53a3a]" : "text-primary/62"}`;
@@ -67,11 +67,11 @@ export default function HomeConsultationForm({ hero }) {
   const validationSummaryId = `${formId}-validation-summary`;
 
   return (
-    <form className="relative max-w-lg rounded-lg border border-white/60 bg-white p-6 text-primary md:p-7" noValidate onSubmit={handleSubmit(onSubmit)} style={{ clipPath: "url(#form-notch)" }}>
-      <div className="relative z-30 mb-5">
-        <span className="section-label text-xs text-primary-soft!">{hero.formLabel}</span>
-        <h2 className="mt-2 text-xl font-800 sm:text-2xl">{hero.formTitle}</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted sm:leading-6">{hero.formText}</p>
+    <form className="relative max-w-lg rounded-lg border border-white/60 bg-white p-6 text-primary xl:p-7" noValidate onSubmit={handleSubmit(onSubmit)} style={{ clipPath: "url(#form-notch)" }}>
+      <div className="relative z-30 mb-4 xl:mb-5">
+        <span className="section-label text-xs! text-primary-soft!">{hero.formLabel}</span>
+        <h2 className="mt-2 text-xl font-800 xl:text-2xl">{hero.formTitle}</h2>
+        <p className="mt-2 text-sm! leading-relaxed text-muted xl:leading-6">{hero.formText}</p>
       </div>
 
       <fieldset className="relative z-30 grid gap-3" disabled={isSubmitting}>
@@ -161,9 +161,11 @@ export default function HomeConsultationForm({ hero }) {
         <FormSubmitButton isSubmitting={isSubmitting} variant="primarySoft" className="w-full">
           {isSubmitting ? hero.formStatus.sending : hero.formButton}
         </FormSubmitButton>
-        <p className={`mt-2 h-5 overflow-hidden text-sm leading-5 ${feedbackClassName}`} id={validationSummaryId} role={hasValidationErrors ? "alert" : undefined} aria-live="polite">
-          {feedbackMessage}
-        </p>
+        {feedbackMessage && (
+          <p className={`mt-2 h-5 overflow-hidden text-sm leading-5 ${feedbackClassName}`} id={validationSummaryId} role={hasValidationErrors ? "alert" : undefined} aria-live="polite">
+            {feedbackMessage}
+          </p>
+        )}
       </div>
     </form>
   );

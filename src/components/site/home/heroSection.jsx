@@ -21,13 +21,13 @@ export default function HeroSection({ content }) {
             <HeartPulse size={15} className="text-accent" />
             {hero.label}
           </span> */}
-          <h1 className="mt-[clamp(1rem,2vw,1.75rem)] text-[clamp(2.35rem,7vw,4.5rem)] font-800 leading-[1.03]">
+          <h1 className="mt-[clamp(1rem,2vw,1.75rem)] text-[clamp(2.35rem,5vw,4.5rem)] font-800 leading-[1.03]">
             {hero.title}
             <br />
             <span className="serif-accent text-accent">{hero.accent}</span>
           </h1>
-          <p className="mt-[clamp(1.125rem,2.2vw,1.5rem)] max-w-xl text-[clamp(0.95rem,1.5vw,1.125rem)] leading-7 text-white/78 md:leading-8">{hero.description}</p>
-          <div className="mt-[clamp(1.5rem,3vw,2rem)] flex flex-col gap-3 sm:flex-row">
+          <p className="mt-[clamp(1.125rem,2.2vw,1.5rem)] max-w-xl text-[clamp(0.95rem,1.3vw,1.125rem)] leading-7 text-white/78 xl:leading-8">{hero.description}</p>
+          <div className="mt-[clamp(1.5rem,2vw,2rem)] flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact" variant="primary-soft">
               {hero.primaryButton}
             </ButtonLink>
@@ -37,7 +37,7 @@ export default function HeroSection({ content }) {
           </div>
 
           {hero.medicalBadges?.length ? (
-            <div className="mt-[clamp(1.75rem,3vw,2.25rem)] max-w-2xl border-t border-white/14 pt-5">
+            <div className="mt-[clamp(1.75rem,2vw,2.25rem)] max-w-2xl border-t border-white/14 pt-5">
               <div className="grid gap-4 sm:grid-cols-3">
                 {hero.medicalBadges.map((badge, index) => {
                   const Icon = medicalBadgeIcons[index] || ShieldCheck;

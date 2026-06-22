@@ -103,8 +103,14 @@ export default async function Footer({ content }) {
         </div>
       </div>
 
-      <div className="mt-[clamp(2.5rem,5vw,3.5rem)] flex flex-col gap-2 text-[0.68rem] text-[#a0a0a0] md:flex-row md:items-center md:justify-between">
-        <span>© 2024 GK InterCare. {t("rights")}</span>
+      <div className="mt-[clamp(2.5rem,5vw,3.5rem)] flex flex-col gap-3 text-[0.68rem] text-[#a0a0a0] md:flex-row md:items-center md:justify-between">
+        <span className="flex items-center gap-1">
+          © 2026 GK InterCare. {t("rights")}{" "}
+          <a className="focus-ring inline-flex w-fit items-center gap-1.5 rounded-sm transition group" href="https://markaforce.com" rel="noopener noreferrer" target="_blank">
+            <Image alt="" className="h-auto w-4" height={15} src="/markaforce.png" width={16} />
+            <span className="group-hover:text-black">MarkaForce</span>
+          </a>
+        </span>
         <span>
           {t("privacy")} | {t("terms")}
         </span>
