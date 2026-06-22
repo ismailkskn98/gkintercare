@@ -153,7 +153,7 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
   return (
     <button
       aria-label="Open live chat"
-      className="focus-ring fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white px-3 py-2 text-primary transition hover:border-accent"
+      className="focus-ring fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white px-3 py-2 text-primary transition hover:border-accent disabled:cursor-wait disabled:opacity-70"
       disabled={!isReady}
       onClick={toggleChat}
       type="button"
