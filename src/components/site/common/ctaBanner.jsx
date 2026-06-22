@@ -5,7 +5,7 @@ export default function CtaBanner({ title, text, button, eyebrow = "Take the fir
   return (
     <>
       <section className={`gridContainer ${className}`}>
-        <div className="relative min-h-[clamp(15rem,28vw,22rem)] overflow-hidden rounded-lg bg-primary px-[clamp(1rem,4vw,2.25rem)] py-[clamp(1.1rem,4vw,2.5rem)] text-white shadow-[0_22px_70px_rgba(11,60,93,0.16)]">
+        <div className="relative min-h-[clamp(15rem,28vw,22rem)] max-h-62.5 sm:max-h-max overflow-hidden rounded-lg bg-primary px-[clamp(1rem,4vw,2.25rem)] py-[clamp(1.1rem,4vw,2.5rem)] text-white shadow-[0_22px_70px_rgba(11,60,93,0.16)]">
           <Image src={image} alt={imageAlt} fill unoptimized className="object-cover object-[60%_50%] sm:object-center" />
           <div className="absolute inset-0 bg-linear-to-r from-primary/92 via-primary/68 to-primary/12" />
           <div className="absolute inset-0 bg-black/10" />

@@ -2534,8 +2534,24 @@ const contentByLocale = {
   it: mergeContent(englishContent, italianOverrides),
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://gkintercare.com";
+const siteName = "GK InterCare";
+const defaultOgImage = "/images/logo/logo.png";
+const localeMetaMap = {
+  en: "en_US",
+  es: "es_ES",
+  it: "it_IT",
+};
+
 function localizedPath(locale, path) {
   return path === "/" ? `/${locale}` : `/${locale}${path}`;
+}
+
+function getLanguageAlternates(path) {
+  return {
+    ...Object.fromEntries(supportedLocales.map((supportedLocale) => [supportedLocale, localizedPath(supportedLocale, path)])),
+    "x-default": localizedPath("en", path),
+  };
 }
 
 export function getSiteContent(locale = "en") {
@@ -2548,29 +2564,53 @@ export function getPageMetadata(locale, pageKey) {
   const path = pagePaths[pageKey] || "/";
   const metadata = content.metadata[pageKey] || content.metadata.home;
   const canonical = localizedPath(normalizedLocale, path);
+  const languageAlternates = getLanguageAlternates(path);
+  const localeTag = localeMetaMap[normalizedLocale] || localeMetaMap.en;
+  const alternateLocales = supportedLocales.filter((supportedLocale) => supportedLocale !== normalizedLocale).map((supportedLocale) => localeMetaMap[supportedLocale]);
 
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://gkintercare.com"),
+    metadataBase: new URL(siteUrl),
+    applicationName: siteName,
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
+    category: "healthcare",
+    authors: [{ name: siteName, url: siteUrl }],
+    creator: siteName,
+    publisher: siteName,
+    referrer: "origin-when-cross-origin",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    manifest: "/manifest.webmanifest",
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/images/logo/icon.png", type: "image/png", sizes: "512x512" },
+      ],
+      apple: [{ url: "/images/logo/iconcuk.png", type: "image/png", sizes: "180x180" }],
+      shortcut: ["/favicon.ico"],
+    },
     alternates: {
       canonical,
-      languages: Object.fromEntries(supportedLocales.map((supportedLocale) => [supportedLocale, localizedPath(supportedLocale, path)])),
+      languages: languageAlternates,
     },
     openGraph: {
       title: metadata.title,
       description: metadata.description,
       url: canonical,
-      siteName: "GK InterCare",
-      locale: normalizedLocale,
+      siteName,
+      locale: localeTag,
+      alternateLocale: alternateLocales,
       type: "website",
       images: [
         {
-          url: "/images/logo/logo.png",
+          url: defaultOgImage,
           width: 1200,
           height: 630,
-          alt: "GK InterCare",
+          alt: `${siteName} logo`,
         },
       ],
     },
@@ -2578,11 +2618,18 @@ export function getPageMetadata(locale, pageKey) {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
-      images: ["/images/logo/logo.png"],
+      images: [defaultOgImage],
     },
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
     },
   };
 }
