@@ -10,8 +10,7 @@ import { MotionSlideUp } from "../common/animation";
 import LanguageSwitcher from "../common/languageSwitcher";
 import HeaderLogo from "./logo";
 
-const primaryHeaderPathnames = [pagePaths.doctors];
-const transparentLightHeaderPathnames = [pagePaths.partners];
+const transparentLightHeaderPathnames = [pagePaths.partners, pagePaths.doctors];
 
 export default function Header() {
   const t = useTranslations("Common");
@@ -46,7 +45,6 @@ export default function Header() {
     label: t(item.key),
   }));
 
-  const isPrimaryHeaderAtTop = !isScrolled && primaryHeaderPathnames.includes(pathname);
   const isTransparentLightHeaderAtTop = !isScrolled && transparentLightHeaderPathnames.includes(pathname);
   const hasLightHeaderContext = isScrolled || isTransparentLightHeaderAtTop;
   const headerColor = hasLightHeaderContext ? "text-primary" : "text-white";
@@ -56,7 +54,7 @@ export default function Header() {
   return (
     <motion.header
       animate={{
-        backgroundColor: isScrolled ? "rgba(255,255,255,0.96)" : isPrimaryHeaderAtTop ? "rgba(11,60,93,1)" : "rgba(255,255,255,0)",
+        backgroundColor: isScrolled ? "rgba(255,255,255,0.96)" : "rgba(255,255,255,0)",
         boxShadow: isScrolled ? "0 16px 42px rgba(11,60,93,0.10)" : "0 0 0 rgba(0,0,0,0)",
       }}
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md ${hasLightHeaderContext ? "border-primary/10" : "border-white/10"} ${headerColor}`}
