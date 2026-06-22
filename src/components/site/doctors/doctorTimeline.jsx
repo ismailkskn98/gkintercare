@@ -42,9 +42,9 @@ function DoctorTimelineCard({ doctor, index, labels }) {
                     {item}
                   </span>
                 ))}
-                {hiddenExpertiseCount > 0 ? (
+                {/* {hiddenExpertiseCount > 0 ? (
                   <span className="rounded-full border border-accent/25 bg-accent/10 px-3 py-1.5 text-xs font-800 leading-5 text-accent">+{hiddenExpertiseCount}</span>
-                ) : null}
+                ) : null} */}
               </div>
             </div>
 
