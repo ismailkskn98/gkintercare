@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { MessageCircleMore } from "lucide-react";
 
 export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/icon.png" }) {
   const [isReady, setIsReady] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const hideTimersRef = useRef([]);
   const isOpenRef = useRef(false);
+  const isOpeningRef = useRef(false);
   const syncIntervalRef = useRef(null);
 
   const clearHideTimers = useCallback(() => {
@@ -43,6 +43,10 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
 
     if (typeof opened !== "boolean") return;
 
+    // Opening is asynchronous. Do not hide Crisp again while it is processing
+    // the command from the custom launcher.
+    if (isOpeningRef.current && !opened) return;
+
     const shouldHideCustomButton = opened && visible !== false;
     updateOpenState(shouldHideCustomButton);
 
@@ -64,10 +68,22 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
     const crisp = window.$crisp;
     hideNativeLauncherWhenClosed();
 
+    const handleCrispReady = () => {
+      if (!isMounted) return;
+
+      setIsReady(true);
+      hideNativeLauncherWhenClosed();
+
+      // Keep local state synced in case Crisp misses close/open callbacks.
+      if (syncIntervalRef.current) clearInterval(syncIntervalRef.current);
+      syncIntervalRef.current = setInterval(syncOpenState, 500);
+    };
+
     crisp.push([
       "on",
       "chat:opened",
       () => {
+        isOpeningRef.current = false;
         clearHideTimers();
         updateOpenState(true);
       },
@@ -77,6 +93,7 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
       "on",
       "chat:closed",
       () => {
+        isOpeningRef.current = false;
         updateOpenState(false);
         hideNativeLauncherWhenClosed();
       },
@@ -89,27 +106,21 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
       script.async = true;
       script.src = "https://client.crisp.chat/l.js";
       script.charset = "UTF-8";
-      script.onload = () => {
-        setIsReady(true);
-        hideNativeLauncherWhenClosed();
-
-        // Keep local state synced in case Crisp misses close/open callbacks.
-        if (syncIntervalRef.current) clearInterval(syncIntervalRef.current);
-        syncIntervalRef.current = setInterval(syncOpenState, 500);
-      };
+      script.addEventListener("load", handleCrispReady);
       document.body.appendChild(script);
     } else {
-      queueMicrotask(() => {
-        if (isMounted) setIsReady(true);
-      });
-      hideNativeLauncherWhenClosed();
+      const script = document.getElementById(scriptId);
 
-      if (syncIntervalRef.current) clearInterval(syncIntervalRef.current);
-      syncIntervalRef.current = setInterval(syncOpenState, 500);
+      if (typeof crisp.is === "function") {
+        handleCrispReady();
+      } else {
+        script.addEventListener("load", handleCrispReady);
+      }
     }
 
     return () => {
       isMounted = false;
+      document.getElementById(scriptId)?.removeEventListener("load", handleCrispReady);
       clearHideTimers();
       if (syncIntervalRef.current) {
         clearInterval(syncIntervalRef.current);
@@ -120,7 +131,7 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
   }, [clearHideTimers, hideNativeLauncherWhenClosed, syncOpenState, websiteId]);
 
   function toggleChat() {
-    if (!window.$crisp) return;
+    if (!isReady || !window.$crisp) return;
 
     if (isOpen) {
       clearHideTimers();
@@ -131,7 +142,7 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
     }
 
     clearHideTimers();
-    updateOpenState(true);
+    isOpeningRef.current = true;
     window.$crisp.push(["do", "chat:show"]);
     window.$crisp.push(["do", "chat:open"]);
   }
@@ -143,6 +154,7 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
     <button
       aria-label="Open live chat"
       className="focus-ring fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white px-3 py-2 text-primary transition hover:border-accent"
+      disabled={!isReady}
       onClick={toggleChat}
       type="button"
     >
@@ -150,7 +162,6 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
         <Image alt="GK InterCare" fill sizes="36px" src={logoSrc} className="object-contain p-1" />
       </span>
       <span className="pr-1 text-xs font-800 tracking-wide">Live Chat</span>
-      {/* <MessageCircleMore className={`size-4 ${isReady ? "text-accent" : "text-primary/45"}`} /> */}
     </button>
   );
 }
