@@ -14,7 +14,7 @@ const pageLockCopy = {
 
 export default function TemporaryPageLock({ enabled = true }) {
   const pathname = usePathname() || "/";
-  const isExcluded = ["/", "/doctors", "/partners"].includes(pathname);
+  const isExcluded = ["/", "/doctors", "/partners", "/about"].includes(pathname);
 
   useEffect(() => {
     if (!enabled || isExcluded) return;

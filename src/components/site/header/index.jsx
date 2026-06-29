@@ -10,7 +10,7 @@ import { MotionSlideUp } from "../common/animation";
 import LanguageSwitcher from "../common/languageSwitcher";
 import HeaderLogo from "./logo";
 
-const transparentLightHeaderPathnames = [pagePaths.partners, pagePaths.doctors];
+const transparentLightHeaderPathnames = [pagePaths.about, pagePaths.partners, pagePaths.doctors];
 
 export default function Header() {
   const t = useTranslations("Common");

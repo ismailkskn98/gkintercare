@@ -480,22 +480,28 @@ const englishContent = {
     },
     apart: {
       title: "What Sets Us Apart",
+      image: "/images/about/focus-areas.webp",
+      imageAlt: "GK InterCare international patient support",
       items: [
         {
           title: "International Patient Care",
           text: "We guide you every step of the way, from your first inquiry to full recovery.",
+          highlights: ["full recovery"],
         },
         {
           title: "End-to-End Support",
           text: "Our team is with you throughout your journey and beyond.",
+          // highlights: ["throughout your journey"],
         },
         {
           title: "VIP & Tailored Experience",
           text: "Personalized care plans designed around your needs and goals.",
+          // highlights: ["Personalized care plans"],
         },
         {
           title: "Trusted Medical Network",
           text: "We collaborate with leading hospitals and specialists worldwide.",
+          // highlights: ["leading hospitals and specialists"],
         },
       ],
     },
@@ -503,6 +509,9 @@ const englishContent = {
       label: "Who We Are",
       title: "More Than an Agency,",
       accent: "Your Partner in Health.",
+      image: "/images/doctors/doctors.png",
+      imageAlt: "GK InterCare international patient care team",
+      highlightPhrases: ["medical tourism"],
       paragraphs: [
         "With more than a decade of experience in medical tourism, GK InterCare has become a trusted partner for patients from all over the world.",
         "We work with a carefully selected network of leading hospitals and specialists in Istanbul to ensure the highest standards of safety, quality, and care.",
@@ -519,28 +528,35 @@ const englishContent = {
       title: "Built on Experience.",
       accent: "Driven by Patient Satisfaction.",
       description: "Our commitment to excellence shapes every aspect of the care we provide.",
+      highlightPhrases: ["excellence"],
       cards: [
         {
           title: "Patient Satisfaction First",
           text: "Your comfort, safety, and happiness are at the center of everything we do.",
+          // highlights: ["comfort, safety, and happiness"],
         },
         {
           title: "Doctor-Led Perspective",
           text: "Our services are shaped by the insight and standards of experienced doctors.",
+          highlights: ["experienced doctors"],
         },
         {
           title: "Personalized Care, Every Step",
           text: "From your first contact to your final follow-up, we are by your side.",
+          // highlights: ["by your side"],
         },
         {
           title: "Transparency & Trust",
           text: "Clear communication, honest guidance, and ethical healthcare partnerships.",
+          // highlights: ["honest guidance"],
         },
       ],
     },
     vision: {
       label: "Our Vision",
       title: "Healthcare, Experienced Through a Doctor's Perspective",
+      image: "/images/about/our-vision-bg-2.webp",
+      imageAlt: "Doctor-led healthcare vision at GK InterCare",
       text: "We believe the best results come from combining medical excellence with a personalized approach. Our team works with a doctor's perspective at every stage of your journey.",
       center: "We evaluate, plan, coordinate, and care just as we would for our own family.",
       quote: "Our goal is to make world-class healthcare accessible, without compromising on quality.",
@@ -549,7 +565,10 @@ const englishContent = {
     promise: {
       label: "Our Promise to You",
       title: "Premium Quality. Accessible to All.",
+      image: "/images/about/promise.webp",
+      imageAlt: "Premium healthcare promise at GK InterCare",
       description: "We make high-end healthcare services more affordable without compromising on safety, quality, or comfort. Because everyone deserves the best care.",
+      highlightPhrases: ["best care"],
       steps: ["Consultation & Planning", "Travel & Arrival Management", "Treatment Coordination", "Recovery & Follow-Up", "Aftercare & Long-Term Support"],
     },
     cta: {
@@ -774,7 +793,7 @@ const englishContent = {
       accent: "GK InterCare?",
       description: "A dependable clinical network, with the communication and flexibility your local team needs.",
       items: [
-        { title: "Competitive Commissions", text: "Earn up to 20% per patient", image: "/images/gk-intercare-for-partners.avif" },
+        { title: "Competitive Commissions", text: "Rewarding partnership terms tailored to your referral volume", image: "/images/gk-intercare-for-partners.avif" },
         { title: "Flexible Pricing", text: "Personalized pricing for each case", image: "/images/journey-teaser/case-review.webp" },
         { title: "Top Medical Experts", text: "Access to leading surgeons", image: "/images/medical-team-2.jpg" },
         { title: "VIP Patient Experience", text: "High-end service for your patients", image: "/images/personalized-care.webp" },
@@ -1298,22 +1317,28 @@ const spanishOverrides = {
     },
     apart: {
       title: "Lo que nos diferencia",
+      image: "/images/about/what-sets-us-apart.webp",
+      imageAlt: "Atención internacional al paciente de GK InterCare",
       items: [
         {
           title: "Atención a pacientes internacionales",
           text: "Te guiamos en cada paso, desde tu primera consulta hasta la recuperación completa.",
+          highlights: ["cada paso", "recuperación completa"],
         },
         {
           title: "Soporte integral",
           text: "Nuestro equipo está contigo durante todo tu viaje y más allá.",
+          highlights: ["durante todo tu viaje"],
         },
         {
           title: "Experiencia VIP y a medida",
           text: "Planes de atención personalizados según tus necesidades y objetivos.",
+          highlights: ["Planes de atención personalizados"],
         },
         {
           title: "Red médica de confianza",
           text: "Colaboramos con hospitales y especialistas líderes a nivel mundial.",
+          highlights: ["hospitales y especialistas líderes"],
         },
       ],
     },
@@ -1321,39 +1346,54 @@ const spanishOverrides = {
       label: "Quiénes somos",
       title: "Más que una agencia,",
       accent: "tu socio en salud.",
+      image: "/images/about/who-we-are.webp",
+      imageAlt: "Equipo de atención internacional al paciente de GK InterCare",
+      highlightPhrases: ["turismo médico", "socio de confianza", "Estambul"],
       paragraphs: [
         "Con más de una década de experiencia en turismo médico, GK InterCare se ha convertido en un socio de confianza para pacientes de todo el mundo.",
         "Trabajamos con una red cuidadosamente seleccionada de hospitales y especialistas líderes en Estambul para garantizar los más altos estándares de seguridad, calidad y atención.",
       ],
-      stats: [{ label: "Años de experiencia" }, { label: "Pacientes internacionales" }, { label: "Índice de satisfacción del paciente" }, { label: "Hospitales asociados en todo el mundo" }],
+      stats: [
+        { value: "10+", label: "Años de experiencia" },
+        { value: "10,000+", label: "Pacientes internacionales" },
+        { value: "95%+", label: "Índice de satisfacción del paciente" },
+        { value: "50+", label: "Hospitales asociados en todo el mundo" },
+      ],
     },
     why: {
       label: "¿Por qué elegirnos?",
       title: "Construido sobre experiencia.",
       accent: "Impulsado por la satisfacción del paciente.",
       description: "Nuestro compromiso con la excelencia guía cada aspecto de la atención que ofrecemos.",
+      highlightPhrases: ["excelencia"],
       cards: [
         {
           title: "La satisfacción del paciente primero",
           text: "Tu comodidad, seguridad y felicidad están en el centro de todo lo que hacemos.",
+          highlights: ["comodidad, seguridad y felicidad"],
         },
         {
           title: "Perspectiva dirigida por médicos",
           text: "Nuestros servicios se basan en la visión y los estándares de médicos experimentados.",
+          highlights: ["médicos experimentados"],
         },
         {
           title: "Atención personalizada en cada paso",
           text: "Desde el primer contacto hasta el último seguimiento, estamos a tu lado.",
+          highlights: ["a tu lado"],
         },
         {
           title: "Transparencia y confianza",
           text: "Comunicación clara, orientación honesta y alianzas sanitarias éticas.",
+          highlights: ["orientación honesta"],
         },
       ],
     },
     vision: {
       label: "Nuestra visión",
       title: "La salud, vivida desde la perspectiva de un médico",
+      image: "/images/about/vision.webp",
+      imageAlt: "Visión sanitaria dirigida por médicos en GK InterCare",
       text: "Creemos que los mejores resultados nacen de combinar excelencia médica con un enfoque personalizado. Nuestro equipo trabaja con perspectiva médica en cada etapa de tu viaje.",
       center: "Evaluamos, planificamos, coordinamos y cuidamos como lo haríamos con nuestra propia familia.",
       quote: "Nuestro objetivo es hacer accesible la atención sanitaria de clase mundial sin comprometer la calidad.",
@@ -1362,7 +1402,10 @@ const spanishOverrides = {
     promise: {
       label: "Nuestra promesa para ti",
       title: "Calidad premium. Accesible para todos.",
+      image: "/images/about/promise.webp",
+      imageAlt: "Promesa de atención premium de GK InterCare",
       description: "Hacemos que los servicios sanitarios de alto nivel sean más accesibles sin comprometer la seguridad, la calidad ni la comodidad. Porque todos merecen la mejor atención.",
+      highlightPhrases: ["más accesibles", "mejor atención"],
       steps: ["Consulta y planificación", "Gestión de viaje y llegada", "Coordinación del tratamiento", "Recuperación y seguimiento", "Cuidados posteriores y apoyo a largo plazo"],
     },
     cta: {
@@ -1571,7 +1614,7 @@ const spanishOverrides = {
       accent: "GK InterCare?",
       description: "Una red clinica confiable, con la comunicacion y flexibilidad que necesita tu equipo local.",
       items: [
-        { title: "Comisiones competitivas", text: "Gana hasta un 20% por paciente" },
+        { title: "Comisiones competitivas", text: "Condiciones de colaboración atractivas adaptadas a tu volumen de referidos" },
         { title: "Precios flexibles", text: "Precios personalizados para cada caso" },
         { title: "Expertos médicos líderes", text: "Acceso a cirujanos destacados" },
         { title: "Experiencia VIP para pacientes", text: "Servicio de alto nivel para tus pacientes" },
@@ -2086,22 +2129,28 @@ const italianOverrides = {
     },
     apart: {
       title: "Cosa ci distingue",
+      image: "/images/about/what-sets-us-apart.webp",
+      imageAlt: "Assistenza internazionale ai pazienti di GK InterCare",
       items: [
         {
           title: "Assistenza per pazienti internazionali",
           text: "Ti guidiamo in ogni fase, dalla prima richiesta fino al completo recupero.",
+          highlights: ["ogni fase", "completo recupero"],
         },
         {
           title: "Supporto end-to-end",
           text: "Il nostro team è con te durante tutto il percorso e oltre.",
+          highlights: ["durante tutto il percorso"],
         },
         {
           title: "Esperienza VIP e su misura",
           text: "Piani di cura personalizzati in base alle tue esigenze e ai tuoi obiettivi.",
+          highlights: ["Piani di cura personalizzati"],
         },
         {
           title: "Rete medica affidabile",
           text: "Collaboriamo con ospedali e specialisti leader a livello mondiale.",
+          highlights: ["ospedali e specialisti leader"],
         },
       ],
     },
@@ -2109,39 +2158,54 @@ const italianOverrides = {
       label: "Chi siamo",
       title: "Più di un'agenzia,",
       accent: "il tuo partner per la salute.",
+      image: "/images/about/who-we-are.webp",
+      imageAlt: "Team di assistenza internazionale ai pazienti di GK InterCare",
+      highlightPhrases: ["turismo medico", "partner di fiducia", "Istanbul"],
       paragraphs: [
         "Con oltre un decennio di esperienza nel turismo medico, GK InterCare è diventata un partner di fiducia per pazienti da tutto il mondo.",
         "Lavoriamo con una rete attentamente selezionata di ospedali e specialisti leader a Istanbul per garantire i più alti standard di sicurezza, qualità e cura.",
       ],
-      stats: [{ label: "Anni di esperienza" }, { label: "Pazienti internazionali" }, { label: "Tasso di soddisfazione dei pazienti" }, { label: "Ospedali partner nel mondo" }],
+      stats: [
+        { value: "10+", label: "Anni di esperienza" },
+        { value: "10,000+", label: "Pazienti internazionali" },
+        { value: "95%+", label: "Tasso di soddisfazione dei pazienti" },
+        { value: "50+", label: "Ospedali partner nel mondo" },
+      ],
     },
     why: {
       label: "Perché sceglierci?",
       title: "Fondati sull'esperienza.",
       accent: "Guidati dalla soddisfazione del paziente.",
       description: "Il nostro impegno per l'eccellenza guida ogni aspetto dell'assistenza che offriamo.",
+      highlightPhrases: ["eccellenza"],
       cards: [
         {
           title: "Soddisfazione del paziente al primo posto",
           text: "Il tuo comfort, la tua sicurezza e la tua felicità sono al centro di tutto ciò che facciamo.",
+          highlights: ["comfort, la tua sicurezza e la tua felicità"],
         },
         {
           title: "Prospettiva guidata da medici",
           text: "I nostri servizi sono modellati dall'esperienza e dagli standard di medici esperti.",
+          highlights: ["medici esperti"],
         },
         {
           title: "Cura personalizzata in ogni fase",
           text: "Dal primo contatto all'ultimo follow-up, siamo al tuo fianco.",
+          highlights: ["al tuo fianco"],
         },
         {
           title: "Trasparenza e fiducia",
           text: "Comunicazione chiara, guida onesta e partnership sanitarie etiche.",
+          highlights: ["guida onesta"],
         },
       ],
     },
     vision: {
       label: "La nostra visione",
       title: "La sanità vissuta attraverso la prospettiva di un medico",
+      image: "/images/about/vision.webp",
+      imageAlt: "Visione sanitaria guidata da medici presso GK InterCare",
       text: "Crediamo che i migliori risultati nascano dall'unione tra eccellenza medica e approccio personalizzato. Il nostro team lavora con una prospettiva medica in ogni fase del tuo percorso.",
       center: "Valutiamo, pianifichiamo, coordiniamo e ci prendiamo cura di te come faremmo con la nostra famiglia.",
       quote: "Il nostro obiettivo è rendere accessibile la sanità di livello mondiale senza compromettere la qualità.",
@@ -2150,7 +2214,10 @@ const italianOverrides = {
     promise: {
       label: "La nostra promessa per te",
       title: "Qualità premium. Accessibile a tutti.",
+      image: "/images/about/promise.webp",
+      imageAlt: "Promessa di assistenza premium di GK InterCare",
       description: "Rendiamo i servizi sanitari di alto livello più accessibili senza compromettere sicurezza, qualità o comfort. Perché tutti meritano le migliori cure.",
+      highlightPhrases: ["più accessibili", "migliori cure"],
       steps: ["Consulenza e pianificazione", "Gestione viaggio e arrivo", "Coordinamento del trattamento", "Recupero e follow-up", "Assistenza post-trattamento e supporto a lungo termine"],
     },
     cta: {
@@ -2359,7 +2426,7 @@ const italianOverrides = {
       accent: "GK InterCare?",
       description: "Una rete clinica affidabile, con la comunicazione e la flessibilita che servono al tuo team locale.",
       items: [
-        { title: "Commissioni competitive", text: "Guadagna fino al 20% per paziente" },
+        { title: "Commissioni competitive", text: "Condizioni di partnership vantaggiose in base al tuo volume di referral" },
         { title: "Prezzi flessibili", text: "Prezzi personalizzati per ogni caso" },
         { title: "Massimi esperti medici", text: "Accesso a chirurghi leader" },
         { title: "Esperienza VIP per pazienti", text: "Servizio di alto livello per i tuoi pazienti" },
