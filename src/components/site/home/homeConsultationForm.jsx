@@ -3,7 +3,7 @@
 import { useId } from "react";
 import { Mail, MapPin, Phone, UserRound } from "lucide-react";
 import { useForm } from "react-hook-form";
-import FormSubmitButton from "../forms/formSubmitButton";
+import CustomSubmitButton from "../common/customSubmitButton";
 import { useFormSubmissionStore } from "@/stores/formSubmissionStore";
 
 const inputClassName = "w-full bg-transparent text-sm font-600 text-primary outline-none placeholder:text-muted";
@@ -158,9 +158,9 @@ export default function HomeConsultationForm({ hero }) {
       </fieldset>
 
       <div className="relative z-30 mt-5">
-        <FormSubmitButton isSubmitting={isSubmitting} variant="primarySoft" className="w-full">
+        <CustomSubmitButton isSubmitting={isSubmitting} variant="primarySoft" className="w-full">
           {isSubmitting ? hero.formStatus.sending : hero.formButton}
-        </FormSubmitButton>
+        </CustomSubmitButton>
         {feedbackMessage && (
           <p className={`mt-2 h-5 overflow-hidden text-sm leading-5 ${feedbackClassName}`} id={validationSummaryId} role={hasValidationErrors ? "alert" : undefined} aria-live="polite">
             {feedbackMessage}

@@ -16,6 +16,7 @@ export default function TreatmentCards({ treatments, labels, buttonLabel, href =
     description: treatment.description,
     image: treatment.image,
     meta: treatment.tags,
+    treatment: treatment.title,
     ctaLabel: resolvedButtonLabel,
   }));
 

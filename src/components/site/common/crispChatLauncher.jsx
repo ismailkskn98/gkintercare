@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useCookieConsentStore } from "@/stores/cookieConsentStore";
 
 export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/icon.png" }) {
+  const functionalConsent = useCookieConsentStore((state) => state.hasConsent("functional"));
+  const consentReady = useCookieConsentStore((state) => state.isReady);
   const [isReady, setIsReady] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const hideTimersRef = useRef([]);
@@ -43,8 +46,6 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
 
     if (typeof opened !== "boolean") return;
 
-    // Opening is asynchronous. Do not hide Crisp again while it is processing
-    // the command from the custom launcher.
     if (isOpeningRef.current && !opened) return;
 
     const shouldHideCustomButton = opened && visible !== false;
@@ -58,7 +59,14 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
   }, [clearHideTimers, hideNativeLauncherWhenClosed, updateOpenState]);
 
   useEffect(() => {
-    if (!websiteId) return;
+    if (!websiteId || !consentReady || !functionalConsent) {
+      const timeoutId = window.setTimeout(() => {
+        setIsReady(false);
+        updateOpenState(false);
+      }, 0);
+      window.$crisp?.push(["do", "chat:hide"]);
+      return () => window.clearTimeout(timeoutId);
+    }
 
     let isMounted = true;
 
@@ -74,7 +82,6 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
       setIsReady(true);
       hideNativeLauncherWhenClosed();
 
-      // Keep local state synced in case Crisp misses close/open callbacks.
       if (syncIntervalRef.current) clearInterval(syncIntervalRef.current);
       syncIntervalRef.current = setInterval(syncOpenState, 500);
     };
@@ -128,7 +135,7 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
       }
       window.$crisp?.push(["do", "chat:hide"]);
     };
-  }, [clearHideTimers, hideNativeLauncherWhenClosed, syncOpenState, websiteId]);
+  }, [clearHideTimers, consentReady, functionalConsent, hideNativeLauncherWhenClosed, syncOpenState, updateOpenState, websiteId]);
 
   function toggleChat() {
     if (!isReady || !window.$crisp) return;
@@ -147,18 +154,18 @@ export default function CrispChatLauncher({ websiteId, logoSrc = "/images/logo/i
     window.$crisp.push(["do", "chat:open"]);
   }
 
-  if (!websiteId) return null;
+  if (!websiteId || !consentReady || !functionalConsent) return null;
   if (isOpen) return null;
 
   return (
     <button
       aria-label="Open live chat"
-      className="focus-ring fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white px-3 py-2 text-primary transition hover:border-accent disabled:cursor-wait disabled:opacity-70"
+      className="focus-ring fixed bottom-5 right-5 z-40 inline-flex items-center gap-1 rounded-full border border-primary/10 bg-white px-3 py-2 text-primary transition hover:border-accent disabled:cursor-wait disabled:opacity-70"
       disabled={!isReady}
       onClick={toggleChat}
       type="button"
     >
-      <span className="relative flex size-9 items-center justify-center overflow-hidden rounded-full bg-primary/5 ring-1 ring-primary/10">
+      <span className="relative flex size-9 items-center justify-center overflow-hidden">
         <Image alt="GK InterCare" fill sizes="36px" src={logoSrc} className="object-contain p-1" />
       </span>
       <span className="pr-1 text-xs font-800 tracking-wide">Live Chat</span>

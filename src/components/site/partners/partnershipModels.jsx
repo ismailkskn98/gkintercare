@@ -58,7 +58,7 @@ export default function PartnershipModels({ models }) {
   );
 
   return (
-    <section className="gridContainer py-[clamp(3.5rem,8vw,6.5rem)]" ref={sectionRef}>
+    <section className="gridContainer pt-[clamp(3.5rem,8vw,6.5rem)]" ref={sectionRef}>
       <div>
         <div ref={headingRef}>
           <SectionHeader label={models.label} title={models.title} />

@@ -10,7 +10,7 @@ import TreatmentCards from "../common/treatmentCards";
 import WhySection from "./whySection";
 import WorldPatientMap from "../common/worldPatientMap";
 
-export default function HomeContent({ content }) {
+export default function HomeContent({ content, locale }) {
   const { home, treatments, ui } = content;
 
   return (
@@ -33,7 +33,7 @@ export default function HomeContent({ content }) {
           <p className="mt-4 max-w-2xl text-[clamp(0.9rem,1.3vw,1rem)] leading-7 text-white/70">{home.patientMap.description}</p>
         </article>
         <main className="w-full flex flex-col items-center gap-[clamp(2rem,4vw,3.5rem)]">
-          <WorldPatientMap />
+          <WorldPatientMap locale={locale} />
           <MotionFadeIn className="w-full flex-1">
             <StatsBar stats={home.hero.trustItems} className="w-full" />
           </MotionFadeIn>

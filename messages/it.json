@@ -16,6 +16,8 @@
     "rights": "Tutti i diritti riservati.",
     "privacy": "Informativa Privacy",
     "terms": "Termini di Servizio",
+    "cookieSettings": "Impostazioni cookie",
+    "cookiePolicy": "Cookie Policy",
     "language": "Lingua",
     "languages": {
       "label": "Lingua",
@@ -24,5 +26,203 @@
       "italian": "Italiano"
     },
     "whatsapp": "WhatsApp"
+  },
+  "ConsultationForm": {
+    "eyebrow": "Consulenza gratuita",
+    "title": "Pianifica il tuo trattamento con GK InterCare",
+    "description": "Condividi i tuoi dati e il nostro team di coordinamento pazienti ti contatterà con i prossimi passi.",
+    "secureNote": "La tua richiesta sarà esaminata da un coordinatore pazienti GK InterCare.",
+    "button": "Invia richiesta di consulenza",
+    "consent": "Accetto che GK InterCare tratti le mie informazioni e mi contatti in merito a questa richiesta di consulenza.",
+    "fields": {
+      "fullName": {
+        "label": "Nome completo",
+        "placeholder": "Il tuo nome completo"
+      },
+      "email": {
+        "label": "Indirizzo email",
+        "placeholder": "tu@email.com"
+      },
+      "phone": {
+        "label": "Telefono / WhatsApp",
+        "placeholder": "+90 532 123 45 67"
+      },
+      "country": {
+        "label": "Paese",
+        "placeholder": "Da quale paese provieni?"
+      },
+      "treatment": {
+        "label": "Trattamento di interesse",
+        "placeholder": "Seleziona un trattamento"
+      },
+      "doctorPreference": {
+        "label": "Preferenza medico",
+        "placeholder": "Seleziona un medico (opzionale)"
+      },
+      "message": {
+        "label": "Messaggio",
+        "placeholder": "Raccontaci i tuoi obiettivi, le tempistiche, la storia dei trattamenti o le domande."
+      }
+    },
+    "select": {
+      "noOptions": "Nessuna opzione trovata"
+    },
+    "images": {
+      "title": "Immagini opzionali",
+      "helper": "Trascina o seleziona fino a 3 immagini JPG/PNG. Ogni immagine può essere massimo 5 MB.",
+      "dropActive": "Rilascia qui le immagini",
+      "remove": "Rimuovi immagine"
+    },
+    "validation": {
+      "required": "Questo campo è obbligatorio.",
+      "invalidEmail": "Inserisci un indirizzo email valido.",
+      "consent": "Accetta il consenso privacy.",
+      "summary": "Controlla i campi evidenziati.",
+      "tooLong": "Accorcia questo campo.",
+      "maxFiles": "Puoi caricare fino a 3 immagini.",
+      "fileType": "Sono supportate solo immagini JPG, JPEG e PNG.",
+      "fileSize": "Ogni immagine può essere massimo 5 MB.",
+      "fileRejected": "Sono accettate solo immagini JPG/PNG fino a 5 MB."
+    },
+    "status": {
+      "sending": "Invio della richiesta...",
+      "success": "Grazie. Il nostro team di coordinamento pazienti ti contatterà presto.",
+      "error": "Non siamo riusciti a inviare la richiesta. Riprova."
+    }
+  },
+  "CookieConsent": {
+    "accept": "Accetta",
+    "reject": "Rifiuta",
+    "banner": {
+      "message": "Utilizziamo i cookie per far funzionare il sito in modo sicuro e, con il tuo permesso, abilitare la live chat.",
+      "learnMore": "Scopri di più"
+    },
+    "preferences": {
+      "open": "Apri preferenze cookie",
+      "title": "Preferenze cookie",
+      "description": "Scegli quali cookie opzionali consentire. I cookie necessari sono sempre attivi perché richiesti dal sito.",
+      "close": "Chiudi preferenze cookie",
+      "cancel": "Annulla",
+      "save": "Salva preferenze",
+      "moreInfo": "Maggiori informazioni nella nostra",
+      "cookiePolicy": "Cookie Policy",
+      "privacyPolicy": "Informativa Privacy"
+    },
+    "categories": {
+      "necessary": {
+        "title": "Necessari",
+        "description": "Richiesti per sicurezza, lingua e memorizzare la scelta sui cookie."
+      },
+      "functional": {
+        "title": "Funzionali",
+        "description": "Abilitano la live chat tramite il fornitore Crisp."
+      },
+      "analytics": {
+        "title": "Analitici",
+        "description": "Ci aiutano a capire l'uso del sito. Attualmente non sono attivi."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "description": "Usati per pubblicità e remarketing. Attualmente non sono attivi."
+      }
+    }
+  },
+  "Legal": {
+    "privacy": {
+      "metaTitle": "Informativa Privacy | GK InterCare",
+      "metaDescription": "Come GK InterCare raccoglie, utilizza e protegge i dati personali.",
+      "hero": {
+        "label": "Legale",
+        "title": "Informativa",
+        "accent": "Privacy",
+        "description": "Questo avviso spiega come GK InterCare tratta i dati personali quando utilizzi il nostro sito e ci contatti."
+      },
+      "sections": [
+        {
+          "title": "Chi siamo",
+          "paragraphs": [
+            "GK InterCare è un servizio di coordinamento del turismo sanitario con sede a Istanbul, Turchia.",
+            "Per domande sulla privacy, contattaci a info@gkintercare.com."
+          ]
+        },
+        {
+          "title": "Quali dati raccogliamo",
+          "paragraphs": [
+            "Quando invii un modulo di contatto, consultazione, partnership o richiesta di richiamata, raccogliamo i dati che fornisci come nome, email, telefono, paese e messaggio.",
+            "Se usi la live chat dopo aver accettato i cookie funzionali, il fornitore della chat può elaborare dati della conversazione e informazioni tecniche.",
+            "Al momento non utilizziamo Google Analytics, Meta Pixel o tracker pubblicitari su questo sito."
+          ]
+        },
+        {
+          "title": "Perché usiamo i tuoi dati",
+          "paragraphs": [
+            "Elaboriamo i dati del modulo per rispondere alla tua richiesta, coordinare le consultazioni e comunicare con te.",
+            "La casella di consenso di ogni modulo è un permesso separato per quella richiesta. Non è la stessa cosa del consenso sui cookie.",
+            "Usiamo cookie strettamente necessari per ricordare la tua scelta. I cookie funzionali vengono usati solo se li accetti."
+          ]
+        },
+        {
+          "title": "Basi giuridiche",
+          "paragraphs": [
+            "A seconda dei casi, ci basiamo sul consenso, misure precontrattuali, interesse legittimo a rispondere alle richieste e obblighi legali.",
+            "Puoi revocare il consenso per i cookie opzionali in qualsiasi momento tramite Impostazioni cookie nel footer."
+          ]
+        },
+        {
+          "title": "Conservazione e condivisione",
+          "paragraphs": [
+            "Conserviamo le richieste solo per il tempo necessario a coordinamento, follow-up e conformità legale.",
+            "I dati possono essere condivisi con fornitori che ci aiutano a gestire sito, email e live chat."
+          ]
+        },
+        {
+          "title": "I tuoi diritti",
+          "paragraphs": [
+            "A seconda della tua posizione, puoi avere diritto di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità.",
+            "Puoi anche presentare reclamo all'autorità di protezione dei dati locale."
+          ]
+        }
+      ]
+    },
+    "cookiePolicy": {
+      "metaTitle": "Cookie Policy | GK InterCare",
+      "metaDescription": "Come GK InterCare utilizza cookie e tecnologie simili.",
+      "hero": {
+        "label": "Legale",
+        "title": "Cookie",
+        "accent": "Policy",
+        "description": "Questa pagina spiega quali cookie sono usati su gkintercare.com e come puoi controllarli."
+      },
+      "sections": [
+        {
+          "title": "Cosa sono i cookie",
+          "paragraphs": [
+            "I cookie sono piccoli file di testo memorizzati sul tuo dispositivo. Aiutano i siti a funzionare, ricordare preferenze e comprendere l'utilizzo."
+          ]
+        },
+        {
+          "title": "Come usiamo i cookie",
+          "paragraphs": [
+            "I cookie necessari memorizzano la tua scelta in un cookie first-party chiamato gk_cookie_consent.",
+            "I cookie funzionali vengono caricati solo se li accetti. Sono usati per la live chat Crisp.",
+            "I cookie analitici e di marketing sono elencati per trasparenza, ma al momento non sono attivi."
+          ]
+        },
+        {
+          "title": "Preferenza lingua",
+          "paragraphs": [
+            "La lingua del sito è gestita tramite il percorso URL (ad esempio /en/, /es/, /it/). Non usiamo un cookie lingua separato per questa funzione."
+          ]
+        },
+        {
+          "title": "Gestione dei cookie",
+          "paragraphs": [
+            "Alla prima visita puoi Accettare tutti, Rifiutare quelli opzionali o aprire Preferenze per scegliere le categorie.",
+            "Puoi modificare la scelta in qualsiasi momento da Impostazioni cookie nel footer.",
+            "Puoi anche eliminare i cookie dalle impostazioni del browser."
+          ]
+        }
+      ]
+    }
   }
 }

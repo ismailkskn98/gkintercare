@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MotionFadeIn } from "../common/animation";
-import ButtonLink from "../common/buttonLink";
+import ConsultationButtonLink from "../common/consultation/consultationButtonLink";
 
 function DoctorTimelineCard({ doctor, index, labels }) {
   const visibleExpertise = doctor.expertise.slice(0, 4);
@@ -48,9 +48,15 @@ function DoctorTimelineCard({ doctor, index, labels }) {
               </div>
             </div>
 
-            <ButtonLink className="mt-6 min-h-9! w-full px-3! py-2! text-xs! sm:w-max" href="/contact" variant="outline">
+            <ConsultationButtonLink
+              className="mt-6 min-h-9! w-full px-3! py-2! text-xs! sm:w-max"
+              doctor={doctor.name}
+              source="Doctors page doctor card"
+              treatment={doctor.expertise?.[0] || ""}
+              variant="outline"
+            >
               {labels.planButton}
-            </ButtonLink>
+            </ConsultationButtonLink>
           </div>
         </div>
       </div>

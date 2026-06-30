@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MotionSlideUp } from "../common/animation";
-import ButtonLink from "../common/buttonLink";
+import ConsultationButtonLink from "../common/consultation/consultationButtonLink";
 
 const backgroundImage = "/images/doctors-page-bottom.webp";
 
@@ -17,9 +17,9 @@ export default function DoctorJourneyNotes({ journey, eyebrow }) {
             <span className="section-label text-accent">{eyebrow}</span>
             <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.65rem)] font-800 leading-tight text-white">{journey.title}</h2>
             <p className="mt-4 text-sm leading-7 text-white/70">{journey.text}</p>
-            <ButtonLink className="mt-6 w-full sm:w-max" href="/contact" variant="light">
+            <ConsultationButtonLink className="mt-6 w-full sm:w-max" source="Doctors page journey CTA" variant="light">
               {journey.button}
-            </ButtonLink>
+            </ConsultationButtonLink>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">

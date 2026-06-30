@@ -48,7 +48,7 @@ export default function PartnerBenefits({ benefits }) {
   }
 
   return (
-    <section className="gridContainer overflow-hidden bg-light-bg py-[clamp(3.5rem,8vw,6.5rem)]" id="partner-benefits" ref={sectionRef}>
+    <section className="gridContainer overflow-hidden py-[clamp(3.5rem,8vw,6.5rem)]" id="partner-benefits" ref={sectionRef}>
       <div>
         <header className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-12" ref={headingRef}>
           <div>

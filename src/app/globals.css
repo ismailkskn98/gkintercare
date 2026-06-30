@@ -9,6 +9,17 @@
   --light-bg: #f6fafd;
   --muted: #6b7380;
   --border: rgba(11, 60, 93, 0.12);
+  --card: #ffffff;
+  --card-foreground: #0b3c5d;
+  --popover: #ffffff;
+  --popover-foreground: #0b3c5d;
+  --primary-foreground: #ffffff;
+  --accent-foreground: #0b3c5d;
+  --muted-foreground: #6b7380;
+  --input: rgba(11, 60, 93, 0.14);
+  --ring: #c8a969;
+  --destructive: #b53a3a;
+  --destructive-foreground: #ffffff;
   --radius: 8px;
   --shadow: 0 24px 70px rgba(11, 60, 93, 0.12);
 }
@@ -19,8 +30,23 @@
   --color-primary: var(--primary);
   --color-primary-soft: var(--primary-soft);
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --color-light-bg: var(--light-bg);
   --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-cormorant);
 }
@@ -29,11 +55,11 @@
   display: grid;
   grid-template-columns: 1fr min(91%, 98rem) 1fr;
 
-  &>* {
+  & > * {
     grid-column: 2;
   }
 
-  &>.fluid {
+  & > .fluid {
     grid-column: 1 / -1;
   }
 }
@@ -55,6 +81,11 @@ body {
   scrollbar-gutter: stable both-edges;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 body,
 button,
 input,
@@ -63,21 +94,9 @@ textarea {
   font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 img,
 video {
   max-width: 100%;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
 }
 
 .font-600 {
@@ -146,15 +165,13 @@ textarea {
 }
 
 .medical-texture {
-  background-image:
-    linear-gradient(rgba(11, 60, 93, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 60, 93, 0.055) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(11, 60, 93, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(11, 60, 93, 0.055) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
 .focus-ring {
-  outline: 2px solid transparent;
-  outline-offset: 3px;
+  outline: 1px solid transparent;
+  outline-offset: 1px;
 }
 
 .focus-ring:focus-visible {
@@ -167,7 +184,6 @@ textarea {
 }
 
 @keyframes heartbeat-soft {
-
   0%,
   100% {
     transform: scale(1);
@@ -193,4 +209,99 @@ textarea {
 .animate-heartbeat-soft {
   animation: heartbeat-soft 2.2s ease-in-out infinite;
   transform-origin: center;
+}
+
+@keyframes sheet-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sheet-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-slide-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sheet-slide-out-right {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes sheet-slide-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sheet-slide-out-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.sheet-overlay[data-state="open"] {
+  animation: sheet-fade-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.sheet-overlay[data-state="closed"] {
+  animation: sheet-fade-out 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.sheet-content-right[data-state="open"] {
+  animation: sheet-slide-in-right 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.sheet-content-right[data-state="closed"] {
+  animation: sheet-slide-out-right 360ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.sheet-content-left[data-state="open"] {
+  animation: sheet-slide-in-left 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.sheet-content-left[data-state="closed"] {
+  animation: sheet-slide-out-left 360ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet-overlay[data-state="open"],
+  .sheet-overlay[data-state="closed"],
+  .sheet-content-right[data-state="open"],
+  .sheet-content-right[data-state="closed"],
+  .sheet-content-left[data-state="open"],
+  .sheet-content-left[data-state="closed"] {
+    animation-duration: 1ms;
+  }
 }

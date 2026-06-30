@@ -7,16 +7,28 @@ import { useEffect, useRef, useState } from "react";
 import { navigationItems, pagePaths } from "@/data/siteContent";
 import { Link, usePathname } from "@/i18n/navigation";
 import { MotionSlideUp } from "../common/animation";
+import { useConsultation } from "../common/consultation/consultationContext";
 import LanguageSwitcher from "../common/languageSwitcher";
 import HeaderLogo from "./logo";
 
-const transparentLightHeaderPathnames = [pagePaths.about, pagePaths.partners, pagePaths.doctors];
+const transparentLightHeaderPathnames = [
+  pagePaths.about,
+  pagePaths.partners,
+  pagePaths.doctors,
+  pagePaths.treatments,
+  pagePaths.contact,
+  pagePaths.patientJourney,
+  pagePaths.cookie,
+  pagePaths.privacy,
+  pagePaths.beforeAfter,
+];
 
 export default function Header() {
   const t = useTranslations("Common");
   const pathname = usePathname() || "/";
   const { scrollY } = useScroll();
   const headerRef = useRef(null);
+  const { openConsultation } = useConsultation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -48,11 +60,13 @@ export default function Header() {
   const isTransparentLightHeaderAtTop = !isScrolled && transparentLightHeaderPathnames.includes(pathname);
   const hasLightHeaderContext = isScrolled || isTransparentLightHeaderAtTop;
   const headerColor = hasLightHeaderContext ? "text-primary" : "text-white";
-  const inactiveLinkColor = hasLightHeaderContext ? "text-primary/72" : "text-white/78";
+  const inactiveLinkColor = hasLightHeaderContext ? "text-primary" : "text-white";
   const controlClass = hasLightHeaderContext ? "border-primary/12 text-primary hover:bg-light-bg" : "border-white/18 text-white hover:bg-white/10";
 
   return (
     <motion.header
+      layoutRoot
+      layoutScroll
       animate={{
         backgroundColor: isScrolled ? "rgba(255,255,255,0.96)" : "rgba(255,255,255,0)",
         boxShadow: isScrolled ? "0 16px 42px rgba(11,60,93,0.10)" : "0 0 0 rgba(0,0,0,0)",
@@ -91,14 +105,15 @@ export default function Header() {
 
           <div className="hidden items-center gap-3 xl:flex">
             <div className="relative flex items-center gap-2">
-              <Link
+              <button
                 className={`focus-ring inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-800 transition ${
                   hasLightHeaderContext ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
                 }`}
-                href="/contact"
+                onClick={() => openConsultation({ source: "Header desktop CTA" })}
+                type="button"
               >
                 {t("consultation")}
-              </Link>
+              </button>
               <LanguageSwitcher bgWhite={hasLightHeaderContext} />
             </div>
           </div>
@@ -140,15 +155,18 @@ export default function Header() {
               </div>
 
               <div className={`mt-3 border-t pt-4 ${hasLightHeaderContext ? "border-primary/10" : "border-white/12"}`}>
-                <Link
+                <button
                   className={`focus-ring flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-800 transition ${
                     hasLightHeaderContext ? "bg-primary text-white! hover:bg-primary-soft" : "bg-white text-primary! hover:bg-light-bg"
                   }`}
-                  href="/contact"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    openConsultation?.({ source: "Header mobile CTA" });
+                  }}
+                  type="button"
                 >
                   {t("consultation")}
-                </Link>
+                </button>
               </div>
             </div>
           </motion.div>

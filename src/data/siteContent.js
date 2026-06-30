@@ -15,6 +15,8 @@ export const pagePaths = {
   beforeAfter: "/before-after",
   partners: "/partners",
   contact: "/contact",
+  cookie: "/cookie-policy",
+  privacy: "/privacy",
 };
 
 export const navigationItems = [
@@ -35,6 +37,7 @@ export const contact = {
   emailHref: "mailto:info@gkintercare.com",
   address: "Levent Mah. Büyükdere Cad. No: 199",
   addressDetail: "Kat: 15, 34394 Şişli / İstanbul, Türkiye",
+  mapsHref: "https://www.google.com/maps/dir/?api=1&destination=41.0822,29.011",
   workingHours: "Mon - Sat, 09:00 - 18:00 GMT+3",
 };
 
@@ -65,36 +68,44 @@ const treatmentAreas = [
   {
     title: "Plastic Surgery",
     description: "Enhance your natural beauty and confidence with advanced surgical and aesthetic procedures.",
+    detail: "From facial refinement to body contouring, our coordinators match you with surgeons who focus on natural proportions and clear pre-operative planning.",
+    highlights: ["natural beauty and confidence"],
     image: "/images/treatments/plastic.webp",
     tags: ["Rhinoplasty", "Liposuction", "Facelift", "Tummy Tuck", "Breast Surgery", "Brazilian Butt Lift", "Eyelid Surgery", "Hair Transplantation"],
   },
   {
     title: "Dental",
     description: "Achieve a healthy, beautiful smile with our comprehensive dental care solutions.",
+    detail: "Treatments are planned in stages when needed, combining restorative work, aesthetics, and follow-up care through trusted Istanbul clinics.",
     image: "/images/treatments/dental.webp",
     tags: ["Dental Implants", "Crowns & Bridges", "Veneers", "Orthodontics", "Hollywood Smile", "Gum Treatments", "Teeth Whitening", "Root Canal Therapy"],
   },
   {
     title: "Bariatric Surgery",
     description: "Safe and effective weight loss procedures for a healthier, longer life.",
+    detail: "Your pathway includes specialist evaluation, nutritional guidance, and structured aftercare so recovery and lifestyle changes stay coordinated.",
     image: "/images/treatments/bariatric.webp",
     tags: ["Bariatric Surgery", "Lifestyle Coaching", "Pre-Surgery Evaluation", "Post-Surgery Follow-Up", "Nutritional Counseling", "Long-Term Support"],
   },
   {
     title: "Orthopedics",
     description: "Regain mobility and live pain-free with our expert orthopedic care.",
+    detail: "We coordinate consultations for joint, spine, and sports-related conditions with hospitals experienced in international patient rehabilitation planning.",
     image: "/images/treatments/orthopedics.webp",
     tags: ["Knee Replacement", "Spinal Surgery", "Hip Replacement", "Sports Injuries", "Arthroscopy", "Joint Pain Treatments"],
   },
   {
     title: "Neurology",
     description: "Advanced diagnosis and treatment for a wide range of neurological conditions.",
+    detail: "Care pathways are arranged with neurology and neurosurgery teams when advanced imaging, treatment planning, or rehabilitation support is required.",
     image: "/images/treatments/neurology.webp",
     tags: ["Brain & Spine Surgery", "Migraine & Headache", "Epilepsy Treatment", "Neuropathy Treatment", "Multiple Sclerosis (MS)", "Stroke Rehabilitation"],
   },
   {
     title: "Oncology",
     description: "Comprehensive cancer care with compassionate support every step of the way.",
+    detail: "We help organize second opinions, treatment scheduling, and communication between you, your home physicians, and partner oncology centers.",
+    highlights: ["compassionate support"],
     image: "/images/treatments/oncologyy.webp",
     tags: ["Cancer Diagnosis", "Targeted Therapy", "Chemotherapy", "Radiotherapy", "Immunotherapy", "Follow-Up & Support"],
   },
@@ -155,31 +166,51 @@ const journeySteps = [
   {
     number: "01",
     title: "Take the First Step",
-    description: "Reach out to us and share your expectations. Our dedicated team is here to listen, understand, and guide you from the very beginning.",
+    cardTitle: "Start with a Simple Request",
+    description:
+      "Share the treatment you are considering, your priorities, and any timing questions you already have. We review your request and explain how the planning process begins.",
+    detail:
+      "You can contact our team with your initial questions, preferred treatment area, and available medical details. We come back with a clear response, practical next steps, and a direct coordination contact for the planning stage.",
     image: "/images/patient-journey1.avif",
   },
   {
     number: "02",
     title: "Personalized Medical Plan",
-    description: "Our specialists carefully evaluate your case and create a fully tailored treatment plan designed specifically for your needs and desired outcome.",
+    cardTitle: "Review Your Case and Options",
+    description:
+      "After the first review, we help organize your case details and present suitable treatment pathways based on your needs and goals.",
+    detail:
+      "Relevant doctors, clinics, or hospitals are matched to your treatment area. You receive a structured overview covering the proposed plan, expected scheduling flow, and the information you may need before making travel decisions.",
     image: "/images/patient-journey2.avif",
   },
   {
     number: "03",
     title: "Smart Planning Together",
-    description: "We schedule your procedure at the most convenient time for you and organize every detail to ensure a smooth and stress-free experience.",
+    cardTitle: "Confirm the Travel Timeline",
+    description:
+      "Once you are ready to move forward, we coordinate appointment timing and help shape the travel schedule around your availability.",
+    detail:
+      "Treatment dates, arrival timing, accommodation preferences, and key appointments are aligned as one plan. The goal is to keep each step easy to follow before you travel to Istanbul.",
     image: "/images/patient-journey3.avif",
   },
   {
     number: "04",
     title: "VIP Arrival Experience",
-    description: "From the moment you land, everything is taken care of. Our private transfer team welcomes you in a luxury Vito and accompanies you throughout your journey.",
+    cardTitle: "Arrive with Coordinated Support",
+    description:
+      "When you arrive in Istanbul, our coordination team helps keep your transfer, accommodation, and clinic schedule connected.",
+    detail:
+      "Airport pickup, hotel check-in support, and clinic transportation are arranged according to your confirmed itinerary. Your coordinator stays available so practical updates and timing changes remain clear on the ground.",
     image: "/images/patient-journey4.avif",
   },
   {
     number: "05",
     title: "Experience the Transformation",
-    description: "Relax and focus on yourself while our expert team delivers exceptional, natural results. All you need to do is witness the transformation.",
+    cardTitle: "Treatment, Recovery, and Follow-Up",
+    description:
+      "Your treatment period is supported with clear communication, followed by recovery guidance and ongoing follow-up after the procedure.",
+    detail:
+      "During and after treatment, we help keep communication organized between you and the medical team. Recovery instructions, check-in points, and follow-up contact stay part of the journey after your procedure.",
     image: "/images/patient-journey5.avif",
   },
 ];
@@ -882,6 +913,15 @@ const englishContent = {
       title: "Send Us a Message",
       text: "Fill out the form below and our team will get back to you.",
       secureNote: "Your information is secure and will not be shared.",
+      formStatus: {
+        sending: "Sending...",
+        success: "Thank you. Our team will get back to you shortly.",
+        error: "We could not send your message. Please try again.",
+        required: "This field is required.",
+        invalidEmail: "Enter a valid email address.",
+        validationError: "Please check the highlighted fields.",
+        consentRequired: "Please accept the privacy policy to continue.",
+      },
       fields: [
         { label: "Full Name", placeholder: "Your full name", type: "text" },
         { label: "Email Address", placeholder: "your@email.com", type: "email" },
@@ -901,6 +941,8 @@ const englishContent = {
       phoneLabel: "Phone / WhatsApp",
       emailLabel: "Email",
       addressLabel: "Address",
+      mapsHelperText: "Tap to open the address in your maps app and get directions instantly.",
+      mapsButtonLabel: "Open in Maps",
       consultationTitle: "Consultation",
       consultationText: "Book your free consultation and take the first step.",
       consultationButton: "Book a Free Consultation",
@@ -997,6 +1039,7 @@ const spanishOverrides = {
     {
       title: "Cirugía plástica",
       description: "Realza tu belleza natural y tu confianza con procedimientos quirúrgicos y estéticos avanzados.",
+      highlights: ["belleza natural y tu confianza"],
       tags: ["Rinoplastia", "Liposucción", "Lifting facial", "Abdominoplastia", "Cirugía mamaria", "Aumento de glúteos brasileño", "Cirugía de párpados", "Trasplante capilar"],
     },
     {
@@ -1022,6 +1065,7 @@ const spanishOverrides = {
     {
       title: "Oncología",
       description: "Atención oncológica integral con apoyo humano en cada etapa del proceso.",
+      highlights: ["apoyo humano"],
       tags: ["Diagnóstico de cáncer", "Terapia dirigida", "Quimioterapia", "Radioterapia", "Inmunoterapia", "Seguimiento y apoyo"],
     },
   ],
@@ -1066,23 +1110,43 @@ const spanishOverrides = {
   journeySteps: [
     {
       title: "Da el primer paso",
-      description: "Contáctanos y comparte tus expectativas. Nuestro equipo dedicado está aquí para escucharte, entenderte y guiarte desde el primer momento.",
+      cardTitle: "Empieza con una solicitud sencilla",
+      description:
+        "Comparte el tratamiento que estás considerando, tus prioridades y cualquier duda de timing que ya tengas. Revisamos tu solicitud y te explicamos cómo empieza la planificación.",
+      detail:
+        "Puedes contactar a nuestro equipo con tus preguntas iniciales, el área de tratamiento que te interesa y los detalles médicos disponibles. Te respondemos con pasos prácticos, una orientación clara y un contacto directo de coordinación para esta etapa.",
     },
     {
       title: "Plan médico personalizado",
-      description: "Nuestros especialistas evalúan cuidadosamente tu caso y crean un plan de tratamiento totalmente adaptado a tus necesidades y al resultado deseado.",
+      cardTitle: "Revisamos tu caso y tus opciones",
+      description:
+        "Después de la primera revisión, te ayudamos a ordenar la información de tu caso y te presentamos rutas de tratamiento adecuadas a tus necesidades y objetivos.",
+      detail:
+        "Seleccionamos médicos, clínicas u hospitales relevantes según el área de tratamiento. Recibes una visión estructurada del plan propuesto, el flujo estimado de tiempos y la información útil antes de decidir tu viaje.",
     },
     {
       title: "Planificación inteligente juntos",
-      description: "Programamos tu procedimiento en el momento más conveniente para ti y organizamos cada detalle para garantizar una experiencia fluida y sin estrés.",
+      cardTitle: "Confirmamos el calendario del viaje",
+      description:
+        "Cuando decides avanzar, coordinamos las fechas de las citas y ayudamos a organizar el viaje según tu disponibilidad.",
+      detail:
+        "Fechas de tratamiento, llegada, preferencias de alojamiento y citas clave se alinean dentro de un mismo plan. Así cada paso queda claro antes de viajar a Estambul.",
     },
     {
       title: "Experiencia VIP de llegada",
-      description: "Desde el momento en que aterrizas, todo está organizado. Nuestro equipo de traslado privado te recibe en un Vito de lujo y te acompaña durante todo tu viaje.",
+      cardTitle: "Llegada con apoyo coordinado",
+      description:
+        "Cuando llegas a Estambul, nuestro equipo de coordinación ayuda a mantener conectados tu traslado, alojamiento y agenda clínica.",
+      detail:
+        "La recogida en el aeropuerto, el apoyo con el check-in del hotel y los desplazamientos hacia la clínica se organizan según tu itinerario confirmado. Tu coordinador sigue disponible para resolver cambios prácticos o de horario.",
     },
     {
       title: "Vive la transformación",
-      description: "Relájate y concéntrate en ti mientras nuestro equipo experto consigue resultados excepcionales y naturales. Solo tienes que presenciar la transformación.",
+      cardTitle: "Tratamiento, recuperación y seguimiento",
+      description:
+        "Durante el tratamiento y después del procedimiento, mantenemos una comunicación clara y el seguimiento de la recuperación.",
+      detail:
+        "Durante y después del tratamiento, ayudamos a mantener organizada la comunicación entre tú y el equipo médico. Las instrucciones de recuperación, los puntos de control y el contacto posterior siguen formando parte del proceso.",
     },
   ],
   metadata: {
@@ -1700,6 +1764,15 @@ const spanishOverrides = {
       title: "Envíanos un mensaje",
       text: "Completa el formulario y nuestro equipo te responderá.",
       secureNote: "Tu información está segura y no se compartirá.",
+      formStatus: {
+        sending: "Enviando...",
+        success: "Gracias. Nuestro equipo te responderá en breve.",
+        error: "No pudimos enviar tu mensaje. Inténtalo de nuevo.",
+        required: "Este campo es obligatorio.",
+        invalidEmail: "Introduce un email válido.",
+        validationError: "Revisa los campos marcados.",
+        consentRequired: "Acepta la política de privacidad para continuar.",
+      },
       fields: [
         { label: "Nombre completo", placeholder: "Tu nombre completo" },
         { label: "Email", placeholder: "tu@email.com" },
@@ -1719,6 +1792,8 @@ const spanishOverrides = {
       phoneLabel: "Teléfono / WhatsApp",
       emailLabel: "Email",
       addressLabel: "Dirección",
+      mapsHelperText: "Toca para abrir la dirección en tu app de mapas y obtener indicaciones al instante.",
+      mapsButtonLabel: "Abrir en mapas",
       consultationTitle: "Consulta",
       consultationText: "Reserva tu consulta gratuita y da el primer paso.",
       consultationButton: "Reservar consulta gratuita",
@@ -1810,6 +1885,7 @@ const italianOverrides = {
     {
       title: "Chirurgia plastica",
       description: "Valorizza la tua bellezza naturale e la tua sicurezza con procedure chirurgiche ed estetiche avanzate.",
+      highlights: ["bellezza naturale e la tua sicurezza"],
       tags: ["Rinoplastica", "Liposuzione", "Lifting del viso", "Addominoplastica", "Chirurgia del seno", "Brazilian Butt Lift", "Chirurgia delle palpebre", "Trapianto di capelli"],
     },
     {
@@ -1835,6 +1911,7 @@ const italianOverrides = {
     {
       title: "Oncologia",
       description: "Assistenza oncologica completa con supporto umano in ogni fase del percorso.",
+      highlights: ["supporto umano"],
       tags: ["Diagnosi del cancro", "Terapia mirata", "Chemioterapia", "Radioterapia", "Immunoterapia", "Follow-up e supporto"],
     },
   ],
@@ -1879,23 +1956,43 @@ const italianOverrides = {
   journeySteps: [
     {
       title: "Fai il primo passo",
-      description: "Contattaci e condividi le tue aspettative. Il nostro team dedicato è qui per ascoltarti, comprenderti e guidarti fin dall'inizio.",
+      cardTitle: "Inizia con una richiesta semplice",
+      description:
+        "Condividi il trattamento che stai valutando, le tue priorità e le eventuali domande sui tempi. Esaminiamo la richiesta e ti spieghiamo come inizia la pianificazione.",
+      detail:
+        "Puoi contattare il nostro team con le tue prime domande, l'area di trattamento che ti interessa e i dettagli medici disponibili. Ti rispondiamo con passaggi pratici, indicazioni chiare e un referente diretto per questa fase di coordinamento.",
     },
     {
       title: "Piano medico personalizzato",
-      description: "I nostri specialisti valutano attentamente il tuo caso e creano un piano di trattamento completamente su misura per le tue esigenze e il risultato desiderato.",
+      cardTitle: "Esaminiamo il tuo caso e le opzioni",
+      description:
+        "Dopo la prima valutazione, ti aiutiamo a organizzare le informazioni del caso e a vedere i percorsi di trattamento piu adatti alle tue esigenze e ai tuoi obiettivi.",
+      detail:
+        "Medici, cliniche o ospedali pertinenti vengono selezionati in base all'area di trattamento. Ricevi una panoramica strutturata del piano proposto, della tempistica prevista e delle informazioni utili prima di decidere il viaggio.",
     },
     {
       title: "Pianificazione intelligente insieme",
-      description: "Programmiamo la procedura nel momento più comodo per te e organizziamo ogni dettaglio per garantire un'esperienza fluida e senza stress.",
+      cardTitle: "Confermiamo la tabella del viaggio",
+      description:
+        "Quando decidi di procedere, coordiniamo le date principali e aiutiamo a costruire il programma del viaggio in base alla tua disponibilita.",
+      detail:
+        "Date del trattamento, arrivo, preferenze di alloggio e appuntamenti chiave vengono riuniti in un unico piano. In questo modo ogni passaggio resta chiaro prima del viaggio a Istanbul.",
     },
     {
       title: "Esperienza VIP all'arrivo",
-      description: "Dal momento in cui atterri, tutto è già organizzato. Il nostro team di transfer privato ti accoglie in un Vito di lusso e ti accompagna durante tutto il percorso.",
+      cardTitle: "Arrivo con supporto coordinato",
+      description:
+        "Quando arrivi a Istanbul, il nostro team di coordinamento aiuta a mantenere allineati transfer, alloggio e programma clinico.",
+      detail:
+        "Pickup aeroportuale, supporto per il check-in in hotel e spostamenti verso la clinica vengono organizzati secondo l'itinerario confermato. Il coordinatore resta disponibile per aggiornamenti pratici o cambi di orario.",
     },
     {
       title: "Vivi la trasformazione",
-      description: "Rilassati e concentrati su te stesso mentre il nostro team esperto realizza risultati eccezionali e naturali. Devi solo vivere la trasformazione.",
+      cardTitle: "Trattamento, recupero e follow-up",
+      description:
+        "Il periodo di trattamento e la fase successiva sono supportati da una comunicazione chiara, con indicazioni per il recupero e contatto di follow-up.",
+      detail:
+        "Durante e dopo il trattamento, aiutiamo a mantenere ordinata la comunicazione tra te e il team medico. Indicazioni per il recupero, momenti di controllo e contatto successivo restano parte del percorso.",
     },
   ],
   metadata: {
@@ -2512,6 +2609,15 @@ const italianOverrides = {
       title: "Inviaci un messaggio",
       text: "Compila il modulo qui sotto e il nostro team ti ricontatterà.",
       secureNote: "Le tue informazioni sono al sicuro e non saranno condivise.",
+      formStatus: {
+        sending: "Invio in corso...",
+        success: "Grazie. Il nostro team ti ricontatterà a breve.",
+        error: "Non siamo riusciti a inviare il messaggio. Riprova.",
+        required: "Questo campo è obbligatorio.",
+        invalidEmail: "Inserisci un indirizzo email valido.",
+        validationError: "Controlla i campi evidenziati.",
+        consentRequired: "Accetta l'informativa sulla privacy per continuare.",
+      },
       fields: [
         { label: "Nome completo", placeholder: "Il tuo nome completo" },
         { label: "Email", placeholder: "tu@email.com" },
@@ -2531,6 +2637,8 @@ const italianOverrides = {
       phoneLabel: "Telefono / WhatsApp",
       emailLabel: "Email",
       addressLabel: "Indirizzo",
+      mapsHelperText: "Tocca per aprire l'indirizzo nella tua app mappe e ottenere subito le indicazioni.",
+      mapsButtonLabel: "Apri in Maps",
       consultationTitle: "Consulenza",
       consultationText: "Prenota la tua consulenza gratuita e fai il primo passo.",
       consultationButton: "Prenota una consulenza gratuita",

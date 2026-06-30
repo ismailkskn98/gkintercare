@@ -2,7 +2,7 @@
 
 import { useId } from "react";
 import { useForm } from "react-hook-form";
-import FormSubmitButton from "../forms/formSubmitButton";
+import CustomSubmitButton from "../common/customSubmitButton";
 import { useFormSubmissionStore } from "@/stores/formSubmissionStore";
 
 export default function CallbackRequestForm({ content }) {
@@ -56,9 +56,9 @@ export default function CallbackRequestForm({ content }) {
             pattern: { value: /^\S+@\S+\.\S+$/, message: content.invalidEmailError },
           })}
         />
-        <FormSubmitButton isSubmitting={isSubmitting} variant="dark" className="rounded-md px-4 text-xs min-[420px]:py-0">
+        <CustomSubmitButton isSubmitting={isSubmitting} variant="dark" className="rounded-md px-4 text-xs min-[420px]:py-0">
           {isSubmitting ? content.sending : content.button}
-        </FormSubmitButton>
+        </CustomSubmitButton>
       </div>
       <p className={errors.email || status === "error" ? "mt-2 text-xs font-700 text-[#b53a3a]" : "mt-2 text-xs font-700 text-primary-soft"} id={`${formId}-email-error`} aria-live="polite">
         {errors.email?.message || (status === "success" ? content.success : status === "error" ? content.error : null)}

@@ -54,29 +54,29 @@ export default function AboutVisionSection({ vision }) {
             width: "100vw",
             height: "100dvh",
             borderRadius: 0,
-            duration: 1,
-            ease: "power2.inOut",
+            duration: 1.5,
+            ease: "power1.inOut",
           });
 
           timeline.to(
             overlay,
             {
               opacity: 1,
-              duration: 0.45,
-              ease: "power2.out",
+              duration: 0.75,
+              ease: "power1.out",
             },
-            "<0.55",
+            "<0.5",
           );
 
-          timeline.add(() => {}, "+=0.18");
+          timeline.add(() => {}, "+=0.28");
 
           timeline.to(
             content,
             {
               y: "-4vh",
               opacity: 1,
-              duration: 0.85,
-              ease: "power3.out",
+              duration: 1.2,
+              ease: "power2.out",
             },
             "<",
           );
@@ -84,9 +84,9 @@ export default function AboutVisionSection({ vision }) {
           const scrollTrigger = ScrollTrigger.create({
             trigger: main,
             start: "top 88px",
-            end: () => `bottom+=${main.offsetHeight}px bottom`,
+            end: () => `bottom+=${Math.round(main.offsetHeight * 1.4)}px bottom`,
             pin: true,
-            scrub: 0.65,
+            scrub: 1.15,
             animation: timeline,
             anticipatePin: 1,
             invalidateOnRefresh: true,
@@ -102,7 +102,7 @@ export default function AboutVisionSection({ vision }) {
   );
 
   return (
-    <section className="gridContainer pb-[clamp(3.25rem,7vw,6rem)] pt-[clamp(3.25rem,7vw,6rem)] lg:pt-0" ref={sectionRef}>
+    <section className="gridContainer" ref={sectionRef}>
       <div className="lg:hidden">
         <MotionSlideUp>
           <div className="relative mb-8 aspect-[16/10] overflow-hidden rounded-xl bg-primary/8">
@@ -129,7 +129,7 @@ export default function AboutVisionSection({ vision }) {
 
       <div className="fluid relative hidden h-[calc(100svh-5.5rem)] overflow-hidden lg:block" ref={mainRef}>
         <div className="relative flex h-full items-center justify-center">
-          <div className="relative z-10 h-[clamp(20rem,44vh,28rem)] w-[86%] overflow-hidden rounded-xl" ref={imageFrameRef}>
+          <div className="relative z-10 h-[clamp(20rem,50vh,30rem)] w-[86%] overflow-hidden rounded-xl" ref={imageFrameRef}>
             <Image src={imageSrc} alt={vision.imageAlt || vision.label} fill sizes="100vw" className="object-cover" priority />
             <div className="absolute inset-0 bg-linear-to-t from-primary/28 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-primary/72 opacity-0" ref={overlayRef} />

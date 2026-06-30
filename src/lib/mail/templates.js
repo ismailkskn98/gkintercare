@@ -85,3 +85,42 @@ export function createQuickConsultationEmail(values) {
     }),
   };
 }
+
+export function createFreeConsultationEmail(values) {
+  return {
+    subject: `Get a free consultation request from ${values.fullName}`,
+    html: emailLayout({
+      eyebrow: "Get a free consultation",
+      title: "New consultation drawer request",
+      rows: [
+        ["Source", values.source || "Get a free consultation drawer"],
+        ["Full name", values.fullName],
+        ["Email", values.email],
+        ["Phone / WhatsApp", values.phone],
+        ["Country", values.country],
+        ["Interested treatment", values.treatment],
+        ["Doctor preference", values.doctorPreference],
+        ["Message", values.message],
+        ["Attached images", values.attachmentCount ? `${values.attachmentCount} image(s)` : "No images attached"],
+      ],
+    }),
+  };
+}
+
+export function createContactEmail(values) {
+  return {
+    subject: `New contact message from ${values.fullName}`,
+    html: emailLayout({
+      eyebrow: "Contact page",
+      title: "New contact page enquiry",
+      rows: [
+        ["Source", "Contact page form"],
+        ["Full name", values.fullName],
+        ["Email", values.email],
+        ["Phone", values.phone],
+        ["Country", values.country],
+        ["Message", values.message],
+      ],
+    }),
+  };
+}

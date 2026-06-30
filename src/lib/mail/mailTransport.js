@@ -11,7 +11,7 @@ function getMailConfig() {
   return { EMAIL_PASS, EMAIL_TO, EMAIL_USER, SMTP_HOST, port };
 }
 
-export async function sendSiteEmail({ html, replyTo, subject }) {
+export async function sendSiteEmail({ attachments = [], html, replyTo, subject }) {
   const config = getMailConfig();
   const transporter = nodemailer.createTransport({
     host: config.SMTP_HOST,
@@ -24,6 +24,7 @@ export async function sendSiteEmail({ html, replyTo, subject }) {
   });
 
   await transporter.sendMail({
+    attachments,
     from: `GK InterCare Website <${config.EMAIL_USER}>`,
     to: config.EMAIL_TO,
     replyTo,

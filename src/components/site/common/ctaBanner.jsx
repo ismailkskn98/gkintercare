@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ButtonLink from "./buttonLink";
+import ConsultationButtonLink from "./consultation/consultationButtonLink";
 
 export default function CtaBanner({ title, text, button, eyebrow = "Take the first step", href = "/contact", image = "/images/cta-banner/ctaBanner2.webp", imageAlt = "", className = "" }) {
   return (
@@ -16,9 +17,15 @@ export default function CtaBanner({ title, text, button, eyebrow = "Take the fir
               <h3 className="mt-[clamp(0.35rem,1vw,0.875rem)] text-[clamp(1.25rem,3.6vw,2.35rem)] font-800 leading-tight">{title}</h3>
               {text ? <p className="mt-[clamp(0.4rem,1vw,0.875rem)] max-w-sm text-xs leading-5 text-white/74 sm:text-[13px] sm:leading-6">{text}</p> : null}
             </div>
-            <ButtonLink href={href} variant="light" className="min-h-9! w-max px-3! py-2! text-xs! sm:min-h-10! sm:px-4!">
-              {button}
-            </ButtonLink>
+            {href === "/contact" ? (
+              <ConsultationButtonLink variant="light" source="CTA banner" className="min-h-9! w-max px-3! py-2! text-xs! sm:min-h-10! sm:px-4!">
+                {button}
+              </ConsultationButtonLink>
+            ) : (
+              <ButtonLink href={href} variant="light" className="min-h-9! w-max px-3! py-2! text-xs! sm:min-h-10! sm:px-4!">
+                {button}
+              </ButtonLink>
+            )}
           </div>
         </div>
       </section>

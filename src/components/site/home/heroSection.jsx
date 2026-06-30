@@ -1,6 +1,7 @@
 import { Building2, ShieldCheck, Stethoscope } from "lucide-react";
 import { MotionFadeIn } from "../common/animation";
 import ButtonLink from "../common/buttonLink";
+import ConsultationButtonLink from "../common/consultation/consultationButtonLink";
 import Image from "next/image";
 import HeroBackgroundMedia from "./heroBackgroundMedia";
 import HomeConsultationForm from "./homeConsultationForm";
@@ -28,9 +29,9 @@ export default function HeroSection({ content }) {
           </h1>
           <p className="mt-[clamp(1.125rem,2.2vw,1.5rem)] max-w-xl text-[clamp(0.95rem,1.3vw,1.125rem)] leading-7 text-white/78 xl:leading-8">{hero.description}</p>
           <div className="mt-[clamp(1.5rem,2vw,2rem)] flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contact" variant="primary-soft">
+            <ConsultationButtonLink source="Home hero primary CTA" variant="primary-soft">
               {hero.primaryButton}
-            </ButtonLink>
+            </ConsultationButtonLink>
             <ButtonLink href="/treatments" variant="secondary">
               {hero.secondaryButton}
             </ButtonLink>

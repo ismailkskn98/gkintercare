@@ -7,6 +7,8 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "@/i18n/navigation";
 import ButtonLink, { AnimatedIcon, AnimatedLabel } from "./buttonLink";
+import ConsultationButtonLink from "./consultation/consultationButtonLink";
+import { useConsultation } from "./consultation/consultationContext";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -27,6 +29,7 @@ export default function ShowcaseSlider({
   const previousClass = `showcase-slider-prev-${sliderId}`;
   const nextClass = `showcase-slider-next-${sliderId}`;
   const shouldLoop = items.length > 3;
+  const { openConsultation } = useConsultation();
 
   return (
     <div className={`grid gap-8 lg:grid-cols-[0.52fr_1.48fr] lg:items-end ${className}`}>
@@ -37,9 +40,15 @@ export default function ShowcaseSlider({
         </div>
         <h2 className="mt-[clamp(14px,1vw,32px)] text-[clamp(26px,3.5vw,48px)] font-800 leading-[1.04] text-primary lg:leading-[1.02]">{title}</h2>
         {description ? <p className="mt-5 text-sm leading-relaxed xl:leading-7 text-muted xl:text-base">{description}</p> : null}
-        <ButtonLink className="mt-[clamp(16px,1vw,32px)] h-11" href={ctaHref} icon={ArrowUpRight} variant="dark">
-          {ctaLabel}
-        </ButtonLink>
+        {ctaHref === "/contact" ? (
+          <ConsultationButtonLink className="mt-[clamp(16px,1vw,32px)] h-11" icon={ArrowUpRight} source="Showcase section CTA" variant="dark">
+            {ctaLabel}
+          </ConsultationButtonLink>
+        ) : (
+          <ButtonLink className="mt-[clamp(16px,1vw,32px)] h-11" href={ctaHref} icon={ArrowUpRight} variant="dark">
+            {ctaLabel}
+          </ButtonLink>
+        )}
       </div>
 
       <div className="min-w-0 overflow-hidden xl:pl-8">
@@ -65,13 +74,14 @@ export default function ShowcaseSlider({
           speed={700}
           className="overflow-hidden! p-1.5!"
         >
-          {items.map((item, index) => (
-            <SwiperSlide key={item.title}>
-              <Link className={`group group/action-link relative block overflow-hidden rounded-2xl bg-primary ${cardAspectClass}`} href={item.href || ctaHref}>
+          {items.map((item, index) => {
+            const slideHref = item.href || ctaHref;
+            const cardClassName = `group group/action-link relative block overflow-hidden rounded-2xl bg-primary text-left ${cardAspectClass}`;
+            const cardContent = (
+              <>
                 <Image src={item.image} alt={item.title} fill unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-linear-to-t from-primary/90 via-primary/50 xl:via-primary/20 to-black/5" />
-                {/* <span className="pointer-events-none absolute bottom-4 right-4 text-7xl font-800 leading-none tracking-[-0.06em] text-white/24 transition group-hover:text-white/32"> */}
-                <span className="pointer-events-none absolute bottom-3 right-3 text-6xl font-800 leading-none tracking-[-0.06em] transition bg-linear-to-b from-white/30 to-primary/60 bg-clip-text text-transparent md:bottom-4 md:right-4 md:text-8xl">
+                <span className="pointer-events-none absolute bottom-3 right-3 bg-linear-to-b from-white/30 to-primary/60 bg-clip-text text-6xl font-800 leading-none tracking-[-0.06em] text-transparent transition md:bottom-4 md:right-4 md:text-8xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
@@ -94,9 +104,23 @@ export default function ShowcaseSlider({
                     </span>
                   </div>
                 </article>
-              </Link>
-            </SwiperSlide>
-          ))}
+              </>
+            );
+
+            return (
+              <SwiperSlide key={item.title}>
+                {slideHref === "/contact" && openConsultation ? (
+                  <button className={cardClassName} onClick={() => openConsultation({ source: "Treatment showcase card", treatment: item.treatment || item.title })} type="button">
+                    {cardContent}
+                  </button>
+                ) : (
+                  <Link className={cardClassName} href={slideHref}>
+                    {cardContent}
+                  </Link>
+                )}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
 
         <div className="mt-6 flex justify-end gap-2">

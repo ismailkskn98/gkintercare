@@ -11,5 +11,5 @@ export default async function HomePage({ params }) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <HomeContent content={getSiteContent(locale)} />;
+  return <HomeContent content={getSiteContent(locale)} locale={locale} />;
 }

@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import CallbackRequestForm from "./callbackRequestForm";
+import CookieSettingsButton from "../common/cookieConsent/cookieSettingsButton";
 
 const socialLinks = [
   { label: "Facebook", Icon: FaFacebookF, href: "#" },
@@ -102,7 +103,6 @@ export default async function Footer({ content }) {
           <CallbackRequestForm content={footer.newsletter} />
         </div>
       </div>
-
       <div className="mt-[clamp(2.5rem,5vw,3.5rem)] flex flex-col gap-3 text-[0.68rem] text-[#a0a0a0] md:flex-row md:items-center md:justify-between">
         <span className="flex items-center gap-1">
           © 2026 GK InterCare. {t("rights")}{" "}
@@ -111,8 +111,16 @@ export default async function Footer({ content }) {
             <span className="group-hover:text-black">MarkaForce</span>
           </a>
         </span>
-        <span>
-          {t("privacy")} | {t("terms")}
+        <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <Link className="transition hover:text-primary" href="/privacy">
+            {t("privacy")}
+          </Link>
+          <span aria-hidden="true">|</span>
+          <Link className="transition hover:text-primary" href="/cookie-policy">
+            {t("cookiePolicy")}
+          </Link>
+          <span aria-hidden="true">|</span>
+          <CookieSettingsButton>{t("cookieSettings")}</CookieSettingsButton>
         </span>
       </div>
     </footer>

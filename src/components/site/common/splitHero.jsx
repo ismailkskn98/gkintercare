@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
 import ButtonLink from "./buttonLink";
+import ConsultationButtonLink from "./consultation/consultationButtonLink";
 
 export default function SplitHero({
   label,
@@ -37,7 +38,11 @@ export default function SplitHero({
               ))}
             </div>
           ) : null}
-          {primaryButton ? (
+          {primaryButton && primaryHref === "/contact" ? (
+            <ConsultationButtonLink className="mt-8" source="Split hero CTA" variant="light">
+              {primaryButton}
+            </ConsultationButtonLink>
+          ) : primaryButton ? (
             <ButtonLink className="mt-8" href={primaryHref} variant="light">
               {primaryButton}
             </ButtonLink>
